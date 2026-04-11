@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
-
 html, body {
   overflow-x:hidden;
   -webkit-font-smoothing: antialiased;
@@ -34,6 +31,31 @@ a:hover {
   color: #31997d;
 }
 
+a:focus,
+button:focus {
+  outline: 3px solid rgba(63, 197, 162, 0.45);
+  outline-offset: 2px;
+}
+
+button {
+  font: inherit;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 1100;
+  padding: 0.75rem 1rem;
+  background: #181922;
+  color: #fff;
+  border-radius: 0.5rem;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
 blockquote {
   font-style: italic;
 }
@@ -41,6 +63,7 @@ blockquote {
 figure img {
   border: 10px solid #ddffdd;
   max-width: 100%;
+  height: auto;
   text-align: center;
 }
 
@@ -123,6 +146,8 @@ p, li {
 .blog-post {
   margin-top: 12em;
   margin-bottom: 5em;
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 1800px;
 }
 
 .post-heading {
@@ -153,6 +178,7 @@ h1 {
   top: 0;
   right: 0;
   height: 100%;
+  pointer-events: none;
   z-index: -1;
 }
 
@@ -179,13 +205,14 @@ path.travel.travel-israel {
 .hero-image {
   position:relative;
   width: 100%;
+  min-height: 100vh;
   font-family: 'Libre Baskerville', Garamond, serif;
 }
 
 .hero-image.main {
   padding: 2em 1em 4em;
   text-align: center;
-  min-height: 600px;
+  min-height: 100vh;
   position: relative;
   color: #fff;
   display: -webkit-flex;
@@ -339,10 +366,23 @@ path.travel.travel-israel {
   color: #ccc;
   padding: 0 1em;
   cursor: pointer;
+  background: transparent;
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.post-icon:hover {
+.post-icon:hover,
+.post-icon:focus {
   color: #bbb;
+}
+
+.post-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  align-items: center;
 }
 
 .post .header {
@@ -404,7 +444,8 @@ path.travel.travel-israel {
 
 .msg {
   z-index: 100;
-  display: none;
+  opacity: 0;
+  pointer-events: none;
   position: fixed;
   transform: translateX(-50%);
   text-align: center;
@@ -418,6 +459,11 @@ path.travel.travel-israel {
   font-weight: bold;
   border-bottom-left-radius: 20%;
   border-bottom-right-radius: 20%;
+  transition: opacity 0.2s ease;
+}
+
+.msg.visible {
+  opacity: 1;
 }
 
 .copied {
@@ -451,9 +497,6 @@ path.travel.travel-israel {
   left: 15px;
   top: 50%;
   background-color: #ddffdd;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 40px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -461,6 +504,10 @@ path.travel.travel-israel {
   cursor: pointer;
   transform: translateY(-50%);
   transition: 0.4s;
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .slide-activator.open {
@@ -469,6 +516,10 @@ path.travel.travel-israel {
 
 .slide-activator:hover {
   background-color: #31997d;
+}
+
+.slide-activator:focus {
+  outline-color: rgba(24, 25, 34, 0.45);
 }
 
 .slide-activator i {
@@ -491,13 +542,26 @@ path.travel.travel-israel {
 }
 
 @media (max-width: 992px) {
+  .fixed-box {
+    display: none;
+  }
+
   .fuzz-out {
     width: 100%;
     padding-right: 5em;
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0px 0px 40px 20px rgba(255,255,255,0.9);
   }
-  svg {
-    display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .slide-out-nav,
+  .slide-activator,
+  .slide-activator i {
+    transition: none;
   }
 }

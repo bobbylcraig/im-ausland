@@ -7,6 +7,12 @@
 <title>Im Ausland | Bobby's Travel Log</title>
 <meta name="description" content="Bobby's account of his Spring 2017 semester in Europe.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#181922">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://maxcdn.bootstrapcdn.com" crossorigin>
+<link rel="preload" as="image" href="/im-ausland/img/bremen-hero.jpg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Nunito+Sans&display=swap">
 <link href="/im-ausland/css/styles.css" rel="stylesheet">
 <link rel="icon" type="image/png" href="/im-ausland/img/favicon.png">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -20,8 +26,11 @@
   </head>
   <body>
 
-    <div class="slide-activator"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
-<div class="slide-out-nav">
+    <a class="skip-link" href="#content">Skip to posts</a>
+<button class="slide-activator" type="button" aria-expanded="false" aria-controls="post-directory" aria-label="Toggle post directory">
+	<i class="fa fa-arrow-right" aria-hidden="true"></i>
+</button>
+<nav class="slide-out-nav" id="post-directory" aria-label="Post directory">
 	<div class="posts">
 		
 			<a href="/im-ausland/#introduction">Introduction</a>
@@ -125,12 +134,12 @@
 			<a href="/im-ausland/#some-bulleted-thoughts">Some Bulleted Thoughts...</a>
 		
 	</div>
-</div>
+</nav>
 
-<div class="hero-image main">
+<header class="hero-image main">
 	<div class="main-links">
-		<span class="main-links-icons"><a href="http://bobbylcraig.com/" title="Bobby's Blog"><i class="fa fa-rss fa-lg" aria-hidden="true"></i></a></span>
-		<span class="main-links-icons"><a href="https://medium.com/@bobbylcraig/interactive-map-blog-study-abroad-project-ef87e3e938fb" title="Building This Blog"><i class="fa fa-legal fa-lg" aria-hidden="true"></i></a></span>
+		<span class="main-links-icons"><a href="http://bobbylcraig.com/" title="Bobby's Blog" aria-label="Visit Bobby's main blog"><i class="fa fa-rss fa-lg" aria-hidden="true"></i></a></span>
+		<span class="main-links-icons"><a href="https://medium.com/@bobbylcraig/interactive-map-blog-study-abroad-project-ef87e3e938fb" title="Building This Blog" aria-label="Read about how this blog was built"><i class="fa fa-legal fa-lg" aria-hidden="true"></i></a></span>
 	</div>
 	<h1 class="header-title">
     <span class="header-title__main">Im Ausland</span>
@@ -139,25 +148,25 @@
       An interactive travel log by <a href="http://bobbylcraig.com/">Bobby Craig</a>.
     </span>
   </h1>
-</div>
-<div class="hero-image intro">
+</header>
+<section class="hero-image intro" aria-label="Opening quote">
 	<em>&ldquo;I'm broke as hell,<br>but at least I'm rich in memories.&rdquo;</em>
   <span>Dariya Koleva</span>
-</div>
-<div class="story">
+</section>
+<main class="story" id="content">
 	<div class="row">
 		<div class="fuzz-out">
 			
-				<div class="blog-post" id="introduction">
+				<article class="blog-post" id="introduction" aria-labelledby="introduction-title">
 					<h3 class="location-text"></h3>
-					<h1 class="post-heading">Introduction</h1>
+					<h2 class="post-heading" id="introduction-title">Introduction</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/01/18/introduction.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Canton,+OH/@40.8048591,-81.4351842,12z/data=!3m1!4b1!4m5!3m4!1s0x8836c84fd29980a9:0x12cc9ba49ffa6f4b!8m2!3d40.7989473!4d-81.378447"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#introduction" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Introduction">
+						<a class="post-icon" href="/im-ausland/2017/01/18/introduction.html" aria-label="Open the full post for Introduction"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Canton,+OH/@40.8048591,-81.4351842,12z/data=!3m1!4b1!4m5!3m4!1s0x8836c84fd29980a9:0x12cc9ba49ffa6f4b!8m2!3d40.7989473!4d-81.378447" aria-label="Open the map location for Introduction"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#introduction" aria-label="Copy a direct link to Introduction"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>January 18, 2017</em></h5> -->
 					<p>I have told myself for the longest time that I'm a creator, not a consumer. When I see this changing, I try to do something to remedy it. So often I find it's easy to just sit on Reddit or Facebook and endlessly scroll as my eyes grow tired and I grow bored of looking at a screen. While a little bit of this is okay and normal, doing this to the extent that some do is dangerous. It leads to apathy. It leads to unwarranted contentment. And it inhibits creation and self-growth.</p>
@@ -183,40 +192,40 @@
 
 <p>Enjoy.</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="prepping-for-abroad">
+				<article class="blog-post" id="prepping-for-abroad" aria-labelledby="prepping-for-abroad-title">
 					<h3 class="location-text">Canton</h3>
-					<h1 class="post-heading">Prepping For Abroad</h1>
+					<h2 class="post-heading" id="prepping-for-abroad-title">Prepping For Abroad</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/01/20/prepping-for-abroad.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Canton,+OH/@40.8048591,-81.4351842,12z/data=!3m1!4b1!4m5!3m4!1s0x8836c84fd29980a9:0x12cc9ba49ffa6f4b!8m2!3d40.7989473!4d-81.378447"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#prepping-for-abroad" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Prepping For Abroad">
+						<a class="post-icon" href="/im-ausland/2017/01/20/prepping-for-abroad.html" aria-label="Open the full post for Prepping For Abroad"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Canton,+OH/@40.8048591,-81.4351842,12z/data=!3m1!4b1!4m5!3m4!1s0x8836c84fd29980a9:0x12cc9ba49ffa6f4b!8m2!3d40.7989473!4d-81.378447" aria-label="Open the map location for Prepping For Abroad"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#prepping-for-abroad" aria-label="Copy a direct link to Prepping For Abroad"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/01/20/prepping-for-abroad.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/01/20/prepping-for-abroad.html#comments" aria-label="Jump to comments for Prepping For Abroad"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>January 20, 2017</em></h5> -->
 					<p>I’m prepping for abroad! One of my biggest traveling weaknesses is packing at the last second (which I still haven’t remedied…), but I’m actually planning lots of things ahead of time. For example, today I went out and, along with a few errands my mum wanted me to run, I bought some luggage tags (yeah, it was about time) and got some Euros from the bank because currency conversion is wack and crazy expensive!</p>
 
 <p>Also, I’m just kind of testing out this blogging format. I’m hosting it for free with GitHub pages and using the static site generator, <a href="https://jekyllrb.com/">Jekyll</a>. It’s pretty nifty and I can post about it sometime if that’s of interest…if anybody even reads this.</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="day-before-departure">
+				<article class="blog-post" id="day-before-departure" aria-labelledby="day-before-departure-title">
 					<h3 class="location-text">Canton</h3>
-					<h1 class="post-heading">The Day Before Departure</h1>
+					<h2 class="post-heading" id="day-before-departure-title">The Day Before Departure</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/01/24/day-before-departure.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Canton,+OH/@40.8048591,-81.4351842,12z/data=!3m1!4b1!4m5!3m4!1s0x8836c84fd29980a9:0x12cc9ba49ffa6f4b!8m2!3d40.7989473!4d-81.378447"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#day-before-departure" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for The Day Before Departure">
+						<a class="post-icon" href="/im-ausland/2017/01/24/day-before-departure.html" aria-label="Open the full post for The Day Before Departure"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Canton,+OH/@40.8048591,-81.4351842,12z/data=!3m1!4b1!4m5!3m4!1s0x8836c84fd29980a9:0x12cc9ba49ffa6f4b!8m2!3d40.7989473!4d-81.378447" aria-label="Open the map location for The Day Before Departure"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#day-before-departure" aria-label="Copy a direct link to The Day Before Departure"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/01/24/day-before-departure.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/01/24/day-before-departure.html#comments" aria-label="Jump to comments for The Day Before Departure"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>January 24, 2017</em></h5> -->
 					<p>Hello from Canton, Ohio (still…)! As I prepare for my departure tomorrow, I worry about the weight of my luggage and the timeliness of my planes. How much would it suck to have a leg delayed enough that it throws everything off? Anyway, as I have prepped and sat at home doing nothing super exciting, like playing around with the computer and decorating my laptop case with stickers (NOT MY LAPTOP. JUST THE COVER. I might post pictures when I have time…) [EDIT: <a href="/im-ausland/img/post-imgs/laptop-cover-min.jpg">found time</a>!], I’ve realized that I’m beyond excited for Bremen.</p>
@@ -225,20 +234,20 @@
 
 <p>Still, I’m sure I’ll have tons of fun! I’m going to miss my friends at home. I’ve met my roommate for abroad and he seems like a good guy, and I’m gearing up for my flight tomorrow. My bags are just about packed… my stuff is about cleaned… I have some work to finish for Tenable (the company I’m interning for) before I go, but that shouldn’t take long… then I’ll say goodbye to my grandparents in the morning, then my mum who is bound to be an emotional mess… AND then off to ATL → CDW → BRE! Can’t wait!</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="hour-before-departure">
+				<article class="blog-post" id="hour-before-departure" aria-labelledby="hour-before-departure-title">
 					<h3 class="location-text">Canton</h3>
-					<h1 class="post-heading">An Hour Before Departure</h1>
+					<h2 class="post-heading" id="hour-before-departure-title">An Hour Before Departure</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/01/25/hour-before-departure.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Akron-Canton+Airport+(CAK)/@40.914619,-81.4388607,17z/data=!3m1!4b1!4m5!3m4!1s0x8836d47bac9c5887:0x4b5fdee88369aec5!8m2!3d40.914615!4d-81.436672"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#hour-before-departure" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for An Hour Before Departure">
+						<a class="post-icon" href="/im-ausland/2017/01/25/hour-before-departure.html" aria-label="Open the full post for An Hour Before Departure"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Akron-Canton+Airport+(CAK)/@40.914619,-81.4388607,17z/data=!3m1!4b1!4m5!3m4!1s0x8836d47bac9c5887:0x4b5fdee88369aec5!8m2!3d40.914615!4d-81.436672" aria-label="Open the map location for An Hour Before Departure"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#hour-before-departure" aria-label="Copy a direct link to An Hour Before Departure"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/01/25/hour-before-departure.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/01/25/hour-before-departure.html#comments" aria-label="Jump to comments for An Hour Before Departure"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>January 25, 2017</em></h5> -->
 					<p>Yes... I'm still in Canton... for about another hour as I write this! But then I will be off.</p>
@@ -253,20 +262,20 @@
 
 <p>I'm ready for my trip. I slept very little, so I'm hoping that my early morning arrival won't be too terrible if I can fall asleep on the plane (it'll be 4am EST). If not, day 1 in Bremen will be miserable. I may update this or add posts at other airports depending on how bored I am. I'm headed to Atlanta next and then Paris. Tschüss!</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="the-flights">
+				<article class="blog-post" id="the-flights" aria-labelledby="the-flights-title">
 					<h3 class="location-text">Bremen</h3>
-					<h1 class="post-heading">The Flights</h1>
+					<h2 class="post-heading" id="the-flights-title">The Flights</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/01/26/the-flights.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Bremen+Airport+(BRE)/@53.0479773,8.7836906,17z/data=!3m1!4b1!4m5!3m4!1s0x47b0d7c3076f1b3f:0xb0088e993fc5ef83!8m2!3d53.0479741!4d8.7858793"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#the-flights" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for The Flights">
+						<a class="post-icon" href="/im-ausland/2017/01/26/the-flights.html" aria-label="Open the full post for The Flights"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Bremen+Airport+(BRE)/@53.0479773,8.7836906,17z/data=!3m1!4b1!4m5!3m4!1s0x47b0d7c3076f1b3f:0xb0088e993fc5ef83!8m2!3d53.0479741!4d8.7858793" aria-label="Open the map location for The Flights"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#the-flights" aria-label="Copy a direct link to The Flights"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/01/26/the-flights.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/01/26/the-flights.html#comments" aria-label="Jump to comments for The Flights"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>January 26, 2017</em></h5> -->
 					<p>It was a rather…long…process getting here, but I have finally arrived, jet-lagged but still ready to have a good time! I haven’t written anything on this blog since before my first flight, so it might make sense to cover that entire duration.</p>
@@ -329,20 +338,20 @@ Pilot: “Okee dokee, artichokey.”</p>
 <p>As we approached Bremen, I noticed that 10 minutes before landing the skies became incredibly overcast––I don't know how Northern Germans stay so upbeat with how crappy the weather is! We landed, I got off of the plane, and grabbed my luggage seamlessly. I'm so glad my luggage didn't get lost in the diversion tragedy the day prior. I then walked towards arrivals to meet my student advisor, ready to take on Bremen...</p>
 </div>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="arrival-to-jacobs">
+				<article class="blog-post" id="arrival-to-jacobs" aria-labelledby="arrival-to-jacobs-title">
 					<h3 class="location-text">Jacobs University</h3>
-					<h1 class="post-heading">I Have Arrived At Jacobs!</h1>
+					<h2 class="post-heading" id="arrival-to-jacobs-title">I Have Arrived At Jacobs!</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/01/27/arrival-to-jacobs.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Jacobs+University+Bremen/@53.5586526,9.6476411,10z/data=!4m5!3m4!1s0x47b12ca1e7c06c65:0x903fa1786c3fd4e9!8m2!3d53.1677169!4d8.6542654"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#arrival-to-jacobs" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for I Have Arrived At Jacobs!">
+						<a class="post-icon" href="/im-ausland/2017/01/27/arrival-to-jacobs.html" aria-label="Open the full post for I Have Arrived At Jacobs!"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Jacobs+University+Bremen/@53.5586526,9.6476411,10z/data=!4m5!3m4!1s0x47b12ca1e7c06c65:0x903fa1786c3fd4e9!8m2!3d53.1677169!4d8.6542654" aria-label="Open the map location for I Have Arrived At Jacobs!"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#arrival-to-jacobs" aria-label="Copy a direct link to I Have Arrived At Jacobs!"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/01/27/arrival-to-jacobs.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/01/27/arrival-to-jacobs.html#comments" aria-label="Jump to comments for I Have Arrived At Jacobs!"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>January 27, 2017</em></h5> -->
 					<p>When I last left off I was at the arrivals in Germany preparing to meet my student advisor, Taha. Well, lo-and-behold, once I left the airport he was standing at arrivals! And he didn’t come alone! Taha also brought my roommate, Julius. First words out of Taha’s mouth were introductions, of course. Second words, however, were “do you smoke?”</p>
@@ -361,20 +370,20 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 <p>After grabbing dinner, I headed back to my room to take a nap and instead wrote this post. How great of me. Bye bye.</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="post-party">
+				<article class="blog-post" id="post-party" aria-labelledby="post-party-title">
 					<h3 class="location-text">Bremen</h3>
-					<h1 class="post-heading">The Post-Party Period</h1>
+					<h2 class="post-heading" id="post-party-title">The Post-Party Period</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/01/29/post-party.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Jacobs+University+Bremen/@53.5586526,9.6476411,10z/data=!4m5!3m4!1s0x47b12ca1e7c06c65:0x903fa1786c3fd4e9!8m2!3d53.1677169!4d8.6542654"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#post-party" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for The Post-Party Period">
+						<a class="post-icon" href="/im-ausland/2017/01/29/post-party.html" aria-label="Open the full post for The Post-Party Period"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Jacobs+University+Bremen/@53.5586526,9.6476411,10z/data=!4m5!3m4!1s0x47b12ca1e7c06c65:0x903fa1786c3fd4e9!8m2!3d53.1677169!4d8.6542654" aria-label="Open the map location for The Post-Party Period"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#post-party" aria-label="Copy a direct link to The Post-Party Period"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/01/29/post-party.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/01/29/post-party.html#comments" aria-label="Jump to comments for The Post-Party Period"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>January 29, 2017</em></h5> -->
 					<p>Since my last post, I’ve made some pretty good friends that are other exchange students. I really enjoy hanging out with them and we have had a lot of fun the past two days. We all met on our trip to Bremen on Saturday afternoon. Friday night was rather interesting and I met many of my roommates friends (as well as some exchange students that showed up). Julius knows how to throw a really great party and is always pushing me out of my comfort zone, which is nice but also a little unnerving at times.</p>
@@ -398,20 +407,20 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 <p>Since then, I’ve been back to Vegesack for several more errands and have been all around campus. I’m starting to get comfortable and am having lots of fun. It’s going to be a great semester!</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="classes-have-begun">
+				<article class="blog-post" id="classes-have-begun" aria-labelledby="classes-have-begun-title">
 					<h3 class="location-text">Jacobs University</h3>
-					<h1 class="post-heading">Classes Have Begun</h1>
+					<h2 class="post-heading" id="classes-have-begun-title">Classes Have Begun</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/02/03/classes-have-begun.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Jacobs+University+Bremen/@53.5586526,9.6476411,10z/data=!4m5!3m4!1s0x47b12ca1e7c06c65:0x903fa1786c3fd4e9!8m2!3d53.1677169!4d8.6542654"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#classes-have-begun" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Classes Have Begun">
+						<a class="post-icon" href="/im-ausland/2017/02/03/classes-have-begun.html" aria-label="Open the full post for Classes Have Begun"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Jacobs+University+Bremen/@53.5586526,9.6476411,10z/data=!4m5!3m4!1s0x47b12ca1e7c06c65:0x903fa1786c3fd4e9!8m2!3d53.1677169!4d8.6542654" aria-label="Open the map location for Classes Have Begun"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#classes-have-begun" aria-label="Copy a direct link to Classes Have Begun"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/02/03/classes-have-begun.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/02/03/classes-have-begun.html#comments" aria-label="Jump to comments for Classes Have Begun"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>February 3, 2017</em></h5> -->
 					<p>My first day of classes was yesterday and I must say it was a rather stressful first day of classes.</p>
@@ -428,20 +437,20 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 <p>I’m now planning a trip to Hamburg with Dan and Dariya (as I mentioned previously) and will post later how that went…</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="weekend-in-hamburg">
+				<article class="blog-post" id="weekend-in-hamburg" aria-labelledby="weekend-in-hamburg-title">
 					<h3 class="location-text">Hamburg</h3>
-					<h1 class="post-heading">A Weekend In Hamburg</h1>
+					<h2 class="post-heading" id="weekend-in-hamburg-title">A Weekend In Hamburg</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/02/05/weekend-in-hamburg.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Hamburg,+Germany/@53.1203809,8.5962027,11z/data=!4m5!3m4!1s0x47b161837e1813b9:0x4263df27bd63aa0!8m2!3d53.5510846!4d9.9936818"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#weekend-in-hamburg" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for A Weekend In Hamburg">
+						<a class="post-icon" href="/im-ausland/2017/02/05/weekend-in-hamburg.html" aria-label="Open the full post for A Weekend In Hamburg"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Hamburg,+Germany/@53.1203809,8.5962027,11z/data=!4m5!3m4!1s0x47b161837e1813b9:0x4263df27bd63aa0!8m2!3d53.5510846!4d9.9936818" aria-label="Open the map location for A Weekend In Hamburg"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#weekend-in-hamburg" aria-label="Copy a direct link to A Weekend In Hamburg"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/02/05/weekend-in-hamburg.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/02/05/weekend-in-hamburg.html#comments" aria-label="Jump to comments for A Weekend In Hamburg"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>February 5, 2017</em></h5> -->
 					<div class="BREMEN-TO-HAMBURG" data-from="1675 1650 500 400" data-to="1750 1600 500 400">
@@ -478,20 +487,20 @@ Pilot: “Okee dokee, artichokey.”</p>
 <p><strong>Also</strong>, I found out that I'll be rooming with Oliver in Taylor next year, so that's pretty fun too! It'll take some getting used to and I'll have to establish personal space...but I think it'll work out well.</p>
 </div>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="another-day-in-bremen">
+				<article class="blog-post" id="another-day-in-bremen" aria-labelledby="another-day-in-bremen-title">
 					<h3 class="location-text">Bremen</h3>
-					<h1 class="post-heading">Another Day In Bremen</h1>
+					<h2 class="post-heading" id="another-day-in-bremen-title">Another Day In Bremen</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/02/10/another-day-in-bremen.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Bremen,+Germany/@53.1203809,8.5962027,11z/data=!3m1!4b1!4m5!3m4!1s0x47b128100ceee335:0xc2e8885cf937df51!8m2!3d53.0792962!4d8.8016937"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#another-day-in-bremen" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Another Day In Bremen">
+						<a class="post-icon" href="/im-ausland/2017/02/10/another-day-in-bremen.html" aria-label="Open the full post for Another Day In Bremen"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Bremen,+Germany/@53.1203809,8.5962027,11z/data=!3m1!4b1!4m5!3m4!1s0x47b128100ceee335:0xc2e8885cf937df51!8m2!3d53.0792962!4d8.8016937" aria-label="Open the map location for Another Day In Bremen"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#another-day-in-bremen" aria-label="Copy a direct link to Another Day In Bremen"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/02/10/another-day-in-bremen.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/02/10/another-day-in-bremen.html#comments" aria-label="Jump to comments for Another Day In Bremen"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>February 10, 2017</em></h5> -->
 					<p>Wow, a lot has happened since my last post. I’m writing this significantly after my last post too, so this should be a good test of how much I remember. I’m running a pattern (pretty consistently, actually) of posting what I did a week later. Not only do I hate reflective writing, but I <em>really</em> hate reflective writing a week later when I can’t remember anything. I’ve probably already said this in one of these posts before but…I don’t really care. I still hate it and repetition is simply enforcing my feelings.</p>
@@ -515,20 +524,20 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 <p>Once we were done, we figured we had had enough and it was time to go home. I had some Netflix to catch up on, and I also wanted to get dinner and see other people. All in all, our day in Bremen was very well spent and I had a great time! Now I just have to finish the darn third leg of the tripod and I will be good to go! For now, I sit on my train heading to Copenhagen AND I’M SUPER EXCITED TO REPORT BACK ON THE TRIP TO COPENHAGEN WHEN I’M ON MY RETURNING TRAIN! WOO!</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="to-copenhagen">
+				<article class="blog-post" id="to-copenhagen" aria-labelledby="to-copenhagen-title">
 					<h3 class="location-text">Copenhagen</h3>
-					<h1 class="post-heading">To Copenhagen!</h1>
+					<h2 class="post-heading" id="to-copenhagen-title">To Copenhagen!</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/02/19/to-copenhagen.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Copenhagen,+Denmark/@55.6713442,12.4907992,12z/data=!3m1!4b1!4m5!3m4!1s0x4652533c5c803d23:0x4dd7edde69467b8!8m2!3d55.6760968!4d12.5683371"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#to-copenhagen" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for To Copenhagen!">
+						<a class="post-icon" href="/im-ausland/2017/02/19/to-copenhagen.html" aria-label="Open the full post for To Copenhagen!"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Copenhagen,+Denmark/@55.6713442,12.4907992,12z/data=!3m1!4b1!4m5!3m4!1s0x4652533c5c803d23:0x4dd7edde69467b8!8m2!3d55.6760968!4d12.5683371" aria-label="Open the map location for To Copenhagen!"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#to-copenhagen" aria-label="Copy a direct link to To Copenhagen!"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/02/19/to-copenhagen.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/02/19/to-copenhagen.html#comments" aria-label="Jump to comments for To Copenhagen!"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>February 19, 2017</em></h5> -->
 					<div class="BREMEN-TO-COPENHAGEN" data-from="1675 1650 500 400" data-to="1850 1450 500 400">
@@ -578,20 +587,20 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 <p>Sidenote because I didn't know where to put this: in Germany, I know a little bit of the language so it isn't terrible trying to survive in the city. In Denmark, I would have no freaking clue what people are saying. Thank goodness nearly all Danes speak English. Whilst in Denmark, I also noticed that I have been conditioned to say impulsive things like "thank you" in German all the time. Danes looked at me weird when someone would run into me and I'd say "entschuldigung!"...and by the end of the weekend Kristina and Sophie were sick of me texting them in German. Ich kann nicht anders!</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="a-weekend-in-dam">
+				<article class="blog-post" id="a-weekend-in-dam" aria-labelledby="a-weekend-in-dam-title">
 					<h3 class="location-text">Amsterdam</h3>
-					<h1 class="post-heading">'Dam</h1>
+					<h2 class="post-heading" id="a-weekend-in-dam-title">'Dam</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/02/27/a-weekend-in-dam.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Amsterdam,+Netherlands/@52.3747388,4.7585309,11z/data=!3m1!4b1!4m5!3m4!1s0x47c63fb5949a7755:0x6600fd4cb7c0af8d!8m2!3d52.3702157!4d4.8951679"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#a-weekend-in-dam" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for 'Dam">
+						<a class="post-icon" href="/im-ausland/2017/02/27/a-weekend-in-dam.html" aria-label="Open the full post for 'Dam"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Amsterdam,+Netherlands/@52.3747388,4.7585309,11z/data=!3m1!4b1!4m5!3m4!1s0x47c63fb5949a7755:0x6600fd4cb7c0af8d!8m2!3d52.3702157!4d4.8951679" aria-label="Open the map location for 'Dam"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#a-weekend-in-dam" aria-label="Copy a direct link to 'Dam"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/02/27/a-weekend-in-dam.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/02/27/a-weekend-in-dam.html#comments" aria-label="Jump to comments for 'Dam"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>February 27, 2017</em></h5> -->
 					<p>In trying to continue with the trend of writing these posts frequently, I'm going to (hopefully) finish writing and uploading this by tonight (Monday). If not, I'm going to feel super ashamed...although probably not much remorse. [Edit: I totally didn't finish this on Monday night...]</p>
@@ -641,20 +650,20 @@ Pilot: “Okee dokee, artichokey.”</p>
 <p>But yeah, got home, went to bed, and a new week started! The end. Hannover next weekend, maybe? We'll see.</p>
 </div>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="i-went-to-hannover">
+				<article class="blog-post" id="i-went-to-hannover" aria-labelledby="i-went-to-hannover-title">
 					<h3 class="location-text">Hannover</h3>
-					<h1 class="post-heading">I Went To Hannover</h1>
+					<h2 class="post-heading" id="i-went-to-hannover-title">I Went To Hannover</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/03/04/i-went-to-hannover.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Hanover,+Germany/@52.3797932,9.6213882,11z/data=!3m1!4b1!4m5!3m4!1s0x47b00b514d494f85:0x425ac6d94ac4720!8m2!3d52.3758916!4d9.7320104"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#i-went-to-hannover" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for I Went To Hannover">
+						<a class="post-icon" href="/im-ausland/2017/03/04/i-went-to-hannover.html" aria-label="Open the full post for I Went To Hannover"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Hanover,+Germany/@52.3797932,9.6213882,11z/data=!3m1!4b1!4m5!3m4!1s0x47b00b514d494f85:0x425ac6d94ac4720!8m2!3d52.3758916!4d9.7320104" aria-label="Open the map location for I Went To Hannover"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#i-went-to-hannover" aria-label="Copy a direct link to I Went To Hannover"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/03/04/i-went-to-hannover.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/03/04/i-went-to-hannover.html#comments" aria-label="Jump to comments for I Went To Hannover"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>March 4, 2017</em></h5> -->
 					<div class="HANNOVER-TO-BREMEN" data-from="1675 1650 500 400" data-to="1725 1700 500 400">
@@ -671,20 +680,20 @@ Pilot: “Okee dokee, artichokey.”</p>
 <p>Other than that, look on social media for pictures. I'm starting to get tired of writing blog posts unfortunately...that's why this isn't very detailed. I shall try to persist!</p>
 </div>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="met-my-host-family">
+				<article class="blog-post" id="met-my-host-family" aria-labelledby="met-my-host-family-title">
 					<h3 class="location-text">Bremen</h3>
-					<h1 class="post-heading">Met My Host Family!</h1>
+					<h2 class="post-heading" id="met-my-host-family-title">Met My Host Family!</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/03/06/met-my-host-family.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Bremen,+Germany/@53.1203809,8.5962027,11z/data=!3m1!4b1!4m5!3m4!1s0x47b128100ceee335:0xc2e8885cf937df51!8m2!3d53.0792962!4d8.8016937"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#met-my-host-family" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Met My Host Family!">
+						<a class="post-icon" href="/im-ausland/2017/03/06/met-my-host-family.html" aria-label="Open the full post for Met My Host Family!"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Bremen,+Germany/@53.1203809,8.5962027,11z/data=!3m1!4b1!4m5!3m4!1s0x47b128100ceee335:0xc2e8885cf937df51!8m2!3d53.0792962!4d8.8016937" aria-label="Open the map location for Met My Host Family!"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#met-my-host-family" aria-label="Copy a direct link to Met My Host Family!"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/03/06/met-my-host-family.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/03/06/met-my-host-family.html#comments" aria-label="Jump to comments for Met My Host Family!"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>March 6, 2017</em></h5> -->
 					<p>So, as I’m writing this it’s significantly past the point where I actually met my host family…knowing that, this should be interesting. If I allude to things I shouldn’t have known at my first meeting with them….well….I’m sorry?</p>
@@ -701,20 +710,20 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 <p>So yeah, that’s pretty much our first meeting with the host fam. Nothing too exciting. Just some Germans and Americans chilling. The end.</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="got-lost-on-a-run">
+				<article class="blog-post" id="got-lost-on-a-run" aria-labelledby="got-lost-on-a-run-title">
 					<h3 class="location-text">Bremen-Vegesack</h3>
-					<h1 class="post-heading">Lost On A Run!</h1>
+					<h2 class="post-heading" id="got-lost-on-a-run-title">Lost On A Run!</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/03/08/got-lost-on-a-run.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Bremen-Vegesack,+Bremen,+Germany/@53.1791478,8.5932476,13z/data=!3m1!4b1!4m5!3m4!1s0x47b12cb33a72536d:0x6291130541e41c97!8m2!3d53.1804023!4d8.6350091"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#got-lost-on-a-run" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Lost On A Run!">
+						<a class="post-icon" href="/im-ausland/2017/03/08/got-lost-on-a-run.html" aria-label="Open the full post for Lost On A Run!"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Bremen-Vegesack,+Bremen,+Germany/@53.1791478,8.5932476,13z/data=!3m1!4b1!4m5!3m4!1s0x47b12cb33a72536d:0x6291130541e41c97!8m2!3d53.1804023!4d8.6350091" aria-label="Open the map location for Lost On A Run!"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#got-lost-on-a-run" aria-label="Copy a direct link to Lost On A Run!"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/03/08/got-lost-on-a-run.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/03/08/got-lost-on-a-run.html#comments" aria-label="Jump to comments for Lost On A Run!"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>March 8, 2017</em></h5> -->
 					<p>Since I arrived in Germany, I’ve been trying to live a more healthy life. It’s really difficult with the snacks and bread they have everywhere, but I’M TRYING. Not only have I been looking to better my diet, but I’ve also been trying to get a little more physically engaged lately. Namely, I’ve been trying to run daily. Interestingly enough, I feel most comfortable when running really late at night when no one is around, so I often leave for runs around 10 or 11pm.</p>
@@ -727,20 +736,20 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 <p>When I got back, I realized I had probably gone about 9mi in all and my legs hurt like a bitch. But yeah, that’s my story about how I got lost in my own German neighborhood.</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="osnabruck">
+				<article class="blog-post" id="osnabruck" aria-labelledby="osnabruck-title">
 					<h3 class="location-text">Osnabrück</h3>
-					<h1 class="post-heading">Osnabrück</h1>
+					<h2 class="post-heading" id="osnabruck-title">Osnabrück</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/03/11/osnabruck.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Osnabrück,+Germany/@52.2780709,7.9853898,12z/data=!3m1!4b1!4m5!3m4!1s0x47b9e598697b5d4d:0x426cf7763005c60!8m2!3d52.2799112!4d8.0471788"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#osnabruck" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Osnabrück">
+						<a class="post-icon" href="/im-ausland/2017/03/11/osnabruck.html" aria-label="Open the full post for Osnabrück"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Osnabrück,+Germany/@52.2780709,7.9853898,12z/data=!3m1!4b1!4m5!3m4!1s0x47b9e598697b5d4d:0x426cf7763005c60!8m2!3d52.2799112!4d8.0471788" aria-label="Open the map location for Osnabrück"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#osnabruck" aria-label="Copy a direct link to Osnabrück"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/03/11/osnabruck.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/03/11/osnabruck.html#comments" aria-label="Jump to comments for Osnabrück"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>March 11, 2017</em></h5> -->
 					<div class="BREMEN-TO-OSNABRUCK" data-from="1675 1650 500 400" data-to="1650 1725 500 400">
@@ -771,40 +780,40 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 </div>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="skating-with-my-host-family">
+				<article class="blog-post" id="skating-with-my-host-family" aria-labelledby="skating-with-my-host-family-title">
 					<h3 class="location-text">Bremen-Walle</h3>
-					<h1 class="post-heading">Skating With My Host Family!</h1>
+					<h2 class="post-heading" id="skating-with-my-host-family-title">Skating With My Host Family!</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/03/12/skating-with-my-host-family.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Paradice+-+Die+Bremer+Eissporthalle/@53.1091014,8.7713492,17z/data=!3m1!4b1!4m5!3m4!1s0x47b129aa2459f37d:0xacbebe6f0bee2dc3!8m2!3d53.1090982!4d8.7735379"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#skating-with-my-host-family" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Skating With My Host Family!">
+						<a class="post-icon" href="/im-ausland/2017/03/12/skating-with-my-host-family.html" aria-label="Open the full post for Skating With My Host Family!"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Paradice+-+Die+Bremer+Eissporthalle/@53.1091014,8.7713492,17z/data=!3m1!4b1!4m5!3m4!1s0x47b129aa2459f37d:0xacbebe6f0bee2dc3!8m2!3d53.1090982!4d8.7735379" aria-label="Open the map location for Skating With My Host Family!"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#skating-with-my-host-family" aria-label="Copy a direct link to Skating With My Host Family!"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/03/12/skating-with-my-host-family.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/03/12/skating-with-my-host-family.html#comments" aria-label="Jump to comments for Skating With My Host Family!"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>March 12, 2017</em></h5> -->
 					<p>Not much to say here. I just wanted to keep this updated. Jacob and I went ice skating with our host family which wasn’t 100% painful…I did remember how not great I am at skating though, haha. When we left, we took the tram back to the Bremen Hbf, Jacob left early for some reason and then we made our way for my host family’s house. On the way, some random guy must have heard us speaking English and gave us a 2 Euro piece and told us (in German, mind you) to enjoy Bremen. It was weird. But hey, we were 2 Euro richer!</p>
 
 <p>At home, we played German scrabble (I died) and ate dinner. After a quick walk, it was late and I had to go home. Not a lot happened. So yeah, the end.</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="to-the-burgerschaft">
+				<article class="blog-post" id="to-the-burgerschaft" aria-labelledby="to-the-burgerschaft-title">
 					<h3 class="location-text">Bremen</h3>
-					<h1 class="post-heading">To The Bürgerschaft!</h1>
+					<h2 class="post-heading" id="to-the-burgerschaft-title">To The Bürgerschaft!</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/03/16/to-the-burgerschaft.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Bremische+Bürgerschaft/@53.0760643,8.8031549,16z/data=!4m8!1m2!2m1!1sBremen+Burgerschaft!3m4!1s0x47b12810a55a4b7b:0xe8be96d65dd60715!8m2!3d53.075413!4d8.807454"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#to-the-burgerschaft" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for To The Bürgerschaft!">
+						<a class="post-icon" href="/im-ausland/2017/03/16/to-the-burgerschaft.html" aria-label="Open the full post for To The Bürgerschaft!"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Bremische+Bürgerschaft/@53.0760643,8.8031549,16z/data=!4m8!1m2!2m1!1sBremen+Burgerschaft!3m4!1s0x47b12810a55a4b7b:0xe8be96d65dd60715!8m2!3d53.075413!4d8.807454" aria-label="Open the map location for To The Bürgerschaft!"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#to-the-burgerschaft" aria-label="Copy a direct link to To The Bürgerschaft!"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/03/16/to-the-burgerschaft.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/03/16/to-the-burgerschaft.html#comments" aria-label="Jump to comments for To The Bürgerschaft!"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>March 16, 2017</em></h5> -->
 					<p>German Politics and Culture went to Berlin a few weeks ago. Unfortunately, because it was prohibitively expensive, I didn’t go. I’ll be going at a later point in time. Because I didn’t get to go, I didn’t get to visit the Reichstag with the rest of the class which SUCKS. BUT THIS WEEK, we got to go to the Bremen Bürgerschaft (like a state house?). Equally as good? Not really. Still fun? Sure!</p>
@@ -813,38 +822,38 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 <p>Afterward, I went with Dariya and a Scottish friend named Hannah to get a drink (specifically iced tea)…although Hannah got a beer with lemonade mixed in it and now I really want to try it [Edit: it’s called a radler and I’ve beed advised against it]! We sat there for quite a while, got ice cream, and then headed back to campus (where we saw Dr. Deutsch on the train)! It was a good afternoon, and I thought it was worthy of a post here.</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="nothing-exciting-happened">
+				<article class="blog-post" id="nothing-exciting-happened" aria-labelledby="nothing-exciting-happened-title">
 					<h3 class="location-text">Jacobs University</h3>
-					<h1 class="post-heading">Nothing Exciting Happened This Weekend...</h1>
+					<h2 class="post-heading" id="nothing-exciting-happened-title">Nothing Exciting Happened This Weekend...</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/03/19/nothing-exciting-happened.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Jacobs+University+Bremen/@53.1677201,8.6520767,17z/data=!3m1!4b1!4m5!3m4!1s0x47b12ca1e7c06c65:0x903fa1786c3fd4e9!8m2!3d53.1677169!4d8.6542654"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#nothing-exciting-happened" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Nothing Exciting Happened This Weekend...">
+						<a class="post-icon" href="/im-ausland/2017/03/19/nothing-exciting-happened.html" aria-label="Open the full post for Nothing Exciting Happened This Weekend..."><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Jacobs+University+Bremen/@53.1677201,8.6520767,17z/data=!3m1!4b1!4m5!3m4!1s0x47b12ca1e7c06c65:0x903fa1786c3fd4e9!8m2!3d53.1677169!4d8.6542654" aria-label="Open the map location for Nothing Exciting Happened This Weekend..."><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#nothing-exciting-happened" aria-label="Copy a direct link to Nothing Exciting Happened This Weekend..."><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/03/19/nothing-exciting-happened.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/03/19/nothing-exciting-happened.html#comments" aria-label="Jump to comments for Nothing Exciting Happened This Weekend..."><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>March 19, 2017</em></h5> -->
 					<p>Yeah, nothing exciting happened this weekend unfortunately. I was planning on going to Bremerhaven but that fell through. Waking up late and not having people on board with you kind of sucks. Next weekend is Dublin though!</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="thursday-night-in-vegesack">
+				<article class="blog-post" id="thursday-night-in-vegesack" aria-labelledby="thursday-night-in-vegesack-title">
 					<h3 class="location-text">Bremen-Vegesack</h3>
-					<h1 class="post-heading">Thursday Night In Vegesack</h1>
+					<h2 class="post-heading" id="thursday-night-in-vegesack-title">Thursday Night In Vegesack</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/03/23/thursday-night-in-vegesack.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Bremen-Vegesack,+Bremen,+Germany/@53.1804547,8.5980019,13.37z/data=!4m5!3m4!1s0x47b12cb33a72536d:0x6291130541e41c97!8m2!3d53.1804023!4d8.6350091"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#thursday-night-in-vegesack" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Thursday Night In Vegesack">
+						<a class="post-icon" href="/im-ausland/2017/03/23/thursday-night-in-vegesack.html" aria-label="Open the full post for Thursday Night In Vegesack"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Bremen-Vegesack,+Bremen,+Germany/@53.1804547,8.5980019,13.37z/data=!4m5!3m4!1s0x47b12cb33a72536d:0x6291130541e41c97!8m2!3d53.1804023!4d8.6350091" aria-label="Open the map location for Thursday Night In Vegesack"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#thursday-night-in-vegesack" aria-label="Copy a direct link to Thursday Night In Vegesack"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/03/23/thursday-night-in-vegesack.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/03/23/thursday-night-in-vegesack.html#comments" aria-label="Jump to comments for Thursday Night In Vegesack"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>March 23, 2017</em></h5> -->
 					<p>Thursday night was pretty chill. We’ve been to bars in Bremen—it’s a common occurrence—but we haven’t been to many bars in Vegesack. So, we decided midday that we would venture into Vegesack, and what a great idea that was (this isn’t sarcasm…it really was a great idea). We finished up our school work for the day (German Politics and Culture is my only class on Thursdays) and we met up outside of Krupp A-block. Daniel and I arrived first, Dariya arrived shortly after, and we waited quite a while for Renata to finally show up. All the while, Dariya received a call from home, so Daniel and I harassed her by yelling “zdrasti” a bunch! She was super annoyed, but I found it hilarious, and I suppose that’s all that matters.</p>
@@ -865,20 +874,20 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 <p>That was the end of that, we got home, I got a candy bar, and went to bed. The next morning I had to go to class and prep for Dublin, so I needed my sleep!</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="top-of-the-morning-to-ya-dublin">
+				<article class="blog-post" id="top-of-the-morning-to-ya-dublin" aria-labelledby="top-of-the-morning-to-ya-dublin-title">
 					<h3 class="location-text">Dublin</h3>
-					<h1 class="post-heading">Top Of The Mornin' To Ya, Dublin!</h1>
+					<h2 class="post-heading" id="top-of-the-morning-to-ya-dublin-title">Top Of The Mornin' To Ya, Dublin!</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/03/27/top-of-the-morning-to-ya-dublin.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Dublin,+Ireland/@53.3244431,-6.3857873,11z/data=!3m1!4b1!4m5!3m4!1s0x48670e80ea27ac2f:0xa00c7a9973171a0!8m2!3d53.3498053!4d-6.2603097"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#top-of-the-morning-to-ya-dublin" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Top Of The Mornin' To Ya, Dublin!">
+						<a class="post-icon" href="/im-ausland/2017/03/27/top-of-the-morning-to-ya-dublin.html" aria-label="Open the full post for Top Of The Mornin' To Ya, Dublin!"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Dublin,+Ireland/@53.3244431,-6.3857873,11z/data=!3m1!4b1!4m5!3m4!1s0x48670e80ea27ac2f:0xa00c7a9973171a0!8m2!3d53.3498053!4d-6.2603097" aria-label="Open the map location for Top Of The Mornin' To Ya, Dublin!"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#top-of-the-morning-to-ya-dublin" aria-label="Copy a direct link to Top Of The Mornin' To Ya, Dublin!"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/03/27/top-of-the-morning-to-ya-dublin.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/03/27/top-of-the-morning-to-ya-dublin.html#comments" aria-label="Jump to comments for Top Of The Mornin' To Ya, Dublin!"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>March 27, 2017</em></h5> -->
 					<div class="BREMEN-TO-DUBLIN" data-from="1675 1650 500 400" data-to="1025 1550 500 400">
@@ -964,20 +973,20 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 </div>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="little-me-back-from-paris">
+				<article class="blog-post" id="little-me-back-from-paris" aria-labelledby="little-me-back-from-paris-title">
 					<h3 class="location-text">Paris</h3>
-					<h1 class="post-heading">Little Me, Back From Paris!</h1>
+					<h2 class="post-heading" id="little-me-back-from-paris-title">Little Me, Back From Paris!</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/04/03/little-me-back-from-paris.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Paris,+France/@48.8589507,2.277517,12z/data=!3m1!4b1!4m5!3m4!1s0x47e66e1f06e2b70f:0x40b82c3688c9460!8m2!3d48.856614!4d2.3522219"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#little-me-back-from-paris" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Little Me, Back From Paris!">
+						<a class="post-icon" href="/im-ausland/2017/04/03/little-me-back-from-paris.html" aria-label="Open the full post for Little Me, Back From Paris!"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Paris,+France/@48.8589507,2.277517,12z/data=!3m1!4b1!4m5!3m4!1s0x47e66e1f06e2b70f:0x40b82c3688c9460!8m2!3d48.856614!4d2.3522219" aria-label="Open the map location for Little Me, Back From Paris!"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#little-me-back-from-paris" aria-label="Copy a direct link to Little Me, Back From Paris!"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/04/03/little-me-back-from-paris.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/04/03/little-me-back-from-paris.html#comments" aria-label="Jump to comments for Little Me, Back From Paris!"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>April 3, 2017</em></h5> -->
 					<div class="BREMEN-TO-PARIS" data-from="1675 1650 500 400" data-to="1350 1950 500 400">
@@ -1049,38 +1058,38 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 </div>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="another-haircut">
+				<article class="blog-post" id="another-haircut" aria-labelledby="another-haircut-title">
 					<h3 class="location-text">Downtown Vegesack</h3>
-					<h1 class="post-heading">Another (Cheaper) Haircut!</h1>
+					<h2 class="post-heading" id="another-haircut-title">Another (Cheaper) Haircut!</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/04/05/another-haircut.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Bremen-Vegesack,+Bremen,+Germany/@53.1804547,8.5980019,13.37z/data=!4m5!3m4!1s0x47b12cb33a72536d:0x6291130541e41c97!8m2!3d53.1804023!4d8.6350091"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#another-haircut" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Another (Cheaper) Haircut!">
+						<a class="post-icon" href="/im-ausland/2017/04/05/another-haircut.html" aria-label="Open the full post for Another (Cheaper) Haircut!"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Bremen-Vegesack,+Bremen,+Germany/@53.1804547,8.5980019,13.37z/data=!4m5!3m4!1s0x47b12cb33a72536d:0x6291130541e41c97!8m2!3d53.1804023!4d8.6350091" aria-label="Open the map location for Another (Cheaper) Haircut!"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#another-haircut" aria-label="Copy a direct link to Another (Cheaper) Haircut!"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/04/05/another-haircut.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/04/05/another-haircut.html#comments" aria-label="Jump to comments for Another (Cheaper) Haircut!"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>April 5, 2017</em></h5> -->
 					<p>Another quick little post. Went for my second haircut in Europe. The first one, if you'll remember from the 'Dam post, was in Amsterdam and cost an arm and a leg. This second haircut was in Germany (Vegesack to be exact), was just as wonderful, but it was significantly cheaper and I had to tell them what I wanted in German. I was super nervous the entire time. I hate speaking German to people who don't speak a lick of English, so I warned the barber-person that my German was bad and he was super nice through the entire process. I would really recommend the place to any students in the area&mdash;great service and great haircut!</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="a-night-out-in-bremen">
+				<article class="blog-post" id="a-night-out-in-bremen" aria-labelledby="a-night-out-in-bremen-title">
 					<h3 class="location-text">Downtown Bremen</h3>
-					<h1 class="post-heading">A Night Out In Bremen</h1>
+					<h2 class="post-heading" id="a-night-out-in-bremen-title">A Night Out In Bremen</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/04/07/a-night-out-in-bremen.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Paddy's+Pit/@53.0821025,8.8096196,17z/data=!3m1!4b1!4m5!3m4!1s0x47b128124a5a7c8d:0x2670a8758f75c3e0!8m2!3d53.0820993!4d8.8118083"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#a-night-out-in-bremen" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for A Night Out In Bremen">
+						<a class="post-icon" href="/im-ausland/2017/04/07/a-night-out-in-bremen.html" aria-label="Open the full post for A Night Out In Bremen"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Paddy's+Pit/@53.0821025,8.8096196,17z/data=!3m1!4b1!4m5!3m4!1s0x47b128124a5a7c8d:0x2670a8758f75c3e0!8m2!3d53.0820993!4d8.8118083" aria-label="Open the map location for A Night Out In Bremen"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#a-night-out-in-bremen" aria-label="Copy a direct link to A Night Out In Bremen"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/04/07/a-night-out-in-bremen.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/04/07/a-night-out-in-bremen.html#comments" aria-label="Jump to comments for A Night Out In Bremen"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>April 7, 2017</em></h5> -->
 					<p>It seemed like a long week and a few of us just wanted to hang out. First, Jack had a friend from Hamburg visit...it was fun. Jessi is a lovely person, has a great sense of humor, and made fun of my German pronunciations of words (the word "röhre" I believe). She brought a car with her, so we got to experience Clement trying to drive a car with a stick (and subsequently Jack, who was pretty damn good for his first time driving a manual!). After these trials, we decided to go to Primark/the mall for good measures and some interesting time. I needed to buy a lock (never found one) and a short sleeve button up shirt (found some but didn't buy any because I'm super indecisive).</p>
@@ -1096,36 +1105,36 @@ Pilot: “Okee dokee, artichokey.”</p>
   <figcaption>Storage area. Staff only. Except Bobby and Jack.</figcaption>
 </figure>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="israel-preface">
+				<article class="blog-post" id="israel-preface" aria-labelledby="israel-preface-title">
 					<h3 class="location-text">Jacobs University</h3>
-					<h1 class="post-heading">Israel Preface</h1>
+					<h2 class="post-heading" id="israel-preface-title">Israel Preface</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/04/08/israel-preface.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Jacobs+University+Bremen/@53.1677201,8.6520767,17z/data=!3m1!4b1!4m5!3m4!1s0x47b12ca1e7c06c65:0x903fa1786c3fd4e9!8m2!3d53.1677169!4d8.6542654"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#israel-preface" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Israel Preface">
+						<a class="post-icon" href="/im-ausland/2017/04/08/israel-preface.html" aria-label="Open the full post for Israel Preface"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Jacobs+University+Bremen/@53.1677201,8.6520767,17z/data=!3m1!4b1!4m5!3m4!1s0x47b12ca1e7c06c65:0x903fa1786c3fd4e9!8m2!3d53.1677169!4d8.6542654" aria-label="Open the map location for Israel Preface"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#israel-preface" aria-label="Copy a direct link to Israel Preface"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>April 8, 2017</em></h5> -->
 					<p>So, before I leave for Israel I want it to be known and understood that I'm going to have a week's worth of writing ahead of me and it's highly possible that it could take me a while to get it into writing. I'm going to try my best to not just list out things that happened or speed though the posts because it's going to be an awesome trip. But just a forewarning.</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="trip-to-tel-aviv">
+				<article class="blog-post" id="trip-to-tel-aviv" aria-labelledby="trip-to-tel-aviv-title">
 					<h3 class="location-text">Various</h3>
-					<h1 class="post-heading">The Trip To Israel</h1>
+					<h2 class="post-heading" id="trip-to-tel-aviv-title">The Trip To Israel</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/04/09/trip-to-tel-aviv.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Tel+Aviv-Yafo,+Israel/@32.0055365,34.8832225,17z/data=!4m5!3m4!1s0x151d4ca6193b7c1f:0xc1fb72a2c0963f90!8m2!3d32.0852999!4d34.7817676"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#trip-to-tel-aviv" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for The Trip To Israel">
+						<a class="post-icon" href="/im-ausland/2017/04/09/trip-to-tel-aviv.html" aria-label="Open the full post for The Trip To Israel"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Tel+Aviv-Yafo,+Israel/@32.0055365,34.8832225,17z/data=!4m5!3m4!1s0x151d4ca6193b7c1f:0xc1fb72a2c0963f90!8m2!3d32.0852999!4d34.7817676" aria-label="Open the map location for The Trip To Israel"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#trip-to-tel-aviv" aria-label="Copy a direct link to The Trip To Israel"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/04/09/trip-to-tel-aviv.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/04/09/trip-to-tel-aviv.html#comments" aria-label="Jump to comments for The Trip To Israel"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>April 9, 2017</em></h5> -->
 					<div class="BREMEN-TO-TELAVIV" data-from="1675 1650 500 400" data-to="3675 3050 187 150">
@@ -1182,20 +1191,20 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 </div>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="day-in-tel-aviv">
+				<article class="blog-post" id="day-in-tel-aviv" aria-labelledby="day-in-tel-aviv-title">
 					<h3 class="location-text">Tel Aviv</h3>
-					<h1 class="post-heading">My Day In Tel Aviv</h1>
+					<h2 class="post-heading" id="day-in-tel-aviv-title">My Day In Tel Aviv</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/04/11/day-in-tel-aviv.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Tel+Aviv-Yafo,+Israel/@32.0055365,34.8832225,17z/data=!4m5!3m4!1s0x151d4ca6193b7c1f:0xc1fb72a2c0963f90!8m2!3d32.0852999!4d34.7817676"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#day-in-tel-aviv" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for My Day In Tel Aviv">
+						<a class="post-icon" href="/im-ausland/2017/04/11/day-in-tel-aviv.html" aria-label="Open the full post for My Day In Tel Aviv"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Tel+Aviv-Yafo,+Israel/@32.0055365,34.8832225,17z/data=!4m5!3m4!1s0x151d4ca6193b7c1f:0xc1fb72a2c0963f90!8m2!3d32.0852999!4d34.7817676" aria-label="Open the map location for My Day In Tel Aviv"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#day-in-tel-aviv" aria-label="Copy a direct link to My Day In Tel Aviv"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/04/11/day-in-tel-aviv.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/04/11/day-in-tel-aviv.html#comments" aria-label="Jump to comments for My Day In Tel Aviv"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>April 11, 2017</em></h5> -->
 					<p>My first day in Tel Aviv I wake up at a reasonable hour and get ready. I shower and change clothes and all that good stuff. I head down the stairs and out the door because I'm so excited to explore the city&mdash;I don't realize until later that I completely forgot to eat breakfast...oops! When I walk out the air is warm and crisp and I'm super excited to be there. I can smell the Sea in the air, so I head directly for the seaside and take no detours. I'm on a mission for some suuuun. Soon I remember that in my haste I also never put sunscreen on, so I can <em>feel</em> the sun beating down on me, but I brush it aside because I'm dumb (yes, this is foreshadowing).</p>
@@ -1234,20 +1243,20 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 <p>But yeah, that's it for Tel Aviv. Off to Jerusalem and Ramallah the next day!</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="one-way-to-ramallah">
+				<article class="blog-post" id="one-way-to-ramallah" aria-labelledby="one-way-to-ramallah-title">
 					<h3 class="location-text">Ramallah</h3>
-					<h1 class="post-heading">One Way To Ramallah</h1>
+					<h2 class="post-heading" id="one-way-to-ramallah-title">One Way To Ramallah</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/04/12/one-way-to-ramallah.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Ramallah/@31.9073861,35.1883724,14z/data=!3m1!4b1!4m5!3m4!1s0x1502d54cda2d58d1:0xbf6d4d17cc8b2c76!8m2!3d31.9037641!4d35.2034184"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#one-way-to-ramallah" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for One Way To Ramallah">
+						<a class="post-icon" href="/im-ausland/2017/04/12/one-way-to-ramallah.html" aria-label="Open the full post for One Way To Ramallah"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Ramallah/@31.9073861,35.1883724,14z/data=!3m1!4b1!4m5!3m4!1s0x1502d54cda2d58d1:0xbf6d4d17cc8b2c76!8m2!3d31.9037641!4d35.2034184" aria-label="Open the map location for One Way To Ramallah"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#one-way-to-ramallah" aria-label="Copy a direct link to One Way To Ramallah"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/04/12/one-way-to-ramallah.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/04/12/one-way-to-ramallah.html#comments" aria-label="Jump to comments for One Way To Ramallah"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>April 12, 2017</em></h5> -->
 					<div class="BREMEN-TO-RAMALLAH" data-from="3675 3050 187 150" data-to="3675 3050 187 150">
@@ -1279,20 +1288,20 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 </div>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="to-jericho">
+				<article class="blog-post" id="to-jericho" aria-labelledby="to-jericho-title">
 					<h3 class="location-text">Jericho</h3>
-					<h1 class="post-heading">Quick Trip To Jericho</h1>
+					<h2 class="post-heading" id="to-jericho-title">Quick Trip To Jericho</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/04/12/to-jericho.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Jericho/@31.8595075,35.4469982,14z/data=!3m1!4b1!4m5!3m4!1s0x151ccc61e6ff8567:0x811428a4685668bb!8m2!3d31.8611058!4d35.4617583"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#to-jericho" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Quick Trip To Jericho">
+						<a class="post-icon" href="/im-ausland/2017/04/12/to-jericho.html" aria-label="Open the full post for Quick Trip To Jericho"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Jericho/@31.8595075,35.4469982,14z/data=!3m1!4b1!4m5!3m4!1s0x151ccc61e6ff8567:0x811428a4685668bb!8m2!3d31.8611058!4d35.4617583" aria-label="Open the map location for Quick Trip To Jericho"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#to-jericho" aria-label="Copy a direct link to Quick Trip To Jericho"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/04/12/to-jericho.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/04/12/to-jericho.html#comments" aria-label="Jump to comments for Quick Trip To Jericho"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>April 12, 2017</em></h5> -->
 					<div class="RAMALLAH-TO-JERICHO" data-from="3675 3050 187 150" data-to="3675 3050 187 150">
@@ -1326,20 +1335,20 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 </div>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="through-jerusalem-and-bethlehem">
+				<article class="blog-post" id="through-jerusalem-and-bethlehem" aria-labelledby="through-jerusalem-and-bethlehem-title">
 					<h3 class="location-text">Jerusalem & Bethlehem</h3>
-					<h1 class="post-heading">Through Jerusalem & Bethlehem</h1>
+					<h2 class="post-heading" id="through-jerusalem-and-bethlehem-title">Through Jerusalem & Bethlehem</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/04/13/through-jerusalem-and-bethlehem.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Jerusalem,+Israel/@31.7964453,35.1053186,12z/data=!3m1!4b1!4m5!3m4!1s0x1502d7d634c1fc4b:0xd96f623e456ee1cb!8m2!3d31.768319!4d35.21371"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#through-jerusalem-and-bethlehem" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Through Jerusalem & Bethlehem">
+						<a class="post-icon" href="/im-ausland/2017/04/13/through-jerusalem-and-bethlehem.html" aria-label="Open the full post for Through Jerusalem & Bethlehem"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Jerusalem,+Israel/@31.7964453,35.1053186,12z/data=!3m1!4b1!4m5!3m4!1s0x1502d7d634c1fc4b:0xd96f623e456ee1cb!8m2!3d31.768319!4d35.21371" aria-label="Open the map location for Through Jerusalem & Bethlehem"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#through-jerusalem-and-bethlehem" aria-label="Copy a direct link to Through Jerusalem & Bethlehem"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/04/13/through-jerusalem-and-bethlehem.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/04/13/through-jerusalem-and-bethlehem.html#comments" aria-label="Jump to comments for Through Jerusalem & Bethlehem"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>April 13, 2017</em></h5> -->
 					<div class="RAMALLAH-TO-BETHLEHEM" data-from="3675 3050 187 150" data-to="3675 3050 187 150">
@@ -1417,20 +1426,20 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 </div>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="dead-sea-for-free">
+				<article class="blog-post" id="dead-sea-for-free" aria-labelledby="dead-sea-for-free-title">
 					<h3 class="location-text">Kalia Beach</h3>
-					<h1 class="post-heading">Dead Sea For Free!</h1>
+					<h2 class="post-heading" id="dead-sea-for-free-title">Dead Sea For Free!</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/04/14/dead-sea-for-free.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Kalia+Beach/@31.7612662,35.5016073,17z/data=!3m1!4b1!4m5!3m4!1s0x150334f593abbed5:0x12bed91d55dda6c9!8m2!3d31.7610016!4d35.5038646"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#dead-sea-for-free" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Dead Sea For Free!">
+						<a class="post-icon" href="/im-ausland/2017/04/14/dead-sea-for-free.html" aria-label="Open the full post for Dead Sea For Free!"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Kalia+Beach/@31.7612662,35.5016073,17z/data=!3m1!4b1!4m5!3m4!1s0x150334f593abbed5:0x12bed91d55dda6c9!8m2!3d31.7610016!4d35.5038646" aria-label="Open the map location for Dead Sea For Free!"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#dead-sea-for-free" aria-label="Copy a direct link to Dead Sea For Free!"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/04/14/dead-sea-for-free.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/04/14/dead-sea-for-free.html#comments" aria-label="Jump to comments for Dead Sea For Free!"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>April 14, 2017</em></h5> -->
 					<div class="RAMALLAH-TO-KALIA" data-from="3675 3050 187 150" data-to="3675 3050 187 150">
@@ -1475,20 +1484,20 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 </div>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="alone-in-ramallah">
+				<article class="blog-post" id="alone-in-ramallah" aria-labelledby="alone-in-ramallah-title">
 					<h3 class="location-text">Ramallah</h3>
-					<h1 class="post-heading">Alone In Ramallah</h1>
+					<h2 class="post-heading" id="alone-in-ramallah-title">Alone In Ramallah</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/04/15/alone-in-ramallah.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Ramallah/@31.9073861,35.1883724,14z/data=!3m1!4b1!4m5!3m4!1s0x1502d54cda2d58d1:0xbf6d4d17cc8b2c76!8m2!3d31.9037641!4d35.2034184"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#alone-in-ramallah" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Alone In Ramallah">
+						<a class="post-icon" href="/im-ausland/2017/04/15/alone-in-ramallah.html" aria-label="Open the full post for Alone In Ramallah"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Ramallah/@31.9073861,35.1883724,14z/data=!3m1!4b1!4m5!3m4!1s0x1502d54cda2d58d1:0xbf6d4d17cc8b2c76!8m2!3d31.9037641!4d35.2034184" aria-label="Open the map location for Alone In Ramallah"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#alone-in-ramallah" aria-label="Copy a direct link to Alone In Ramallah"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/04/15/alone-in-ramallah.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/04/15/alone-in-ramallah.html#comments" aria-label="Jump to comments for Alone In Ramallah"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>April 15, 2017</em></h5> -->
 					<p>The last day I'm in Ramallah Yusuf has to work all day again. Therefore, I'm tasked with finding something to do until 3 when Yusuf can take me to Jerusalem to see me off to Tel Aviv. While it was boring being alone, I found lots of things to do for the day and am glad I was in Ramallah for the Easter celebrations.</p>
@@ -1501,20 +1510,20 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 <p>When I left the streets were littered with people and a parade had formed in the streets. It was mostly young kids playing in a band (well, several bands) but it was fun to see the patriotism, happiness, and pride of Palestinians. I walked around for a while and took pictures but you can only look at the same thing for so long. Therefore, I walked around in shops around Ramallah, bought two delicious cinnamon buns for a shekel each (or about 50¢), and finally it was time for me to go see Yusuf to head to Jerusalem.</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="back-to-tel-aviv">
+				<article class="blog-post" id="back-to-tel-aviv" aria-labelledby="back-to-tel-aviv-title">
 					<h3 class="location-text">Tel Aviv</h3>
-					<h1 class="post-heading">Back To Tel Aviv!</h1>
+					<h2 class="post-heading" id="back-to-tel-aviv-title">Back To Tel Aviv!</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/04/15/back-to-tel-aviv.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Tel+Aviv-Yafo,+Israel/@32.0055365,34.8832225,17z/data=!4m5!3m4!1s0x151d4ca6193b7c1f:0xc1fb72a2c0963f90!8m2!3d32.0852999!4d34.7817676"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#back-to-tel-aviv" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Back To Tel Aviv!">
+						<a class="post-icon" href="/im-ausland/2017/04/15/back-to-tel-aviv.html" aria-label="Open the full post for Back To Tel Aviv!"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Tel+Aviv-Yafo,+Israel/@32.0055365,34.8832225,17z/data=!4m5!3m4!1s0x151d4ca6193b7c1f:0xc1fb72a2c0963f90!8m2!3d32.0852999!4d34.7817676" aria-label="Open the map location for Back To Tel Aviv!"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#back-to-tel-aviv" aria-label="Copy a direct link to Back To Tel Aviv!"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/04/15/back-to-tel-aviv.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/04/15/back-to-tel-aviv.html#comments" aria-label="Jump to comments for Back To Tel Aviv!"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>April 15, 2017</em></h5> -->
 					<div class="RAMALLAH-TO-TELAVIV" data-from="3675 3050 187 150" data-to="3675 3050 187 150">
@@ -1548,20 +1557,20 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 </div>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="a-last-day-in-israel">
+				<article class="blog-post" id="a-last-day-in-israel" aria-labelledby="a-last-day-in-israel-title">
 					<h3 class="location-text">Tel Aviv</h3>
-					<h1 class="post-heading">Last Day In Israel</h1>
+					<h2 class="post-heading" id="a-last-day-in-israel-title">Last Day In Israel</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/04/16/a-last-day-in-israel.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Tel+Aviv-Yafo,+Israel/@32.0055365,34.8832225,17z/data=!4m5!3m4!1s0x151d4ca6193b7c1f:0xc1fb72a2c0963f90!8m2!3d32.0852999!4d34.7817676"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#a-last-day-in-israel" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Last Day In Israel">
+						<a class="post-icon" href="/im-ausland/2017/04/16/a-last-day-in-israel.html" aria-label="Open the full post for Last Day In Israel"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Tel+Aviv-Yafo,+Israel/@32.0055365,34.8832225,17z/data=!4m5!3m4!1s0x151d4ca6193b7c1f:0xc1fb72a2c0963f90!8m2!3d32.0852999!4d34.7817676" aria-label="Open the map location for Last Day In Israel"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#a-last-day-in-israel" aria-label="Copy a direct link to Last Day In Israel"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/04/16/a-last-day-in-israel.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/04/16/a-last-day-in-israel.html#comments" aria-label="Jump to comments for Last Day In Israel"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>April 16, 2017</em></h5> -->
 					<p>The next day seems to move so quickly. I get up, shower quickly, realize that the girl in the bunk beside mine was reallllyyyy attractive, and go grab some breakfast. Breakfast consists of some weird cracker things with Nutella (not complaining--not good or bad...just meh)...but seriously though, she was really attractive. At breakfast I notice there are lots of Aussies at this hostel. They are kind of obnoxious, smelly, and rather loud. I prefer the Germans in Little Tel Aviv, haha. Anyway, yeah, out into the world of Tel Aviv hoping those crackers hold me over until Munich (spoiler alert: they do!).</p>
@@ -1570,20 +1579,20 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 <p>After that time was up, I headed for the train station and wait a while for the train.</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="bremen-bound">
+				<article class="blog-post" id="bremen-bound" aria-labelledby="bremen-bound-title">
 					<h3 class="location-text">Various</h3>
-					<h1 class="post-heading">Bremen Bound</h1>
+					<h2 class="post-heading" id="bremen-bound-title">Bremen Bound</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/04/16/bremen-bound.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Ben+Gurion+Airport/@32.0055365,34.8832225,17z/data=!3m1!4b1!4m5!3m4!1s0x1502caad86c8945b:0x54230ad9cc8917e9!8m2!3d32.005532!4d34.8854112"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#bremen-bound" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Bremen Bound">
+						<a class="post-icon" href="/im-ausland/2017/04/16/bremen-bound.html" aria-label="Open the full post for Bremen Bound"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Ben+Gurion+Airport/@32.0055365,34.8832225,17z/data=!3m1!4b1!4m5!3m4!1s0x1502caad86c8945b:0x54230ad9cc8917e9!8m2!3d32.005532!4d34.8854112" aria-label="Open the map location for Bremen Bound"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#bremen-bound" aria-label="Copy a direct link to Bremen Bound"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/04/16/bremen-bound.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/04/16/bremen-bound.html#comments" aria-label="Jump to comments for Bremen Bound"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>April 16, 2017</em></h5> -->
 					<div class="TELAVIV-TO-BREMEN" data-from="3675 3050 187 150" data-to="1675 1650 500 400">
@@ -1604,38 +1613,38 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 </div>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="israel-epilogue">
+				<article class="blog-post" id="israel-epilogue" aria-labelledby="israel-epilogue-title">
 					<h3 class="location-text">Jacobs University</h3>
-					<h1 class="post-heading">Israel Epilogue</h1>
+					<h2 class="post-heading" id="israel-epilogue-title">Israel Epilogue</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/04/18/israel-epilogue.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Jacobs+University+Bremen/@53.1677201,8.6520767,17z/data=!3m1!4b1!4m5!3m4!1s0x47b12ca1e7c06c65:0x903fa1786c3fd4e9!8m2!3d53.1677169!4d8.6542654"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#israel-epilogue" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Israel Epilogue">
+						<a class="post-icon" href="/im-ausland/2017/04/18/israel-epilogue.html" aria-label="Open the full post for Israel Epilogue"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Jacobs+University+Bremen/@53.1677201,8.6520767,17z/data=!3m1!4b1!4m5!3m4!1s0x47b12ca1e7c06c65:0x903fa1786c3fd4e9!8m2!3d53.1677169!4d8.6542654" aria-label="Open the map location for Israel Epilogue"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#israel-epilogue" aria-label="Copy a direct link to Israel Epilogue"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>April 18, 2017</em></h5> -->
 					<p>If you're looking at this now, it's not been updated yet. I'm still reflecting, okay!?!?!? Get off my case!</p>
 
 <p>[Edit: yeah, I'm not going to update this. I feel like the "reflection" would become rather political and I don't want to really hop into that on this log...that ain't the point.]</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="poland">
+				<article class="blog-post" id="poland" aria-labelledby="poland-title">
 					<h3 class="location-text">Katowice, Kraków, & Oswięcim</h3>
-					<h1 class="post-heading">Poland!</h1>
+					<h2 class="post-heading" id="poland-title">Poland!</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/04/24/poland.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Kraków,+Poland/@50.0469018,19.8647894,11z/data=!3m1!4b1!4m5!3m4!1s0x471644c0354e18d1:0xb46bb6b576478abf!8m2!3d50.0646501!4d19.9449799"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#poland" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Poland!">
+						<a class="post-icon" href="/im-ausland/2017/04/24/poland.html" aria-label="Open the full post for Poland!"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Kraków,+Poland/@50.0469018,19.8647894,11z/data=!3m1!4b1!4m5!3m4!1s0x471644c0354e18d1:0xb46bb6b576478abf!8m2!3d50.0646501!4d19.9449799" aria-label="Open the map location for Poland!"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#poland" aria-label="Copy a direct link to Poland!"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/04/24/poland.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/04/24/poland.html#comments" aria-label="Jump to comments for Poland!"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>April 24, 2017</em></h5> -->
 					<div class="BREMEN-TO-POLAND" data-from="1675 1650 500 400" data-to="2200 1900 500 400">
@@ -1708,20 +1717,20 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 </div>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="kings-day">
+				<article class="blog-post" id="kings-day" aria-labelledby="kings-day-title">
 					<h3 class="location-text">Amsterdam</h3>
-					<h1 class="post-heading">King's Day...Surprise!</h1>
+					<h2 class="post-heading" id="kings-day-title">King's Day...Surprise!</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/04/29/kings-day.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Amsterdam,+Netherlands/@52.3747388,4.7585309,11z/data=!3m1!4b1!4m5!3m4!1s0x47c63fb5949a7755:0x6600fd4cb7c0af8d!8m2!3d52.3702157!4d4.8951679"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#kings-day" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for King's Day...Surprise!">
+						<a class="post-icon" href="/im-ausland/2017/04/29/kings-day.html" aria-label="Open the full post for King's Day...Surprise!"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Amsterdam,+Netherlands/@52.3747388,4.7585309,11z/data=!3m1!4b1!4m5!3m4!1s0x47c63fb5949a7755:0x6600fd4cb7c0af8d!8m2!3d52.3702157!4d4.8951679" aria-label="Open the map location for King's Day...Surprise!"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#kings-day" aria-label="Copy a direct link to King's Day...Surprise!"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/04/29/kings-day.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/04/29/kings-day.html#comments" aria-label="Jump to comments for King's Day...Surprise!"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>April 29, 2017</em></h5> -->
 					<div class="BREMEN-TO-AMSTERDAM-AGAIN" data-from="1675 1650 500 400" data-to="1525 1725 500 400">
@@ -1771,38 +1780,38 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 </div>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="paper-for-bauhaus">
+				<article class="blog-post" id="paper-for-bauhaus" aria-labelledby="paper-for-bauhaus-title">
 					<h3 class="location-text">Jacobs University</h3>
-					<h1 class="post-heading">I Have A Paper Due</h1>
+					<h2 class="post-heading" id="paper-for-bauhaus-title">I Have A Paper Due</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/05/01/paper-for-bauhaus.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Jacobs+University+Bremen/@53.1677201,8.6520767,17z/data=!3m1!4b1!4m5!3m4!1s0x47b12ca1e7c06c65:0x903fa1786c3fd4e9!8m2!3d53.1677169!4d8.6542654"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#paper-for-bauhaus" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for I Have A Paper Due">
+						<a class="post-icon" href="/im-ausland/2017/05/01/paper-for-bauhaus.html" aria-label="Open the full post for I Have A Paper Due"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Jacobs+University+Bremen/@53.1677201,8.6520767,17z/data=!3m1!4b1!4m5!3m4!1s0x47b12ca1e7c06c65:0x903fa1786c3fd4e9!8m2!3d53.1677169!4d8.6542654" aria-label="Open the map location for I Have A Paper Due"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#paper-for-bauhaus" aria-label="Copy a direct link to I Have A Paper Due"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/05/01/paper-for-bauhaus.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/05/01/paper-for-bauhaus.html#comments" aria-label="Jump to comments for I Have A Paper Due"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>May 1, 2017</em></h5> -->
 					<p>Spring is here! It's May 1st, the sun is shining, and I...have to write a paper. This isn't extremely important...however, it's interesting to put things into perspective.</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="switzerland">
+				<article class="blog-post" id="switzerland" aria-labelledby="switzerland-title">
 					<h3 class="location-text">Geneva & The Jura Mountains</h3>
-					<h1 class="post-heading">Hiking in Switzerland</h1>
+					<h2 class="post-heading" id="switzerland-title">Hiking in Switzerland</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/05/08/switzerland.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Geneva,+Switzerland/@46.2050836,6.1090691,13z/data=!3m1!4b1!4m5!3m4!1s0x478c650693d0e2eb:0xa0b695357b0bbc39!8m2!3d46.2043907!4d6.1431577"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#switzerland" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Hiking in Switzerland">
+						<a class="post-icon" href="/im-ausland/2017/05/08/switzerland.html" aria-label="Open the full post for Hiking in Switzerland"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Geneva,+Switzerland/@46.2050836,6.1090691,13z/data=!3m1!4b1!4m5!3m4!1s0x478c650693d0e2eb:0xa0b695357b0bbc39!8m2!3d46.2043907!4d6.1431577" aria-label="Open the map location for Hiking in Switzerland"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#switzerland" aria-label="Copy a direct link to Hiking in Switzerland"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/05/08/switzerland.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/05/08/switzerland.html#comments" aria-label="Jump to comments for Hiking in Switzerland"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>May 8, 2017</em></h5> -->
 					<div class="BREMEN-TO-SWITZERLAND" data-from="1675 1650 500 400" data-to="1525 2200 500 400">
@@ -1913,38 +1922,38 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 <p>This trip was really great. I learned a lot, got out into nature, got closer to Jack and Brooke, learned a lot about myself, and I think it solidified my desire to climb Mt. Denison in the near future. Of course, Mt. Denison is far more technical than anything in the Jura mountains, but I wouldn't mind making a habit out of mountain climbing. Cheers to this trip! And a big "screw you" to Switzerland for your mix of unreasonable prices and inviting atmosphere!</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="bergen-belsen">
+				<article class="blog-post" id="bergen-belsen" aria-labelledby="bergen-belsen-title">
 					<h3 class="location-text">Bergen-Belsen</h3>
-					<h1 class="post-heading">Bergen-Belsen</h1>
+					<h2 class="post-heading" id="bergen-belsen-title">Bergen-Belsen</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/05/13/bergen-belsen.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Belsen,+29303+Bergen,+Germany/@52.7800111,9.9287952,16z/data=!3m1!4b1!4m5!3m4!1s0x47b0383950dfe9cf:0xa263df5063ea7a0!8m2!3d52.780318!4d9.9341186"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#bergen-belsen" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Bergen-Belsen">
+						<a class="post-icon" href="/im-ausland/2017/05/13/bergen-belsen.html" aria-label="Open the full post for Bergen-Belsen"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Belsen,+29303+Bergen,+Germany/@52.7800111,9.9287952,16z/data=!3m1!4b1!4m5!3m4!1s0x47b0383950dfe9cf:0xa263df5063ea7a0!8m2!3d52.780318!4d9.9341186" aria-label="Open the map location for Bergen-Belsen"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#bergen-belsen" aria-label="Copy a direct link to Bergen-Belsen"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/05/13/bergen-belsen.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/05/13/bergen-belsen.html#comments" aria-label="Jump to comments for Bergen-Belsen"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>May 13, 2017</em></h5> -->
 					<p>I did, in fact, visit Bergen-Belsen. However, I'm not going to write a post about it (similar to my feelings on Auschwitz) out of respect for the trip and the impossibility to permanently place words on the experience. However, feel free to talk to me about it...it was very transformative.</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="bauhaus-trip">
+				<article class="blog-post" id="bauhaus-trip" aria-labelledby="bauhaus-trip-title">
 					<h3 class="location-text">Weimar, Dessau, & Berlin</h3>
-					<h1 class="post-heading">A Very Bauhaus Trip</h1>
+					<h2 class="post-heading" id="bauhaus-trip-title">A Very Bauhaus Trip</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/05/16/bauhaus-trip.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Berlin,+Germany/@52.5072111,13.1459682,10z/data=!3m1!4b1!4m5!3m4!1s0x47a84e373f035901:0x42120465b5e3b70!8m2!3d52.5200066!4d13.404954"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#bauhaus-trip" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for A Very Bauhaus Trip">
+						<a class="post-icon" href="/im-ausland/2017/05/16/bauhaus-trip.html" aria-label="Open the full post for A Very Bauhaus Trip"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Berlin,+Germany/@52.5072111,13.1459682,10z/data=!3m1!4b1!4m5!3m4!1s0x47a84e373f035901:0x42120465b5e3b70!8m2!3d52.5200066!4d13.404954" aria-label="Open the map location for A Very Bauhaus Trip"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#bauhaus-trip" aria-label="Copy a direct link to A Very Bauhaus Trip"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/05/16/bauhaus-trip.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/05/16/bauhaus-trip.html#comments" aria-label="Jump to comments for A Very Bauhaus Trip"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>May 16, 2017</em></h5> -->
 					<div class="BREMEN-TO-BERLIN" data-from="1675 1650 500 400" data-to="1850 1750 500 400">
@@ -2010,20 +2019,20 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 </div>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="finals">
+				<article class="blog-post" id="finals" aria-labelledby="finals-title">
 					<h3 class="location-text">Jacobs University</h3>
-					<h1 class="post-heading">Finals...</h1>
+					<h2 class="post-heading" id="finals-title">Finals...</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/05/19/finals.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Jacobs+University+Bremen/@53.1677201,8.6520767,17z/data=!3m1!4b1!4m5!3m4!1s0x47b12ca1e7c06c65:0x903fa1786c3fd4e9!8m2!3d53.1677169!4d8.6542654"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#finals" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Finals...">
+						<a class="post-icon" href="/im-ausland/2017/05/19/finals.html" aria-label="Open the full post for Finals..."><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Jacobs+University+Bremen/@53.1677201,8.6520767,17z/data=!3m1!4b1!4m5!3m4!1s0x47b12ca1e7c06c65:0x903fa1786c3fd4e9!8m2!3d53.1677169!4d8.6542654" aria-label="Open the map location for Finals..."><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#finals" aria-label="Copy a direct link to Finals..."><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/05/19/finals.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/05/19/finals.html#comments" aria-label="Jump to comments for Finals..."><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>May 19, 2017</em></h5> -->
 					<p>No, this isn't an exciting "travel post," but rather it's just me procrastinating and taking a break from studying for finals. All in all, I have 4 final exams (and a final paper for the Bauhaus class which I already turned in...see <a href="/#paper-for-bauhaus">this post</a>). I've already taken my first exam, the one for German Politics and Culture, and I think it went really well. The exam was exactly as expected and I think I studied thoroughly for it. Drs. Gohr and Deutsch were really great professors and really made me care about the material.</p>
@@ -2036,20 +2045,20 @@ Pilot: “Okee dokee, artichokey.”</p>
 
 <p>Overall, I haven't been extremely impressed with Jacobs' academics. I miss Denison in that regard a great deal.</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="peter-baumann">
+				<article class="blog-post" id="peter-baumann" aria-labelledby="peter-baumann-title">
 					<h3 class="location-text">Jacobs University</h3>
-					<h1 class="post-heading">Peter Baumann</h1>
+					<h2 class="post-heading" id="peter-baumann-title">Peter Baumann</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/05/22/peter-baumann.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Jacobs+University+Bremen/@53.1677201,8.6520767,17z/data=!3m1!4b1!4m5!3m4!1s0x47b12ca1e7c06c65:0x903fa1786c3fd4e9!8m2!3d53.1677169!4d8.6542654"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#peter-baumann" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Peter Baumann">
+						<a class="post-icon" href="/im-ausland/2017/05/22/peter-baumann.html" aria-label="Open the full post for Peter Baumann"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Jacobs+University+Bremen/@53.1677201,8.6520767,17z/data=!3m1!4b1!4m5!3m4!1s0x47b12ca1e7c06c65:0x903fa1786c3fd4e9!8m2!3d53.1677169!4d8.6542654" aria-label="Open the map location for Peter Baumann"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#peter-baumann" aria-label="Copy a direct link to Peter Baumann"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/05/22/peter-baumann.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/05/22/peter-baumann.html#comments" aria-label="Jump to comments for Peter Baumann"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>May 22, 2017</em></h5> -->
 					<p>This is in memory of Peter Baumann. What an interesting chap.</p>
@@ -2105,20 +2114,20 @@ ooosydmNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNmyoooooooossos+hNh+ssssssymNNNN
 omNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNmssoossshdmmdmNmddmyssssymNNNNNNNNNNNNNNNNNNNs/+/
 </pre>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="drink-with-dr-white">
+				<article class="blog-post" id="drink-with-dr-white" aria-labelledby="drink-with-dr-white-title">
 					<h3 class="location-text">Bremen</h3>
-					<h1 class="post-heading">A Drink With Dr. White</h1>
+					<h2 class="post-heading" id="drink-with-dr-white-title">A Drink With Dr. White</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/05/23/drink-with-dr-white.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Bremen,+Germany/@53.1203809,8.5962027,11z/data=!3m1!4b1!4m5!3m4!1s0x47b128100ceee335:0xc2e8885cf937df51!8m2!3d53.0792962!4d8.8016937"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#drink-with-dr-white" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for A Drink With Dr. White">
+						<a class="post-icon" href="/im-ausland/2017/05/23/drink-with-dr-white.html" aria-label="Open the full post for A Drink With Dr. White"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Bremen,+Germany/@53.1203809,8.5962027,11z/data=!3m1!4b1!4m5!3m4!1s0x47b128100ceee335:0xc2e8885cf937df51!8m2!3d53.0792962!4d8.8016937" aria-label="Open the map location for A Drink With Dr. White"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#drink-with-dr-white" aria-label="Copy a direct link to A Drink With Dr. White"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/05/23/drink-with-dr-white.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/05/23/drink-with-dr-white.html#comments" aria-label="Jump to comments for A Drink With Dr. White"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>May 23, 2017</em></h5> -->
 					<p>Last night Gabriele and I were paid a visit by the incomparable David Andrew Victor White—what a man. Before meeting up with him we thought that it might be kind of awkward meeting up with a professor to just “grab a beer,” but it turned out to be kind of the opposite. I’m super jealous of the life he leads now and want to do stuff very similar to him. He’s super cool. Slight man crush on this dude.</p>
@@ -2143,20 +2152,20 @@ omNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNmssoossshdmmdmNmddmyssssymNNN
 
 <p>Eventually, we got back and helped Dr. White get his keys from the porter and walked him to the Guest House. We said our goodnights (and goodbyes) and made our way back to Nord. I hopped in the shower to get the bird crap out of my hair and fell asleep almost immediately. Long day. Fun day. Made me realize that I will, in fact, miss Bremen.</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="chocolate-in-hamburg">
+				<article class="blog-post" id="chocolate-in-hamburg" aria-labelledby="chocolate-in-hamburg-title">
 					<h3 class="location-text">Hamburg</h3>
-					<h1 class="post-heading">Chocolate In Hamburg!</h1>
+					<h2 class="post-heading" id="chocolate-in-hamburg-title">Chocolate In Hamburg!</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/05/25/chocolate-in-hamburg.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Hamburg,+Germany/@53.1203809,8.5962027,11z/data=!4m5!3m4!1s0x47b161837e1813b9:0x4263df27bd63aa0!8m2!3d53.5510846!4d9.9936818"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#chocolate-in-hamburg" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Chocolate In Hamburg!">
+						<a class="post-icon" href="/im-ausland/2017/05/25/chocolate-in-hamburg.html" aria-label="Open the full post for Chocolate In Hamburg!"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Hamburg,+Germany/@53.1203809,8.5962027,11z/data=!4m5!3m4!1s0x47b161837e1813b9:0x4263df27bd63aa0!8m2!3d53.5510846!4d9.9936818" aria-label="Open the map location for Chocolate In Hamburg!"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#chocolate-in-hamburg" aria-label="Copy a direct link to Chocolate In Hamburg!"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/05/25/chocolate-in-hamburg.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/05/25/chocolate-in-hamburg.html#comments" aria-label="Jump to comments for Chocolate In Hamburg!"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>May 25, 2017</em></h5> -->
 					<div class="BREMEN-TO-HAMBURG-AGAIN" data-from="1675 1650 500 400" data-to="1750 1600 500 400">
@@ -2188,20 +2197,20 @@ omNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNmssoossshdmmdmNmddmyssssymNNN
 
 </div>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="exchange-bbq">
+				<article class="blog-post" id="exchange-bbq" aria-labelledby="exchange-bbq-title">
 					<h3 class="location-text">Jacobs University</h3>
-					<h1 class="post-heading">Exchange BBQ</h1>
+					<h2 class="post-heading" id="exchange-bbq-title">Exchange BBQ</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/05/26/exchange-bbq.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Jacobs+University+Bremen/@53.1677201,8.6520767,17z/data=!3m1!4b1!4m5!3m4!1s0x47b12ca1e7c06c65:0x903fa1786c3fd4e9!8m2!3d53.1677169!4d8.6542654"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#exchange-bbq" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Exchange BBQ">
+						<a class="post-icon" href="/im-ausland/2017/05/26/exchange-bbq.html" aria-label="Open the full post for Exchange BBQ"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Jacobs+University+Bremen/@53.1677201,8.6520767,17z/data=!3m1!4b1!4m5!3m4!1s0x47b12ca1e7c06c65:0x903fa1786c3fd4e9!8m2!3d53.1677169!4d8.6542654" aria-label="Open the map location for Exchange BBQ"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#exchange-bbq" aria-label="Copy a direct link to Exchange BBQ"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/05/26/exchange-bbq.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/05/26/exchange-bbq.html#comments" aria-label="Jump to comments for Exchange BBQ"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>May 26, 2017</em></h5> -->
 					<p>The semester is coming to an end. The weather is beautiful. Everyone's outside. Life is good. I spent a good amount of my time inside doing genealogy research today because I have a slight obsession...but I'm making a great deal of leeway. I have traced back my family to at least 4 generations on all stems, but I'm still having a little bit of trouble tracing what happened to my family before they came to the US. Ireland doesn't seem to have very good records, and there seem to be <strong>A LOT</strong> of John Craigs in Ireland in the 1700s. I guess time will tell? I might end up going to County Down in Ireland one day to figure it out.</p>
@@ -2216,20 +2225,20 @@ omNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNmssoossshdmmdmNmddmyssssymNNN
 
 <p>Oh yeah, I also have a final tomorrow morning at 9am...oops.</p>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="back-to-the-states">
+				<article class="blog-post" id="back-to-the-states" aria-labelledby="back-to-the-states-title">
 					<h3 class="location-text">Canton</h3>
-					<h1 class="post-heading">Back To The States</h1>
+					<h2 class="post-heading" id="back-to-the-states-title">Back To The States</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/06/01/back-to-the-states.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Canton,+OH/@40.8048591,-81.4351842,12z/data=!3m1!4b1!4m5!3m4!1s0x8836c84fd29980a9:0x12cc9ba49ffa6f4b!8m2!3d40.7989473!4d-81.378447"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#back-to-the-states" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Back To The States">
+						<a class="post-icon" href="/im-ausland/2017/06/01/back-to-the-states.html" aria-label="Open the full post for Back To The States"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Canton,+OH/@40.8048591,-81.4351842,12z/data=!3m1!4b1!4m5!3m4!1s0x8836c84fd29980a9:0x12cc9ba49ffa6f4b!8m2!3d40.7989473!4d-81.378447" aria-label="Open the map location for Back To The States"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#back-to-the-states" aria-label="Copy a direct link to Back To The States"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/06/01/back-to-the-states.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/06/01/back-to-the-states.html#comments" aria-label="Jump to comments for Back To The States"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>June 1, 2017</em></h5> -->
 					<div class="BREMEN-TO-USA" data-from="1675 1650 500 400" data-to="150 1500 2000 1600">
@@ -2287,20 +2296,20 @@ omNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNmssoossshdmmdmNmddmyssssymNNN
 
 </div>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="looking-back">
+				<article class="blog-post" id="looking-back" aria-labelledby="looking-back-title">
 					<h3 class="location-text">Canton</h3>
-					<h1 class="post-heading">Looking Back...</h1>
+					<h2 class="post-heading" id="looking-back-title">Looking Back...</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/06/02/looking-back.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Canton,+OH/@40.8048591,-81.4351842,12z/data=!3m1!4b1!4m5!3m4!1s0x8836c84fd29980a9:0x12cc9ba49ffa6f4b!8m2!3d40.7989473!4d-81.378447"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#looking-back" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Looking Back...">
+						<a class="post-icon" href="/im-ausland/2017/06/02/looking-back.html" aria-label="Open the full post for Looking Back..."><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Canton,+OH/@40.8048591,-81.4351842,12z/data=!3m1!4b1!4m5!3m4!1s0x8836c84fd29980a9:0x12cc9ba49ffa6f4b!8m2!3d40.7989473!4d-81.378447" aria-label="Open the map location for Looking Back..."><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#looking-back" aria-label="Copy a direct link to Looking Back..."><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/06/02/looking-back.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/06/02/looking-back.html#comments" aria-label="Jump to comments for Looking Back..."><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>June 2, 2017</em></h5> -->
 					<div class="fade-in-lines">
@@ -2321,20 +2330,20 @@ omNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNmssoossshdmmdmNmddmyssssymNNN
 
 </div>
 
-				</div>
+				</article>
 			
-				<div class="blog-post" id="some-bulleted-thoughts">
+				<article class="blog-post" id="some-bulleted-thoughts" aria-labelledby="some-bulleted-thoughts-title">
 					<h3 class="location-text">Canton</h3>
-					<h1 class="post-heading">Some Bulleted Thoughts...</h1>
+					<h2 class="post-heading" id="some-bulleted-thoughts-title">Some Bulleted Thoughts...</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland/2017/06/03/some-bulleted-thoughts.html"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="https://www.google.com/maps/place/Canton,+OH/@40.8048591,-81.4351842,12z/data=!3m1!4b1!4m5!3m4!1s0x8836c84fd29980a9:0x12cc9ba49ffa6f4b!8m2!3d40.7989473!4d-81.378447"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#some-bulleted-thoughts" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for Some Bulleted Thoughts...">
+						<a class="post-icon" href="/im-ausland/2017/06/03/some-bulleted-thoughts.html" aria-label="Open the full post for Some Bulleted Thoughts..."><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="https://www.google.com/maps/place/Canton,+OH/@40.8048591,-81.4351842,12z/data=!3m1!4b1!4m5!3m4!1s0x8836c84fd29980a9:0x12cc9ba49ffa6f4b!8m2!3d40.7989473!4d-81.378447" aria-label="Open the map location for Some Bulleted Thoughts..."><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#some-bulleted-thoughts" aria-label="Copy a direct link to Some Bulleted Thoughts..."><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						
-						<a class="post-icon" href="/im-ausland//2017/06/03/some-bulleted-thoughts.html#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland//2017/06/03/some-bulleted-thoughts.html#comments" aria-label="Jump to comments for Some Bulleted Thoughts..."><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>June 3, 2017</em></h5> -->
 					<div class="fade-in-lines">
@@ -2374,10 +2383,10 @@ omNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNmssoossshdmmdmNmddmyssssymNNN
 
 </div>
 
-				</div>
+				</article>
 			
 		</div>
-		<div class="fixed-box">
+		<aside class="fixed-box" aria-hidden="true">
 			<?xml version="1.0" encoding="UTF-8"?> <!-- "150 1500 2000 1600" -->
 <svg viewBox="150 1500 2000 1600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
@@ -2589,391 +2598,640 @@ omNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNmssoossshdmmdmNmddmyssssymNNN
     </g>
 </svg>
 
-		</div>
+		</aside>
 	</div>
-</div>
+</main>
 
-<div class="hero-image intro">
+<section class="hero-image intro" aria-label="Closing quote">
 	<em>&ldquo;Sometimes you will never know the value of a moment until it becomes a memory.&rdquo;</em> <span>Dr. Seuss</span>
-</div>
+</section>
 
-<div class="msg copied">Copied Link!</div>
-<div class="msg error-copying">Error Copying Link!</div>
+<div class="msg copied" role="status" aria-live="polite">Copied Link!</div>
+<div class="msg error-copying" role="status" aria-live="polite">Error Copying Link!</div>
 
 
   </body>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
+  <script>
+  (function() {
+  var map = null;
+  var navigationToggle = null;
+  var navigationDrawer = null;
+  var liveMessageTimer = null;
+  var routeSections = [
+    { pathSelector: "#IN-SWITZ-1", sectionSelector: ".IN-SWITZ", disappearSpeed: 200 },
+    
+      
+      
+    
+      
+      
+    
+      
+        { pathSelector: "#BRE-USA-1", sectionSelector: ".BREMEN-TO-USA", disappearSpeed: 200 },
+      
+      
+    
+      
+      
+    
+      
+        { pathSelector: "#BRE-HAM-2", sectionSelector: ".BREMEN-TO-HAMBURG-AGAIN", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#HAM-BRE-2", sectionSelector: ".HAMBURG-TO-BREMEN-AGAIN", disappearSpeed: 200 },
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+        { pathSelector: "#BRE-BER-1", sectionSelector: ".BREMEN-TO-BERLIN", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#BER-BRE-1", sectionSelector: ".BERLIN-TO-BREMEN", disappearSpeed: 200 },
+      
+    
+      
+      
+    
+      
+        { pathSelector: "#BRE-GEN-1", sectionSelector: ".BREMEN-TO-SWITZERLAND", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#GEN-BRE-1", sectionSelector: ".SWITZERLAND-TO-BREMEN", disappearSpeed: 200 },
+      
+    
+      
+      
+    
+      
+        { pathSelector: "#BRE-AMS-2", sectionSelector: ".BREMEN-TO-AMSTERDAM-AGAIN", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#AMS-BRE-2", sectionSelector: ".AMSTERDAM-TO-BREMEN-AGAIN", disappearSpeed: 200 },
+      
+    
+      
+        { pathSelector: "#BRE-POL-1", sectionSelector: ".BREMEN-TO-POLAND", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#POL-BRE-1", sectionSelector: ".POLAND-TO-BREMEN", disappearSpeed: 200 },
+      
+    
+      
+      
+    
+      
+        { pathSelector: "#TLV-BRE-1", sectionSelector: ".TELAVIV-TO-BREMEN", disappearSpeed: 200 },
+      
+      
+    
+      
+      
+    
+      
+      
+        { pathSelector: "#RAM-TLV-1", sectionSelector: ".RAMALLAH-TO-TELAVIV", disappearSpeed: 200 },
+      
+    
+      
+      
+    
+      
+        { pathSelector: "#RAM-KALIA-1", sectionSelector: ".RAMALLAH-TO-KALIA", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#KALIA-RAM-1", sectionSelector: ".KALIA-TO-RAMALLAH", disappearSpeed: 200 },
+      
+    
+      
+        { pathSelector: "#RAM-BETH-1", sectionSelector: ".RAMALLAH-TO-BETHLEHEM", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#BETH-RAM-1", sectionSelector: ".BETHLEHEM-TO-RAMALLAH", disappearSpeed: 200 },
+      
+    
+      
+        { pathSelector: "#RAM-JER-1", sectionSelector: ".RAMALLAH-TO-JERICHO", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#JER-RAM-1", sectionSelector: ".JERICHO-TO-RAMALLAH", disappearSpeed: 200 },
+      
+    
+      
+        { pathSelector: "#TLV-RAM-1", sectionSelector: ".BREMEN-TO-RAMALLAH", disappearSpeed: 200 },
+      
+      
+    
+      
+      
+    
+      
+        { pathSelector: "#BRE-TLV-1", sectionSelector: ".BREMEN-TO-TELAVIV", disappearSpeed: 200 },
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+        { pathSelector: "#BRE-PAR-1", sectionSelector: ".BREMEN-TO-PARIS", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#PAR-BRE-1", sectionSelector: ".PARIS-TO-BREMEN", disappearSpeed: 200 },
+      
+    
+      
+        { pathSelector: "#BRE-DUB-1", sectionSelector: ".BREMEN-TO-DUBLIN", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#DUB-BRE-1", sectionSelector: ".DUBLIN-TO-BREMEN", disappearSpeed: 200 },
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+        { pathSelector: "#BRE-OSNA-1", sectionSelector: ".BREMEN-TO-OSNABRUCK", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#OSNA-BRE-1", sectionSelector: ".OSNABRUCK-TO-BREMEN", disappearSpeed: 200 },
+      
+    
+      
+      
+    
+      
+      
+    
+      
+        { pathSelector: "#BRE-HAN-1", sectionSelector: ".HANNOVER-TO-BREMEN", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#HAN-BRE-1", sectionSelector: ".BREMEN-TO-HANNOVER", disappearSpeed: 200 },
+      
+    
+      
+        { pathSelector: "#BRE-AMS-1", sectionSelector: ".BREMEN-TO-AMSTERDAM", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#AMS-BRE-1", sectionSelector: ".AMSTERDAM-TO-BREMEN", disappearSpeed: 200 },
+      
+    
+      
+        { pathSelector: "#BRE-COP-1", sectionSelector: ".BREMEN-TO-COPENHAGEN", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#COP-BRE-1", sectionSelector: ".COPENHAGEN-TO-BREMEN", disappearSpeed: 200 },
+      
+    
+      
+      
+    
+      
+        { pathSelector: "#BRE-HAM-1", sectionSelector: ".BREMEN-TO-HAMBURG", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#HAM-BRE-1", sectionSelector: ".HAMBURG-TO-BREMEN", disappearSpeed: 200 },
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+        { pathSelector: "#USA-BRE-1", sectionSelector: ".USA-TO-BREMEN", disappearSpeed: 200 },
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+  ];
+  var routeState = [];
+  var fadeInLines = null;
+  var fadeInBounds = null;
+  var scrollTicking = false;
+  var resizeTicking = false;
+  var futureRouteOpacity = 0.05;
+  var completedRouteOpacity = 0.18;
+  var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var supportsClipboard = !!(navigator.clipboard && navigator.clipboard.writeText);
 
-<script>
-  var map = document.getElementsByTagName("svg")[0];
+  document.addEventListener("DOMContentLoaded", function() {
+    navigationToggle = document.querySelector(".slide-activator");
+    navigationDrawer = document.querySelector(".slide-out-nav");
 
-  $(document).ready(function() {
+    initNavigation();
+    prepareLazyMedia();
+    initMapExperience();
+    initCopyLinks();
+    scrollToHash();
 
-    $(".slide-activator, .slide-out-nav .posts a").on("click", function(event) {
-      $(".slide-out-nav").toggleClass("open");
-      $(".slide-activator").toggleClass("open");
-    });
+    window.addEventListener("resize", onResize, { passive: true });
+    window.addEventListener("scroll", onScroll, { passive: true });
+    document.addEventListener("keydown", onDocumentKeydown);
+  });
 
-    fullscreen();
+  function initNavigation() {
+    if (!navigationToggle || !navigationDrawer) {
+      return;
+    }
 
-    var x = document.getElementsByClassName("travel");
+    navigationToggle.addEventListener("click", toggleNavigation);
+
+    var navLinks = navigationDrawer.querySelectorAll(".posts a");
     var i;
-    for (i = 0; i < x.length; i++) {
-      var length = x[i].getTotalLength();
-      x[i].style["stroke-dasharray"] = length;
-      x[i].style["stroke-dashoffset"] = length;
-      x[i].style.visibility = "visible";
+    for (i = 0; i < navLinks.length; i++) {
+      navLinks[i].addEventListener("click", closeNavigation);
     }
-
-    var y = document.querySelectorAll("#points circle");
-    var j;
-    for (j = 0; j < y.length; j++) {
-      var x_coord = parseFloat(y[j].getAttribute('cx'))+8;
-      var y_coord = parseFloat(y[j].getAttribute('cy'))+3;
-      var sentence = '<text class="' + y[j].id + '-text" x="' + x_coord + '" y="' + y_coord + '" font-family="Verdana" font-size="8" fill="black">' + y[j].id + '</text>';
-      y[j].insertAdjacentHTML( 'beforeBegin', sentence );
-    }
-
-    // Run the function in case of window resize
-    $(window).resize(function() {
-      fullscreen();
-    });
-  });
-
-  $(window).on('ready', function() {
-    fullscreen();
-    // get hash value
-    var hash = window.location.hash;
-    // now scroll to element with that id
-    $('html, body').animate({ scrollTop: $(hash).offset().top }, "slow");
-  });
-
-  function draw_lines() {
-    // MANUAL ADDITIONs
-    draw_section("#IN-SWITZ-1", ".IN-SWITZ", 200);
-    // END MANUAL ADDITIONS
-    
-      
-      
-    
-      
-      
-    
-      
-        draw_section("#BRE-USA-1", ".BREMEN-TO-USA", 200);
-      
-      
-    
-      
-      
-    
-      
-        draw_section("#BRE-HAM-2", ".BREMEN-TO-HAMBURG-AGAIN", 200);
-      
-      
-        draw_section("#HAM-BRE-2", ".HAMBURG-TO-BREMEN-AGAIN", 200);
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-        draw_section("#BRE-BER-1", ".BREMEN-TO-BERLIN", 200);
-      
-      
-        draw_section("#BER-BRE-1", ".BERLIN-TO-BREMEN", 200);
-      
-    
-      
-      
-    
-      
-        draw_section("#BRE-GEN-1", ".BREMEN-TO-SWITZERLAND", 200);
-      
-      
-        draw_section("#GEN-BRE-1", ".SWITZERLAND-TO-BREMEN", 200);
-      
-    
-      
-      
-    
-      
-        draw_section("#BRE-AMS-2", ".BREMEN-TO-AMSTERDAM-AGAIN", 200);
-      
-      
-        draw_section("#AMS-BRE-2", ".AMSTERDAM-TO-BREMEN-AGAIN", 200);
-      
-    
-      
-        draw_section("#BRE-POL-1", ".BREMEN-TO-POLAND", 200);
-      
-      
-        draw_section("#POL-BRE-1", ".POLAND-TO-BREMEN", 200);
-      
-    
-      
-      
-    
-      
-        draw_section("#TLV-BRE-1", ".TELAVIV-TO-BREMEN", 200);
-      
-      
-    
-      
-      
-    
-      
-      
-        draw_section("#RAM-TLV-1", ".RAMALLAH-TO-TELAVIV", 200);
-      
-    
-      
-      
-    
-      
-        draw_section("#RAM-KALIA-1", ".RAMALLAH-TO-KALIA", 200);
-      
-      
-        draw_section("#KALIA-RAM-1", ".KALIA-TO-RAMALLAH", 200);
-      
-    
-      
-        draw_section("#RAM-BETH-1", ".RAMALLAH-TO-BETHLEHEM", 200);
-      
-      
-        draw_section("#BETH-RAM-1", ".BETHLEHEM-TO-RAMALLAH", 200);
-      
-    
-      
-        draw_section("#RAM-JER-1", ".RAMALLAH-TO-JERICHO", 200);
-      
-      
-        draw_section("#JER-RAM-1", ".JERICHO-TO-RAMALLAH", 200);
-      
-    
-      
-        draw_section("#TLV-RAM-1", ".BREMEN-TO-RAMALLAH", 200);
-      
-      
-    
-      
-      
-    
-      
-        draw_section("#BRE-TLV-1", ".BREMEN-TO-TELAVIV", 200);
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-        draw_section("#BRE-PAR-1", ".BREMEN-TO-PARIS", 200);
-      
-      
-        draw_section("#PAR-BRE-1", ".PARIS-TO-BREMEN", 200);
-      
-    
-      
-        draw_section("#BRE-DUB-1", ".BREMEN-TO-DUBLIN", 200);
-      
-      
-        draw_section("#DUB-BRE-1", ".DUBLIN-TO-BREMEN", 200);
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-        draw_section("#BRE-OSNA-1", ".BREMEN-TO-OSNABRUCK", 200);
-      
-      
-        draw_section("#OSNA-BRE-1", ".OSNABRUCK-TO-BREMEN", 200);
-      
-    
-      
-      
-    
-      
-      
-    
-      
-        draw_section("#BRE-HAN-1", ".HANNOVER-TO-BREMEN", 200);
-      
-      
-        draw_section("#HAN-BRE-1", ".BREMEN-TO-HANNOVER", 200);
-      
-    
-      
-        draw_section("#BRE-AMS-1", ".BREMEN-TO-AMSTERDAM", 200);
-      
-      
-        draw_section("#AMS-BRE-1", ".AMSTERDAM-TO-BREMEN", 200);
-      
-    
-      
-        draw_section("#BRE-COP-1", ".BREMEN-TO-COPENHAGEN", 200);
-      
-      
-        draw_section("#COP-BRE-1", ".COPENHAGEN-TO-BREMEN", 200);
-      
-    
-      
-      
-    
-      
-        draw_section("#BRE-HAM-1", ".BREMEN-TO-HAMBURG", 200);
-      
-      
-        draw_section("#HAM-BRE-1", ".HAMBURG-TO-BREMEN", 200);
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-        draw_section("#USA-BRE-1", ".USA-TO-BREMEN", 200);
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
   }
 
-  $(window).scroll(function() {
-    draw_lines();
-  });
-
-  function fullscreen(){
-    $('.hero-image').css({
-        height: $(window).height()
-    });
-    $("svg").css({
-        height: $(window).height(),
-        width: $(window).width()
-    });
+  function toggleNavigation() {
+    var isOpen = navigationDrawer.classList.toggle("open");
+    navigationToggle.classList.toggle("open", isOpen);
+    navigationToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
   }
 
-  function box_change( from, to, percent ) {
-    var from_list = from.split(" ");
-    var to_list = to.split(" ");
-    var new_viewbox = "";
+  function closeNavigation() {
+    if (!navigationDrawer || !navigationDrawer.classList.contains("open")) {
+      return;
+    }
+
+    navigationDrawer.classList.remove("open");
+    navigationToggle.classList.remove("open");
+    navigationToggle.setAttribute("aria-expanded", "false");
+  }
+
+  function onDocumentKeydown(event) {
+    if (event.key === "Escape") {
+      closeNavigation();
+    }
+  }
+
+  function prepareLazyMedia() {
+    var images = document.querySelectorAll(".blog-post img, .post .content img");
+    var iframes = document.querySelectorAll("iframe");
     var i;
-    for ( i=0; i < 4; i++ ) {
-      var diff = Math.abs(from_list[i] - to_list[i]);
-      if ( parseInt(from_list[i]) >= parseInt(to_list[i]) ) {
-        new_viewbox += Math.floor( (parseInt(from_list[i]) - (diff * percent)) );
-      }
-      else {
-        new_viewbox += Math.floor( (parseInt(from_list[i]) + (diff * percent)) );
-      }
-      new_viewbox += " ";
+
+    for (i = 0; i < images.length; i++) {
+      images[i].setAttribute("loading", "lazy");
+      images[i].setAttribute("decoding", "async");
     }
-    map.setAttribute("viewBox", new_viewbox);
+
+    for (i = 0; i < iframes.length; i++) {
+      iframes[i].setAttribute("loading", "lazy");
+      iframes[i].setAttribute("referrerpolicy", "no-referrer-when-downgrade");
+    }
   }
 
-  function draw_section(path_query, section_query, disap_speed) {
-    var path = document.querySelector(path_query);
-    var section = document.querySelector(section_query);
-    var pos = getPos(section);
-    var top = pos["top"];
-    var bottom = pos["bottom"];
+  function initMapExperience() {
+    if (window.innerWidth <= 992 || prefersReducedMotion.matches) {
+      return;
+    }
+
+    map = document.querySelector("svg");
+    if (!map) {
+      return;
+    }
+
+    setupTravelPaths();
+    addPointLabels();
+
+    fadeInLines = document.querySelector(".fade-in-lines");
+    routeState = buildRouteState();
+    recalcBounds();
+    updateRoutes();
+  }
+
+  function setupTravelPaths() {
+    var paths = document.getElementsByClassName("travel");
+    var i;
+
+    for (i = 0; i < paths.length; i++) {
+      var length = paths[i].getTotalLength();
+      paths[i].style["stroke-dasharray"] = length;
+      paths[i].style["stroke-dashoffset"] = length;
+      paths[i].style.opacity = futureRouteOpacity;
+      paths[i].style.visibility = "visible";
+    }
+  }
+
+  function addPointLabels() {
+    var points = document.querySelectorAll("#points circle");
+    var i;
+
+    for (i = 0; i < points.length; i++) {
+      if (points[i].previousElementSibling && points[i].previousElementSibling.classList.contains("map-point-label")) {
+        continue;
+      }
+
+      var xCoord = parseFloat(points[i].getAttribute("cx")) + 8;
+      var yCoord = parseFloat(points[i].getAttribute("cy")) + 3;
+      var sentence = '<text class="map-point-label ' + points[i].id + '-text" x="' + xCoord + '" y="' + yCoord + '" font-family="Verdana" font-size="8" fill="black">' + points[i].id + "</text>";
+      points[i].insertAdjacentHTML("beforeBegin", sentence);
+    }
+  }
+
+  function buildRouteState() {
+    var routes = [];
+    var i;
+
+    for (i = 0; i < routeSections.length; i++) {
+      var path = document.querySelector(routeSections[i].pathSelector);
+      var section = document.querySelector(routeSections[i].sectionSelector);
+
+      if (!path || !section) {
+        continue;
+      }
+
+      routes.push({
+        path: path,
+        section: section,
+        disappearSpeed: routeSections[i].disappearSpeed,
+        pathLength: path.getTotalLength(),
+        top: 0,
+        bottom: 0
+      });
+    }
+
+    return routes;
+  }
+
+  function onScroll() {
+    if (scrollTicking) {
+      return;
+    }
+
+    scrollTicking = true;
+    window.requestAnimationFrame(function() {
+      updateRoutes();
+      scrollTicking = false;
+    });
+  }
+
+  function onResize() {
+    if (resizeTicking) {
+      return;
+    }
+
+    resizeTicking = true;
+    window.requestAnimationFrame(function() {
+      if (!map && window.innerWidth > 992 && !prefersReducedMotion.matches) {
+        initMapExperience();
+      }
+
+      recalcBounds();
+      updateRoutes();
+      resizeTicking = false;
+    });
+  }
+
+  function fullscreen() {
+    return;
+  }
+
+  function recalcBounds() {
+    var i;
+
+    for (i = 0; i < routeState.length; i++) {
+      var rect = routeState[i].section.getBoundingClientRect();
+      routeState[i].top = rect.top + window.scrollY;
+      routeState[i].bottom = routeState[i].top + routeState[i].section.offsetHeight;
+    }
+
+    routeState.sort(function(a, b) {
+      return a.top - b.top;
+    });
+
+    fadeInBounds = null;
+    if (fadeInLines) {
+      var fadeRect = fadeInLines.getBoundingClientRect();
+      var fadeTop = fadeRect.top + window.scrollY;
+      fadeInBounds = {
+        top: fadeTop,
+        bottom: fadeTop + fadeInLines.offsetHeight
+      };
+    }
+  }
+
+  function updateRoutes() {
+    if (!map || !routeState.length) {
+      return;
+    }
+
     var scrollTop = window.scrollY;
-    var path_length = path.getTotalLength();
-    var fade_in_lines_top = getPos(document.querySelector(".fade-in-lines"))["top"];
-    // Don't calc if out of range
-    if (scrollTop < top) {
-      var offset_val = path_length;
-    } else if (scrollTop > bottom) {
-      var offset_val = 0;
+    var activeIndex = getActiveRouteIndex(scrollTop);
+    var i;
+
+    for (i = 0; i < routeState.length; i++) {
+      var route = routeState[i];
+      updateRoute(route, scrollTop, activeIndex, i);
+    }
+  }
+
+  function getActiveRouteIndex(scrollTop) {
+    var i;
+    var activeIndex = -1;
+
+    for (i = 0; i < routeState.length; i++) {
+      if (scrollTop >= routeState[i].top && scrollTop <= routeState[i].bottom) {
+        activeIndex = i;
+      }
+    }
+
+    return activeIndex;
+  }
+
+  function updateRoute(route, scrollTop, activeIndex, routeIndex) {
+    var offsetVal;
+
+    if (activeIndex !== -1) {
+      if (routeIndex < activeIndex) {
+        offsetVal = 0;
+      } else if (routeIndex > activeIndex) {
+        offsetVal = route.pathLength;
+      } else {
+        offsetVal = getActiveRouteOffset(route, scrollTop);
+      }
+    } else if (scrollTop < route.top) {
+      offsetVal = route.pathLength;
+    } else if (scrollTop > route.bottom) {
+      offsetVal = 0;
     } else {
-      var path_percent = ((scrollTop - top) / (bottom - top));
-      var offset_val = path_length - (path_length * path_percent);
-      box_change( section.getAttribute("data-from"), section.getAttribute("data-to"), path_percent );
+      offsetVal = getActiveRouteOffset(route, scrollTop);
     }
-    path.style["stroke-dashoffset"] = offset_val;
 
-    if ( scrollTop > fade_in_lines_top ) {
-      var fade_in_lines_bottom = getPos(document.querySelector(".fade-in-lines"))["bottom"];
-      var mid = (fade_in_lines_bottom - fade_in_lines_top) + fade_in_lines_top;
-      if ( scrollTop > mid ) {
-        path.style.opacity = 1;
+    route.path.style["stroke-dashoffset"] = offsetVal;
+    route.path.style.opacity = getRouteOpacity(route, scrollTop, activeIndex, routeIndex);
+  }
+
+  function getActiveRouteOffset(route, scrollTop) {
+    var pathPercent = (scrollTop - route.top) / (route.bottom - route.top);
+    var offsetVal = route.pathLength - (route.pathLength * pathPercent);
+    boxChange(route.section.getAttribute("data-from"), route.section.getAttribute("data-to"), pathPercent);
+    return offsetVal;
+  }
+
+  function getRouteOpacity(route, scrollTop, activeIndex, routeIndex) {
+    if (activeIndex !== -1) {
+      if (routeIndex < activeIndex) {
+        return completedRouteOpacity;
       }
-      else {
-        path.style.opacity = 0.05 + ( (scrollTop - fade_in_lines_top) / (fade_in_lines_bottom - fade_in_lines_top) );
+
+      if (routeIndex === activeIndex) {
+        return 1;
       }
+
+      return futureRouteOpacity;
     }
-    else if ( scrollTop > bottom + 100 ) {
-      var perc_past = 1 - ((scrollTop - bottom) / disap_speed);
-      if ( perc_past < 0.05 ) {
-        perc_past = 0.05;
-      }
-      path.style.opacity = perc_past;
+
+    if (scrollTop < route.top) {
+      return futureRouteOpacity;
     }
-    else {
-      path.style.opacity = 1;
+
+    if (scrollTop > route.bottom) {
+      return getCompletedRouteOpacity(route, scrollTop);
+    }
+
+    return 1;
+  }
+
+  function getCompletedRouteOpacity(route, scrollTop) {
+    if (scrollTop <= route.bottom + 100) {
+      return 1;
+    }
+
+    var percPast = 1 - ((scrollTop - route.bottom) / route.disappearSpeed);
+    return Math.max(percPast, completedRouteOpacity);
+  }
+
+  function boxChange(from, to, percent) {
+    if (!map || !from || !to) {
+      return;
+    }
+
+    var fromList = from.split(" ");
+    var toList = to.split(" ");
+    var newViewBox = "";
+    var i;
+
+    for (i = 0; i < 4; i++) {
+      var fromVal = parseInt(fromList[i], 10);
+      var toVal = parseInt(toList[i], 10);
+      var diff = Math.abs(fromVal - toVal);
+
+      if (fromVal >= toVal) {
+        newViewBox += Math.floor(fromVal - (diff * percent));
+      } else {
+        newViewBox += Math.floor(fromVal + (diff * percent));
+      }
+
+      newViewBox += " ";
+    }
+
+    map.setAttribute("viewBox", newViewBox);
+  }
+
+  function scrollToHash() {
+    var hash = window.location.hash;
+    if (!hash) {
+      return;
+    }
+
+    var target = document.querySelector(hash);
+    if (!target) {
+      return;
+    }
+
+    target.scrollIntoView({
+      behavior: prefersReducedMotion.matches ? "auto" : "smooth",
+      block: "start"
+    });
+  }
+
+  function initCopyLinks() {
+    var buttons = document.querySelectorAll(".copy-link-btn");
+    var i;
+
+    for (i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener("click", copyLink);
     }
   }
 
-  function getPos(el) {
-    var height = el.offsetHeight;
-    for (var ly = 0; el !== null; ly += el.offsetTop, el = el.offsetParent);
-    return {
-      top: ly,
-      bottom: ly + height
-    };
+  function copyLink(event) {
+    event.preventDefault();
+
+    var text = event.currentTarget.getAttribute("data-clipboard-text");
+    if (!text || !supportsClipboard) {
+      showCopyMessage(false);
+      return;
+    }
+
+    navigator.clipboard.writeText(text).then(function() {
+      showCopyMessage(true);
+    }).catch(function() {
+      showCopyMessage(false);
+    });
   }
 
-  var clipboard = new Clipboard('.copy-link-btn');
+  function showCopyMessage(wasSuccessful) {
+    var otherMessage = document.querySelector(wasSuccessful ? ".error-copying" : ".copied");
+    var message = document.querySelector(wasSuccessful ? ".copied" : ".error-copying");
+    if (!message) {
+      return;
+    }
 
-  clipboard.on('success', function(e) {
-    $(".copied").fadeIn("slow").delay(800).fadeOut("slow");
-  });
+    if (liveMessageTimer) {
+      window.clearTimeout(liveMessageTimer);
+    }
 
-  clipboard.on('error', function(e) {
-    $(".error-copying").fadeIn("slow").delay(800).fadeOut("slow");
-  });
+    if (otherMessage) {
+      otherMessage.classList.remove("visible");
+    }
 
-
+    message.classList.add("visible");
+    liveMessageTimer = window.setTimeout(function() {
+      message.classList.remove("visible");
+    }, 1200);
+  }
+  })();
 </script>
 
 <!-- Analytics at end to load faster -->

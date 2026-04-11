@@ -7,6 +7,12 @@
 <title>Im Ausland | Bobby's Travel Log</title>
 <meta name="description" content="Bobby's account of his Spring 2017 semester in Europe.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#181922">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://maxcdn.bootstrapcdn.com" crossorigin>
+<link rel="preload" as="image" href="/im-ausland/img/bremen-hero.jpg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Nunito+Sans&display=swap">
 <link href="/im-ausland/css/styles.css" rel="stylesheet">
 <link rel="icon" type="image/png" href="/im-ausland/img/favicon.png">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -40,7 +46,7 @@
     <!-- // END CSS -->
 
     <div class="overlay" onClick="style.pointerEvents='none'"></div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d303353.6535048598!2d9.647641133011428!3d53.558652555786374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b161837e1813b9%3A0x4263df27bd63aa0!2sHamburg%2C+Germany!5e0!3m2!1sen!2sus!4v1486305590870" width="100%" height="300px" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d303353.6535048598!2d9.647641133011428!3d53.558652555786374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b161837e1813b9%3A0x4263df27bd63aa0!2sHamburg%2C+Germany!5e0!3m2!1sen!2sus!4v1486305590870" width="100%" height="300px" frameborder="0" style="border:0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     <div class="details">
       <p>February 5, 2017</p>
     </div>
@@ -121,377 +127,626 @@
 
   </body>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
+  <script>
+  (function() {
+  var map = null;
+  var navigationToggle = null;
+  var navigationDrawer = null;
+  var liveMessageTimer = null;
+  var routeSections = [
+    { pathSelector: "#IN-SWITZ-1", sectionSelector: ".IN-SWITZ", disappearSpeed: 200 },
+    
+      
+      
+    
+      
+      
+    
+      
+        { pathSelector: "#BRE-USA-1", sectionSelector: ".BREMEN-TO-USA", disappearSpeed: 200 },
+      
+      
+    
+      
+      
+    
+      
+        { pathSelector: "#BRE-HAM-2", sectionSelector: ".BREMEN-TO-HAMBURG-AGAIN", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#HAM-BRE-2", sectionSelector: ".HAMBURG-TO-BREMEN-AGAIN", disappearSpeed: 200 },
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+        { pathSelector: "#BRE-BER-1", sectionSelector: ".BREMEN-TO-BERLIN", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#BER-BRE-1", sectionSelector: ".BERLIN-TO-BREMEN", disappearSpeed: 200 },
+      
+    
+      
+      
+    
+      
+        { pathSelector: "#BRE-GEN-1", sectionSelector: ".BREMEN-TO-SWITZERLAND", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#GEN-BRE-1", sectionSelector: ".SWITZERLAND-TO-BREMEN", disappearSpeed: 200 },
+      
+    
+      
+      
+    
+      
+        { pathSelector: "#BRE-AMS-2", sectionSelector: ".BREMEN-TO-AMSTERDAM-AGAIN", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#AMS-BRE-2", sectionSelector: ".AMSTERDAM-TO-BREMEN-AGAIN", disappearSpeed: 200 },
+      
+    
+      
+        { pathSelector: "#BRE-POL-1", sectionSelector: ".BREMEN-TO-POLAND", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#POL-BRE-1", sectionSelector: ".POLAND-TO-BREMEN", disappearSpeed: 200 },
+      
+    
+      
+      
+    
+      
+        { pathSelector: "#TLV-BRE-1", sectionSelector: ".TELAVIV-TO-BREMEN", disappearSpeed: 200 },
+      
+      
+    
+      
+      
+    
+      
+      
+        { pathSelector: "#RAM-TLV-1", sectionSelector: ".RAMALLAH-TO-TELAVIV", disappearSpeed: 200 },
+      
+    
+      
+      
+    
+      
+        { pathSelector: "#RAM-KALIA-1", sectionSelector: ".RAMALLAH-TO-KALIA", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#KALIA-RAM-1", sectionSelector: ".KALIA-TO-RAMALLAH", disappearSpeed: 200 },
+      
+    
+      
+        { pathSelector: "#RAM-BETH-1", sectionSelector: ".RAMALLAH-TO-BETHLEHEM", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#BETH-RAM-1", sectionSelector: ".BETHLEHEM-TO-RAMALLAH", disappearSpeed: 200 },
+      
+    
+      
+        { pathSelector: "#RAM-JER-1", sectionSelector: ".RAMALLAH-TO-JERICHO", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#JER-RAM-1", sectionSelector: ".JERICHO-TO-RAMALLAH", disappearSpeed: 200 },
+      
+    
+      
+        { pathSelector: "#TLV-RAM-1", sectionSelector: ".BREMEN-TO-RAMALLAH", disappearSpeed: 200 },
+      
+      
+    
+      
+      
+    
+      
+        { pathSelector: "#BRE-TLV-1", sectionSelector: ".BREMEN-TO-TELAVIV", disappearSpeed: 200 },
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+        { pathSelector: "#BRE-PAR-1", sectionSelector: ".BREMEN-TO-PARIS", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#PAR-BRE-1", sectionSelector: ".PARIS-TO-BREMEN", disappearSpeed: 200 },
+      
+    
+      
+        { pathSelector: "#BRE-DUB-1", sectionSelector: ".BREMEN-TO-DUBLIN", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#DUB-BRE-1", sectionSelector: ".DUBLIN-TO-BREMEN", disappearSpeed: 200 },
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+        { pathSelector: "#BRE-OSNA-1", sectionSelector: ".BREMEN-TO-OSNABRUCK", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#OSNA-BRE-1", sectionSelector: ".OSNABRUCK-TO-BREMEN", disappearSpeed: 200 },
+      
+    
+      
+      
+    
+      
+      
+    
+      
+        { pathSelector: "#BRE-HAN-1", sectionSelector: ".HANNOVER-TO-BREMEN", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#HAN-BRE-1", sectionSelector: ".BREMEN-TO-HANNOVER", disappearSpeed: 200 },
+      
+    
+      
+        { pathSelector: "#BRE-AMS-1", sectionSelector: ".BREMEN-TO-AMSTERDAM", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#AMS-BRE-1", sectionSelector: ".AMSTERDAM-TO-BREMEN", disappearSpeed: 200 },
+      
+    
+      
+        { pathSelector: "#BRE-COP-1", sectionSelector: ".BREMEN-TO-COPENHAGEN", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#COP-BRE-1", sectionSelector: ".COPENHAGEN-TO-BREMEN", disappearSpeed: 200 },
+      
+    
+      
+      
+    
+      
+        { pathSelector: "#BRE-HAM-1", sectionSelector: ".BREMEN-TO-HAMBURG", disappearSpeed: 200 },
+      
+      
+        { pathSelector: "#HAM-BRE-1", sectionSelector: ".HAMBURG-TO-BREMEN", disappearSpeed: 200 },
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+        { pathSelector: "#USA-BRE-1", sectionSelector: ".USA-TO-BREMEN", disappearSpeed: 200 },
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+  ];
+  var routeState = [];
+  var fadeInLines = null;
+  var fadeInBounds = null;
+  var scrollTicking = false;
+  var resizeTicking = false;
+  var futureRouteOpacity = 0.05;
+  var completedRouteOpacity = 0.18;
+  var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var supportsClipboard = !!(navigator.clipboard && navigator.clipboard.writeText);
 
-<script>
-  var map = document.getElementsByTagName("svg")[0];
+  document.addEventListener("DOMContentLoaded", function() {
+    navigationToggle = document.querySelector(".slide-activator");
+    navigationDrawer = document.querySelector(".slide-out-nav");
 
-  $(document).ready(function() {
+    initNavigation();
+    prepareLazyMedia();
+    initMapExperience();
+    initCopyLinks();
+    scrollToHash();
 
-    $(".slide-activator, .slide-out-nav .posts a").on("click", function(event) {
-      $(".slide-out-nav").toggleClass("open");
-      $(".slide-activator").toggleClass("open");
-    });
+    window.addEventListener("resize", onResize, { passive: true });
+    window.addEventListener("scroll", onScroll, { passive: true });
+    document.addEventListener("keydown", onDocumentKeydown);
+  });
 
-    fullscreen();
+  function initNavigation() {
+    if (!navigationToggle || !navigationDrawer) {
+      return;
+    }
 
-    var x = document.getElementsByClassName("travel");
+    navigationToggle.addEventListener("click", toggleNavigation);
+
+    var navLinks = navigationDrawer.querySelectorAll(".posts a");
     var i;
-    for (i = 0; i < x.length; i++) {
-      var length = x[i].getTotalLength();
-      x[i].style["stroke-dasharray"] = length;
-      x[i].style["stroke-dashoffset"] = length;
-      x[i].style.visibility = "visible";
+    for (i = 0; i < navLinks.length; i++) {
+      navLinks[i].addEventListener("click", closeNavigation);
     }
-
-    var y = document.querySelectorAll("#points circle");
-    var j;
-    for (j = 0; j < y.length; j++) {
-      var x_coord = parseFloat(y[j].getAttribute('cx'))+8;
-      var y_coord = parseFloat(y[j].getAttribute('cy'))+3;
-      var sentence = '<text class="' + y[j].id + '-text" x="' + x_coord + '" y="' + y_coord + '" font-family="Verdana" font-size="8" fill="black">' + y[j].id + '</text>';
-      y[j].insertAdjacentHTML( 'beforeBegin', sentence );
-    }
-
-    // Run the function in case of window resize
-    $(window).resize(function() {
-      fullscreen();
-    });
-  });
-
-  $(window).on('ready', function() {
-    fullscreen();
-    // get hash value
-    var hash = window.location.hash;
-    // now scroll to element with that id
-    $('html, body').animate({ scrollTop: $(hash).offset().top }, "slow");
-  });
-
-  function draw_lines() {
-    // MANUAL ADDITIONs
-    draw_section("#IN-SWITZ-1", ".IN-SWITZ", 200);
-    // END MANUAL ADDITIONS
-    
-      
-      
-    
-      
-      
-    
-      
-        draw_section("#BRE-USA-1", ".BREMEN-TO-USA", 200);
-      
-      
-    
-      
-      
-    
-      
-        draw_section("#BRE-HAM-2", ".BREMEN-TO-HAMBURG-AGAIN", 200);
-      
-      
-        draw_section("#HAM-BRE-2", ".HAMBURG-TO-BREMEN-AGAIN", 200);
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-        draw_section("#BRE-BER-1", ".BREMEN-TO-BERLIN", 200);
-      
-      
-        draw_section("#BER-BRE-1", ".BERLIN-TO-BREMEN", 200);
-      
-    
-      
-      
-    
-      
-        draw_section("#BRE-GEN-1", ".BREMEN-TO-SWITZERLAND", 200);
-      
-      
-        draw_section("#GEN-BRE-1", ".SWITZERLAND-TO-BREMEN", 200);
-      
-    
-      
-      
-    
-      
-        draw_section("#BRE-AMS-2", ".BREMEN-TO-AMSTERDAM-AGAIN", 200);
-      
-      
-        draw_section("#AMS-BRE-2", ".AMSTERDAM-TO-BREMEN-AGAIN", 200);
-      
-    
-      
-        draw_section("#BRE-POL-1", ".BREMEN-TO-POLAND", 200);
-      
-      
-        draw_section("#POL-BRE-1", ".POLAND-TO-BREMEN", 200);
-      
-    
-      
-      
-    
-      
-        draw_section("#TLV-BRE-1", ".TELAVIV-TO-BREMEN", 200);
-      
-      
-    
-      
-      
-    
-      
-      
-        draw_section("#RAM-TLV-1", ".RAMALLAH-TO-TELAVIV", 200);
-      
-    
-      
-      
-    
-      
-        draw_section("#RAM-KALIA-1", ".RAMALLAH-TO-KALIA", 200);
-      
-      
-        draw_section("#KALIA-RAM-1", ".KALIA-TO-RAMALLAH", 200);
-      
-    
-      
-        draw_section("#RAM-BETH-1", ".RAMALLAH-TO-BETHLEHEM", 200);
-      
-      
-        draw_section("#BETH-RAM-1", ".BETHLEHEM-TO-RAMALLAH", 200);
-      
-    
-      
-        draw_section("#RAM-JER-1", ".RAMALLAH-TO-JERICHO", 200);
-      
-      
-        draw_section("#JER-RAM-1", ".JERICHO-TO-RAMALLAH", 200);
-      
-    
-      
-        draw_section("#TLV-RAM-1", ".BREMEN-TO-RAMALLAH", 200);
-      
-      
-    
-      
-      
-    
-      
-        draw_section("#BRE-TLV-1", ".BREMEN-TO-TELAVIV", 200);
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-        draw_section("#BRE-PAR-1", ".BREMEN-TO-PARIS", 200);
-      
-      
-        draw_section("#PAR-BRE-1", ".PARIS-TO-BREMEN", 200);
-      
-    
-      
-        draw_section("#BRE-DUB-1", ".BREMEN-TO-DUBLIN", 200);
-      
-      
-        draw_section("#DUB-BRE-1", ".DUBLIN-TO-BREMEN", 200);
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-        draw_section("#BRE-OSNA-1", ".BREMEN-TO-OSNABRUCK", 200);
-      
-      
-        draw_section("#OSNA-BRE-1", ".OSNABRUCK-TO-BREMEN", 200);
-      
-    
-      
-      
-    
-      
-      
-    
-      
-        draw_section("#BRE-HAN-1", ".HANNOVER-TO-BREMEN", 200);
-      
-      
-        draw_section("#HAN-BRE-1", ".BREMEN-TO-HANNOVER", 200);
-      
-    
-      
-        draw_section("#BRE-AMS-1", ".BREMEN-TO-AMSTERDAM", 200);
-      
-      
-        draw_section("#AMS-BRE-1", ".AMSTERDAM-TO-BREMEN", 200);
-      
-    
-      
-        draw_section("#BRE-COP-1", ".BREMEN-TO-COPENHAGEN", 200);
-      
-      
-        draw_section("#COP-BRE-1", ".COPENHAGEN-TO-BREMEN", 200);
-      
-    
-      
-      
-    
-      
-        draw_section("#BRE-HAM-1", ".BREMEN-TO-HAMBURG", 200);
-      
-      
-        draw_section("#HAM-BRE-1", ".HAMBURG-TO-BREMEN", 200);
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-        draw_section("#USA-BRE-1", ".USA-TO-BREMEN", 200);
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
   }
 
-  $(window).scroll(function() {
-    draw_lines();
-  });
-
-  function fullscreen(){
-    $('.hero-image').css({
-        height: $(window).height()
-    });
-    $("svg").css({
-        height: $(window).height(),
-        width: $(window).width()
-    });
+  function toggleNavigation() {
+    var isOpen = navigationDrawer.classList.toggle("open");
+    navigationToggle.classList.toggle("open", isOpen);
+    navigationToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
   }
 
-  function box_change( from, to, percent ) {
-    var from_list = from.split(" ");
-    var to_list = to.split(" ");
-    var new_viewbox = "";
+  function closeNavigation() {
+    if (!navigationDrawer || !navigationDrawer.classList.contains("open")) {
+      return;
+    }
+
+    navigationDrawer.classList.remove("open");
+    navigationToggle.classList.remove("open");
+    navigationToggle.setAttribute("aria-expanded", "false");
+  }
+
+  function onDocumentKeydown(event) {
+    if (event.key === "Escape") {
+      closeNavigation();
+    }
+  }
+
+  function prepareLazyMedia() {
+    var images = document.querySelectorAll(".blog-post img, .post .content img");
+    var iframes = document.querySelectorAll("iframe");
     var i;
-    for ( i=0; i < 4; i++ ) {
-      var diff = Math.abs(from_list[i] - to_list[i]);
-      if ( parseInt(from_list[i]) >= parseInt(to_list[i]) ) {
-        new_viewbox += Math.floor( (parseInt(from_list[i]) - (diff * percent)) );
-      }
-      else {
-        new_viewbox += Math.floor( (parseInt(from_list[i]) + (diff * percent)) );
-      }
-      new_viewbox += " ";
+
+    for (i = 0; i < images.length; i++) {
+      images[i].setAttribute("loading", "lazy");
+      images[i].setAttribute("decoding", "async");
     }
-    map.setAttribute("viewBox", new_viewbox);
+
+    for (i = 0; i < iframes.length; i++) {
+      iframes[i].setAttribute("loading", "lazy");
+      iframes[i].setAttribute("referrerpolicy", "no-referrer-when-downgrade");
+    }
   }
 
-  function draw_section(path_query, section_query, disap_speed) {
-    var path = document.querySelector(path_query);
-    var section = document.querySelector(section_query);
-    var pos = getPos(section);
-    var top = pos["top"];
-    var bottom = pos["bottom"];
+  function initMapExperience() {
+    if (window.innerWidth <= 992 || prefersReducedMotion.matches) {
+      return;
+    }
+
+    map = document.querySelector("svg");
+    if (!map) {
+      return;
+    }
+
+    setupTravelPaths();
+    addPointLabels();
+
+    fadeInLines = document.querySelector(".fade-in-lines");
+    routeState = buildRouteState();
+    recalcBounds();
+    updateRoutes();
+  }
+
+  function setupTravelPaths() {
+    var paths = document.getElementsByClassName("travel");
+    var i;
+
+    for (i = 0; i < paths.length; i++) {
+      var length = paths[i].getTotalLength();
+      paths[i].style["stroke-dasharray"] = length;
+      paths[i].style["stroke-dashoffset"] = length;
+      paths[i].style.opacity = futureRouteOpacity;
+      paths[i].style.visibility = "visible";
+    }
+  }
+
+  function addPointLabels() {
+    var points = document.querySelectorAll("#points circle");
+    var i;
+
+    for (i = 0; i < points.length; i++) {
+      if (points[i].previousElementSibling && points[i].previousElementSibling.classList.contains("map-point-label")) {
+        continue;
+      }
+
+      var xCoord = parseFloat(points[i].getAttribute("cx")) + 8;
+      var yCoord = parseFloat(points[i].getAttribute("cy")) + 3;
+      var sentence = '<text class="map-point-label ' + points[i].id + '-text" x="' + xCoord + '" y="' + yCoord + '" font-family="Verdana" font-size="8" fill="black">' + points[i].id + "</text>";
+      points[i].insertAdjacentHTML("beforeBegin", sentence);
+    }
+  }
+
+  function buildRouteState() {
+    var routes = [];
+    var i;
+
+    for (i = 0; i < routeSections.length; i++) {
+      var path = document.querySelector(routeSections[i].pathSelector);
+      var section = document.querySelector(routeSections[i].sectionSelector);
+
+      if (!path || !section) {
+        continue;
+      }
+
+      routes.push({
+        path: path,
+        section: section,
+        disappearSpeed: routeSections[i].disappearSpeed,
+        pathLength: path.getTotalLength(),
+        top: 0,
+        bottom: 0
+      });
+    }
+
+    return routes;
+  }
+
+  function onScroll() {
+    if (scrollTicking) {
+      return;
+    }
+
+    scrollTicking = true;
+    window.requestAnimationFrame(function() {
+      updateRoutes();
+      scrollTicking = false;
+    });
+  }
+
+  function onResize() {
+    if (resizeTicking) {
+      return;
+    }
+
+    resizeTicking = true;
+    window.requestAnimationFrame(function() {
+      if (!map && window.innerWidth > 992 && !prefersReducedMotion.matches) {
+        initMapExperience();
+      }
+
+      recalcBounds();
+      updateRoutes();
+      resizeTicking = false;
+    });
+  }
+
+  function fullscreen() {
+    return;
+  }
+
+  function recalcBounds() {
+    var i;
+
+    for (i = 0; i < routeState.length; i++) {
+      var rect = routeState[i].section.getBoundingClientRect();
+      routeState[i].top = rect.top + window.scrollY;
+      routeState[i].bottom = routeState[i].top + routeState[i].section.offsetHeight;
+    }
+
+    routeState.sort(function(a, b) {
+      return a.top - b.top;
+    });
+
+    fadeInBounds = null;
+    if (fadeInLines) {
+      var fadeRect = fadeInLines.getBoundingClientRect();
+      var fadeTop = fadeRect.top + window.scrollY;
+      fadeInBounds = {
+        top: fadeTop,
+        bottom: fadeTop + fadeInLines.offsetHeight
+      };
+    }
+  }
+
+  function updateRoutes() {
+    if (!map || !routeState.length) {
+      return;
+    }
+
     var scrollTop = window.scrollY;
-    var path_length = path.getTotalLength();
-    var fade_in_lines_top = getPos(document.querySelector(".fade-in-lines"))["top"];
-    // Don't calc if out of range
-    if (scrollTop < top) {
-      var offset_val = path_length;
-    } else if (scrollTop > bottom) {
-      var offset_val = 0;
+    var activeIndex = getActiveRouteIndex(scrollTop);
+    var i;
+
+    for (i = 0; i < routeState.length; i++) {
+      var route = routeState[i];
+      updateRoute(route, scrollTop, activeIndex, i);
+    }
+  }
+
+  function getActiveRouteIndex(scrollTop) {
+    var i;
+    var activeIndex = -1;
+
+    for (i = 0; i < routeState.length; i++) {
+      if (scrollTop >= routeState[i].top && scrollTop <= routeState[i].bottom) {
+        activeIndex = i;
+      }
+    }
+
+    return activeIndex;
+  }
+
+  function updateRoute(route, scrollTop, activeIndex, routeIndex) {
+    var offsetVal;
+
+    if (activeIndex !== -1) {
+      if (routeIndex < activeIndex) {
+        offsetVal = 0;
+      } else if (routeIndex > activeIndex) {
+        offsetVal = route.pathLength;
+      } else {
+        offsetVal = getActiveRouteOffset(route, scrollTop);
+      }
+    } else if (scrollTop < route.top) {
+      offsetVal = route.pathLength;
+    } else if (scrollTop > route.bottom) {
+      offsetVal = 0;
     } else {
-      var path_percent = ((scrollTop - top) / (bottom - top));
-      var offset_val = path_length - (path_length * path_percent);
-      box_change( section.getAttribute("data-from"), section.getAttribute("data-to"), path_percent );
+      offsetVal = getActiveRouteOffset(route, scrollTop);
     }
-    path.style["stroke-dashoffset"] = offset_val;
 
-    if ( scrollTop > fade_in_lines_top ) {
-      var fade_in_lines_bottom = getPos(document.querySelector(".fade-in-lines"))["bottom"];
-      var mid = (fade_in_lines_bottom - fade_in_lines_top) + fade_in_lines_top;
-      if ( scrollTop > mid ) {
-        path.style.opacity = 1;
+    route.path.style["stroke-dashoffset"] = offsetVal;
+    route.path.style.opacity = getRouteOpacity(route, scrollTop, activeIndex, routeIndex);
+  }
+
+  function getActiveRouteOffset(route, scrollTop) {
+    var pathPercent = (scrollTop - route.top) / (route.bottom - route.top);
+    var offsetVal = route.pathLength - (route.pathLength * pathPercent);
+    boxChange(route.section.getAttribute("data-from"), route.section.getAttribute("data-to"), pathPercent);
+    return offsetVal;
+  }
+
+  function getRouteOpacity(route, scrollTop, activeIndex, routeIndex) {
+    if (activeIndex !== -1) {
+      if (routeIndex < activeIndex) {
+        return completedRouteOpacity;
       }
-      else {
-        path.style.opacity = 0.05 + ( (scrollTop - fade_in_lines_top) / (fade_in_lines_bottom - fade_in_lines_top) );
+
+      if (routeIndex === activeIndex) {
+        return 1;
       }
+
+      return futureRouteOpacity;
     }
-    else if ( scrollTop > bottom + 100 ) {
-      var perc_past = 1 - ((scrollTop - bottom) / disap_speed);
-      if ( perc_past < 0.05 ) {
-        perc_past = 0.05;
-      }
-      path.style.opacity = perc_past;
+
+    if (scrollTop < route.top) {
+      return futureRouteOpacity;
     }
-    else {
-      path.style.opacity = 1;
+
+    if (scrollTop > route.bottom) {
+      return getCompletedRouteOpacity(route, scrollTop);
+    }
+
+    return 1;
+  }
+
+  function getCompletedRouteOpacity(route, scrollTop) {
+    if (scrollTop <= route.bottom + 100) {
+      return 1;
+    }
+
+    var percPast = 1 - ((scrollTop - route.bottom) / route.disappearSpeed);
+    return Math.max(percPast, completedRouteOpacity);
+  }
+
+  function boxChange(from, to, percent) {
+    if (!map || !from || !to) {
+      return;
+    }
+
+    var fromList = from.split(" ");
+    var toList = to.split(" ");
+    var newViewBox = "";
+    var i;
+
+    for (i = 0; i < 4; i++) {
+      var fromVal = parseInt(fromList[i], 10);
+      var toVal = parseInt(toList[i], 10);
+      var diff = Math.abs(fromVal - toVal);
+
+      if (fromVal >= toVal) {
+        newViewBox += Math.floor(fromVal - (diff * percent));
+      } else {
+        newViewBox += Math.floor(fromVal + (diff * percent));
+      }
+
+      newViewBox += " ";
+    }
+
+    map.setAttribute("viewBox", newViewBox);
+  }
+
+  function scrollToHash() {
+    var hash = window.location.hash;
+    if (!hash) {
+      return;
+    }
+
+    var target = document.querySelector(hash);
+    if (!target) {
+      return;
+    }
+
+    target.scrollIntoView({
+      behavior: prefersReducedMotion.matches ? "auto" : "smooth",
+      block: "start"
+    });
+  }
+
+  function initCopyLinks() {
+    var buttons = document.querySelectorAll(".copy-link-btn");
+    var i;
+
+    for (i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener("click", copyLink);
     }
   }
 
-  function getPos(el) {
-    var height = el.offsetHeight;
-    for (var ly = 0; el !== null; ly += el.offsetTop, el = el.offsetParent);
-    return {
-      top: ly,
-      bottom: ly + height
-    };
+  function copyLink(event) {
+    event.preventDefault();
+
+    var text = event.currentTarget.getAttribute("data-clipboard-text");
+    if (!text || !supportsClipboard) {
+      showCopyMessage(false);
+      return;
+    }
+
+    navigator.clipboard.writeText(text).then(function() {
+      showCopyMessage(true);
+    }).catch(function() {
+      showCopyMessage(false);
+    });
   }
 
-  var clipboard = new Clipboard('.copy-link-btn');
+  function showCopyMessage(wasSuccessful) {
+    var otherMessage = document.querySelector(wasSuccessful ? ".error-copying" : ".copied");
+    var message = document.querySelector(wasSuccessful ? ".copied" : ".error-copying");
+    if (!message) {
+      return;
+    }
 
-  clipboard.on('success', function(e) {
-    $(".copied").fadeIn("slow").delay(800).fadeOut("slow");
-  });
+    if (liveMessageTimer) {
+      window.clearTimeout(liveMessageTimer);
+    }
 
-  clipboard.on('error', function(e) {
-    $(".error-copying").fadeIn("slow").delay(800).fadeOut("slow");
-  });
+    if (otherMessage) {
+      otherMessage.classList.remove("visible");
+    }
 
-
+    message.classList.add("visible");
+    liveMessageTimer = window.setTimeout(function() {
+      message.classList.remove("visible");
+    }, 1200);
+  }
+  })();
 </script>
 
 <!-- Analytics at end to load faster -->

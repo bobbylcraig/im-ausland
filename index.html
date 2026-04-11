@@ -2,19 +2,22 @@
 layout: default
 ---
 
-<div class="slide-activator"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
-<div class="slide-out-nav">
+<a class="skip-link" href="#content">Skip to posts</a>
+<button class="slide-activator" type="button" aria-expanded="false" aria-controls="post-directory" aria-label="Toggle post directory">
+	<i class="fa fa-arrow-right" aria-hidden="true"></i>
+</button>
+<nav class="slide-out-nav" id="post-directory" aria-label="Post directory">
 	<div class="posts">
 		{% for post in site.posts reversed %}
 			<a href="/im-ausland/#{{ post.slug }}">{{ post.title }}</a>
 		{% endfor %}
 	</div>
-</div>
+</nav>
 
-<div class="hero-image main">
+<header class="hero-image main">
 	<div class="main-links">
-		<span class="main-links-icons"><a href="http://bobbylcraig.com/" title="Bobby's Blog"><i class="fa fa-rss fa-lg" aria-hidden="true"></i></a></span>
-		<span class="main-links-icons"><a href="https://medium.com/@bobbylcraig/interactive-map-blog-study-abroad-project-ef87e3e938fb" title="Building This Blog"><i class="fa fa-legal fa-lg" aria-hidden="true"></i></a></span>
+		<span class="main-links-icons"><a href="http://bobbylcraig.com/" title="Bobby's Blog" aria-label="Visit Bobby's main blog"><i class="fa fa-rss fa-lg" aria-hidden="true"></i></a></span>
+		<span class="main-links-icons"><a href="https://medium.com/@bobbylcraig/interactive-map-blog-study-abroad-project-ef87e3e938fb" title="Building This Blog" aria-label="Read about how this blog was built"><i class="fa fa-legal fa-lg" aria-hidden="true"></i></a></span>
 	</div>
 	<h1 class="header-title">
     <span class="header-title__main">Im Ausland</span>
@@ -23,42 +26,42 @@ layout: default
       An interactive travel log by <a href="http://bobbylcraig.com/">Bobby Craig</a>.
     </span>
   </h1>
-</div>
-<div class="hero-image intro">
+</header>
+<section class="hero-image intro" aria-label="Opening quote">
 	<em>&ldquo;I'm broke as hell,<br>but at least I'm rich in memories.&rdquo;</em>
   <span>Dariya Koleva</span>
-</div>
-<div class="story">
+</section>
+<main class="story" id="content">
 	<div class="row">
 		<div class="fuzz-out">
 			{% for post in site.posts reversed %}
-				<div class="blog-post" id="{{ post.slug }}">
+				<article class="blog-post" id="{{ post.slug }}" aria-labelledby="{{ post.slug }}-title">
 					<h3 class="location-text">{{ post.location }}</h3>
-					<h1 class="post-heading">{{ post.title }}</h1>
+					<h2 class="post-heading" id="{{ post.slug }}-title">{{ post.title }}</h2>
 					<hr class="post-hr">
-					<span>
-						<a class="post-icon" href="/im-ausland{{ post.url }}"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
-						<a class="post-icon" href="{{ post.map-link }}"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
-						<a data-clipboard-text="https://bobbylcraig.com/im-ausland/#{{ post.slug }}" class="post-icon copy-link-btn"><i class="fa fa-link fa-lg" aria-hidden="true"></i></a>
+					<nav class="post-actions" aria-label="Actions for {{ post.title }}">
+						<a class="post-icon" href="/im-ausland{{ post.url }}" aria-label="Open the full post for {{ post.title }}"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="{{ post.map-link }}" aria-label="Open the map location for {{ post.title }}"><i class="fa fa-map-o fa-lg" aria-hidden="true"></i></a>
+						<button class="post-icon copy-link-btn" type="button" data-clipboard-text="https://bobbylcraig.com/im-ausland/#{{ post.slug }}" aria-label="Copy a direct link to {{ post.title }}"><i class="fa fa-link fa-lg" aria-hidden="true"></i></button>
 						{% if post.comments %}
-						<a class="post-icon" href="/im-ausland/{{ post.url }}#comments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
+						<a class="post-icon" href="/im-ausland/{{ post.url }}#comments" aria-label="Jump to comments for {{ post.title }}"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></a>
 						{% endif %}
-					</span>
+					</nav>
 					<hr class="post-hr">
 					<!-- <h5><em>{{ post.date | date: "%B %-d, %Y" }}</em></h5> -->
 					{{ post.content }}
-				</div>
+				</article>
 			{% endfor %}
 		</div>
-		<div class="fixed-box">
+		<aside class="fixed-box" aria-hidden="true">
 			{% include map.html %}
-		</div>
+		</aside>
 	</div>
-</div>
+</main>
 
-<div class="hero-image intro">
+<section class="hero-image intro" aria-label="Closing quote">
 	<em>&ldquo;Sometimes you will never know the value of a moment until it becomes a memory.&rdquo;</em> <span>Dr. Seuss</span>
-</div>
+</section>
 
-<div class="msg copied">Copied Link!</div>
-<div class="msg error-copying">Error Copying Link!</div>
+<div class="msg copied" role="status" aria-live="polite">Copied Link!</div>
+<div class="msg error-copying" role="status" aria-live="polite">Error Copying Link!</div>
