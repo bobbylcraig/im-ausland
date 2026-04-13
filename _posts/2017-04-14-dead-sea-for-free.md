@@ -28,7 +28,7 @@ data-box-from: "3675 3050 187 150"
 <p>I got into the resort (it was the equivalent of 10$ US I think) and walked around. I got a locker for my stuff, put on the swim trunks I had bought prior in the trip, and headed down to the beach. Nicole informed me earlier that I might need sandals as the ground was very glass-like...well, I didn't. However, everything went well. The water was nothing like I expected. First of all, everyone told me it would burn a crapton to go into if I had any cuts...apparently I didn't. I didn't feel anything when I got in. The next thing hey usually say is that the feeling would be weird because you float. Originally I didn't think this was the case as I walked away from the beach, but when I lifted my feet and tried to float it was so easy! I think the most astounding part was just how difficult it was for me to get my feet back down! I actually struggled. It was a cool experience. After that I tried to get a little bit of sun but it didn't work all too well. The views were beautiful though!</p>
 
 <figure>
-  <img src="/im-ausland/img/post-imgs/dead-sea-min.jpg">
+  <img loading="lazy" src="/im-ausland/img/post-imgs/dead-sea-min.jpg">
   <figcaption>Dead Sea on right and Jordanian Mountains in the back.</figcaption>
 </figure>
 
@@ -39,7 +39,7 @@ data-box-from: "3675 3050 187 150"
 <p>The car ride was nice. The beginning was just them talking in Hebrew so I zoned out, but then we all began talking about random things. They asked where I was and were envious of my age and traveling the world (it's not super easy to travel with an Israeli passport) and we all have a jolly good time. It was during this time that I realized I had gotten to and from Kalia Beach...for free! That's so cool. Completely unintended, but a nice perk.</p>
 
 <figure>
-  <img src="/im-ausland/img/post-imgs/dead-sea-hitchhike-min.jpg">
+  <img loading="lazy" src="/im-ausland/img/post-imgs/dead-sea-hitchhike-min.jpg">
   <figcaption>In the back seat of...a friend's...car.</figcaption>
 </figure>
 

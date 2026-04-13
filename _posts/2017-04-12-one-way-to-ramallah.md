@@ -26,7 +26,7 @@ data-box-from: "3675 3050 187 150"
 <p>Well, that was weird. Anyway, I walk behind the building and see my bus! I walk aboard, pay my fee (like 7 Euros or something), all of the people aboard look at me like I'm a nut case, and we are off to Ramallah. There's a USB plug on the bus so I charge my phone and I text Yusuf to inform him that I'm not too far out.</p>
 
 <figure>
-  <img src="/im-ausland/img/post-imgs/meeting-yusuf-min.jpg">
+  <img loading="lazy" src="/im-ausland/img/post-imgs/meeting-yusuf-min.jpg">
 </figure>
 
 <p>Once I finally arrive in Ramallah, it takes me a while to find the entrance to my hostel. I see a big sign on top of a building but I can't find the darned entrance. I walk around for a while and worry that I'm making Yusuf wait, but eventually I realize I have to climb a bunch of stairs and I'm met by a really nice young lady. She checks me in and shows me around...only then does Yusuf walk in. I see him, run toward him, and launch into a hug. It was great to see a friendly face. We talk briefly, I put my stuff away, and then Yusuf suggests we get something to eat. I'm starving at this point, so I willingly agree. We head down to some falafel place (what I'll end up eating most of the week) and order some falafel pita and some other weird things that I still don't know what they are. Then Yusuf walks over to the buses and says,</p>

@@ -25,7 +25,7 @@ data-box-from: "1675 1650 500 400"
 <p>When we finally got to Hamburg we had to find the key to our AirBnB that was hidden near the train station. The problem was that we had no idea where. We knew it was in a lock box that had a digital code, but all of the lock boxes we could find were accessed by keys. THE BIGGEST PROBLEM was that we only had until 10pm to get the key...and it was 9pm when we finally got there. We searched for about 20 minutes before breaking down and messaging Jenny (the owner of the AirBnB) to see if she could help us find it. She warned me prior that she'd be at a concert from 6-10pm, so I was really worried that she wouldn't see the text. Eventually she sent a PDF with directions. It was wonderful. Still, I had trouble finding the place with the directions, and once I got into the little Turkish shop where the lock box was I had to reach passed some random guy while muttering "bitte" and "entschuldigung".</p>
 
 <figure>
-  <img src="/im-ausland/img/post-imgs/hamburg-at-night-min.jpg">
+  <img loading="lazy" src="/im-ausland/img/post-imgs/hamburg-at-night-min.jpg" width="550" height="413" alt="Hamburg cityscape at night">
   <figcaption>This is Downtown Hamburg over the Alster. Absolutely beautiful.</figcaption>
 </figure>
 
@@ -34,7 +34,7 @@ data-box-from: "1675 1650 500 400"
 <p>We walked around Hamburg a lot. We saw the main sights (Rathaus and whatnot), went to the Miniature Wonderland (really freaking awesome), and I even got to eat a hamburg in Hamburg!</p>
 
 <figure>
-  <img src="/im-ausland/img/post-imgs/mini-wonderland-min.jpg">
+  <img loading="lazy" src="/im-ausland/img/post-imgs/mini-wonderland-min.jpg" width="550" height="339" alt="Miniature Wonderland in Hamburg">
   <figcaption>Rome in Miniature Wonderland.</figcaption>
 </figure>
 

@@ -19,7 +19,7 @@ data-box-from: "1675 1650 500 400"
 </div>
 
 <figure>
-  <img src="/im-ausland/img/post-imgs/hannover-rathaus-min.jpg">
+  <img loading="lazy" src="/im-ausland/img/post-imgs/hannover-rathaus-min.jpg">
 </figure>
 
 <div class="{{ page.from-class }}" data-from="{% if page.data-box-to %}{{ page.data-box-to }}{% endif %}" data-to="{% if page.data-box-from %}{{ page.data-box-from }}{% endif %}">

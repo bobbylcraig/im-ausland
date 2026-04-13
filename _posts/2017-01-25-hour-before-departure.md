@@ -17,7 +17,7 @@ from-class:
 <p>To satiate my appetite, I made my way to the first food booth in CAK&mdash;the Cinnabon&mdash;and got a Cinnabon Classic because I'm boring and vanilla like that (and am trying to induce my inevitable diabetes). I ate that and headed for Gate 5. I'm writing this as I wait for boarding to begin.</p>
 
 <figure>
-  <img src="/im-ausland/img/post-imgs/passport-min.jpg">
+  <img loading="lazy" src="/im-ausland/img/post-imgs/passport-min.jpg" width="550" height="411" alt="Passport and boarding passes">
 </figure>
 
 <p>I'm ready for my trip. I slept very little, so I'm hoping that my early morning arrival won't be too terrible if I can fall asleep on the plane (it'll be 4am EST). If not, day 1 in Bremen will be miserable. I may update this or add posts at other airports depending on how bored I am. I'm headed to Atlanta next and then Paris. Tschüss!</p>

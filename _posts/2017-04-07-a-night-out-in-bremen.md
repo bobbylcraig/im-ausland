@@ -17,6 +17,6 @@ maps: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d153244.41592589748!
 <p>It was on the train back that Jessi made fun of my German pronunciations and it was when we finally got back that we all admitted we were a little hungry and wanted some food. So, we went to Pulse in Jacobs' student center and got some food and just hung out on the steps like hooligans. 10/10 would do again.</p>
 
 <figure>
-  <img src="/im-ausland/img/post-imgs/staff-only-min.jpg">
+  <img loading="lazy" src="/im-ausland/img/post-imgs/staff-only-min.jpg">
   <figcaption>Storage area. Staff only. Except Bobby and Jack.</figcaption>
 </figure>

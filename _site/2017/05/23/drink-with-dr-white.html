@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
 
     <meta charset="utf-8">
@@ -116,638 +116,295 @@
   </body>
 
   <script>
-  (function() {
-  var map = null;
-  var navigationToggle = null;
-  var navigationDrawer = null;
-  var liveMessageTimer = null;
-  var routeSections = [
-    { pathSelector: "#IN-SWITZ-1", sectionSelector: ".IN-SWITZ", disappearSpeed: 200 },
-    
-      
-      
-    
-      
-      
-    
-      
-        { pathSelector: "#BRE-USA-1", sectionSelector: ".BREMEN-TO-USA", disappearSpeed: 200 },
-      
-      
-    
-      
-      
-    
-      
-        { pathSelector: "#BRE-HAM-2", sectionSelector: ".BREMEN-TO-HAMBURG-AGAIN", disappearSpeed: 200 },
-      
-      
-        { pathSelector: "#HAM-BRE-2", sectionSelector: ".HAMBURG-TO-BREMEN-AGAIN", disappearSpeed: 200 },
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-        { pathSelector: "#BRE-BER-1", sectionSelector: ".BREMEN-TO-BERLIN", disappearSpeed: 200 },
-      
-      
-        { pathSelector: "#BER-BRE-1", sectionSelector: ".BERLIN-TO-BREMEN", disappearSpeed: 200 },
-      
-    
-      
-      
-    
-      
-        { pathSelector: "#BRE-GEN-1", sectionSelector: ".BREMEN-TO-SWITZERLAND", disappearSpeed: 200 },
-      
-      
-        { pathSelector: "#GEN-BRE-1", sectionSelector: ".SWITZERLAND-TO-BREMEN", disappearSpeed: 200 },
-      
-    
-      
-      
-    
-      
-        { pathSelector: "#BRE-AMS-2", sectionSelector: ".BREMEN-TO-AMSTERDAM-AGAIN", disappearSpeed: 200 },
-      
-      
-        { pathSelector: "#AMS-BRE-2", sectionSelector: ".AMSTERDAM-TO-BREMEN-AGAIN", disappearSpeed: 200 },
-      
-    
-      
-        { pathSelector: "#BRE-POL-1", sectionSelector: ".BREMEN-TO-POLAND", disappearSpeed: 200 },
-      
-      
-        { pathSelector: "#POL-BRE-1", sectionSelector: ".POLAND-TO-BREMEN", disappearSpeed: 200 },
-      
-    
-      
-      
-    
-      
-        { pathSelector: "#TLV-BRE-1", sectionSelector: ".TELAVIV-TO-BREMEN", disappearSpeed: 200 },
-      
-      
-    
-      
-      
-    
-      
-      
-        { pathSelector: "#RAM-TLV-1", sectionSelector: ".RAMALLAH-TO-TELAVIV", disappearSpeed: 200 },
-      
-    
-      
-      
-    
-      
-        { pathSelector: "#RAM-KALIA-1", sectionSelector: ".RAMALLAH-TO-KALIA", disappearSpeed: 200 },
-      
-      
-        { pathSelector: "#KALIA-RAM-1", sectionSelector: ".KALIA-TO-RAMALLAH", disappearSpeed: 200 },
-      
-    
-      
-        { pathSelector: "#RAM-BETH-1", sectionSelector: ".RAMALLAH-TO-BETHLEHEM", disappearSpeed: 200 },
-      
-      
-        { pathSelector: "#BETH-RAM-1", sectionSelector: ".BETHLEHEM-TO-RAMALLAH", disappearSpeed: 200 },
-      
-    
-      
-        { pathSelector: "#RAM-JER-1", sectionSelector: ".RAMALLAH-TO-JERICHO", disappearSpeed: 200 },
-      
-      
-        { pathSelector: "#JER-RAM-1", sectionSelector: ".JERICHO-TO-RAMALLAH", disappearSpeed: 200 },
-      
-    
-      
-        { pathSelector: "#TLV-RAM-1", sectionSelector: ".BREMEN-TO-RAMALLAH", disappearSpeed: 200 },
-      
-      
-    
-      
-      
-    
-      
-        { pathSelector: "#BRE-TLV-1", sectionSelector: ".BREMEN-TO-TELAVIV", disappearSpeed: 200 },
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-        { pathSelector: "#BRE-PAR-1", sectionSelector: ".BREMEN-TO-PARIS", disappearSpeed: 200 },
-      
-      
-        { pathSelector: "#PAR-BRE-1", sectionSelector: ".PARIS-TO-BREMEN", disappearSpeed: 200 },
-      
-    
-      
-        { pathSelector: "#BRE-DUB-1", sectionSelector: ".BREMEN-TO-DUBLIN", disappearSpeed: 200 },
-      
-      
-        { pathSelector: "#DUB-BRE-1", sectionSelector: ".DUBLIN-TO-BREMEN", disappearSpeed: 200 },
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-        { pathSelector: "#BRE-OSNA-1", sectionSelector: ".BREMEN-TO-OSNABRUCK", disappearSpeed: 200 },
-      
-      
-        { pathSelector: "#OSNA-BRE-1", sectionSelector: ".OSNABRUCK-TO-BREMEN", disappearSpeed: 200 },
-      
-    
-      
-      
-    
-      
-      
-    
-      
-        { pathSelector: "#BRE-HAN-1", sectionSelector: ".HANNOVER-TO-BREMEN", disappearSpeed: 200 },
-      
-      
-        { pathSelector: "#HAN-BRE-1", sectionSelector: ".BREMEN-TO-HANNOVER", disappearSpeed: 200 },
-      
-    
-      
-        { pathSelector: "#BRE-AMS-1", sectionSelector: ".BREMEN-TO-AMSTERDAM", disappearSpeed: 200 },
-      
-      
-        { pathSelector: "#AMS-BRE-1", sectionSelector: ".AMSTERDAM-TO-BREMEN", disappearSpeed: 200 },
-      
-    
-      
-        { pathSelector: "#BRE-COP-1", sectionSelector: ".BREMEN-TO-COPENHAGEN", disappearSpeed: 200 },
-      
-      
-        { pathSelector: "#COP-BRE-1", sectionSelector: ".COPENHAGEN-TO-BREMEN", disappearSpeed: 200 },
-      
-    
-      
-      
-    
-      
-        { pathSelector: "#BRE-HAM-1", sectionSelector: ".BREMEN-TO-HAMBURG", disappearSpeed: 200 },
-      
-      
-        { pathSelector: "#HAM-BRE-1", sectionSelector: ".HAMBURG-TO-BREMEN", disappearSpeed: 200 },
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-        { pathSelector: "#USA-BRE-1", sectionSelector: ".USA-TO-BREMEN", disappearSpeed: 200 },
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-  ];
-  var routeState = [];
-  var fadeInLines = null;
-  var fadeInBounds = null;
-  var scrollTicking = false;
-  var resizeTicking = false;
-  var futureRouteOpacity = 0.05;
-  var completedRouteOpacity = 0.18;
-  var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  var supportsClipboard = !!(navigator.clipboard && navigator.clipboard.writeText);
+  (() => {
+    let map = null;
+    let navigationToggle = null;
+    let navigationDrawer = null;
+    let liveMessageTimer = null;
+    let routeState = [];
+    let fadeInLines = null;
+    let fadeInBounds = null;
+    let scrollTicking = false;
+    let resizeTicking = false;
+    const futureRouteOpacity = 0.05;
+    const completedRouteOpacity = 0.18;
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const supportsClipboard = !!(navigator.clipboard?.writeText);
 
-  document.addEventListener("DOMContentLoaded", function() {
-    navigationToggle = document.querySelector(".slide-activator");
-    navigationDrawer = document.querySelector(".slide-out-nav");
+    document.addEventListener("DOMContentLoaded", () => {
+      navigationToggle = document.querySelector(".slide-activator");
+      navigationDrawer = document.querySelector(".slide-out-nav");
 
-    initNavigation();
-    prepareLazyMedia();
-    initMapExperience();
-    initCopyLinks();
-    scrollToHash();
+      initNavigation();
+      initMapExperience();
+      initCopyLinks();
+      scrollToHash();
 
-    window.addEventListener("resize", onResize, { passive: true });
-    window.addEventListener("scroll", onScroll, { passive: true });
-    document.addEventListener("keydown", onDocumentKeydown);
-  });
+      window.addEventListener("resize", onResize, { passive: true });
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("hashchange", onHashChange);
+      document.addEventListener("keydown", onDocumentKeydown);
+    });
 
-  function initNavigation() {
-    if (!navigationToggle || !navigationDrawer) {
-      return;
+    function initNavigation() {
+      if (!navigationToggle || !navigationDrawer) return;
+      navigationToggle.addEventListener("click", toggleNavigation);
+      navigationDrawer.querySelectorAll(".posts a").forEach(link =>
+        link.addEventListener("click", closeNavigation)
+      );
     }
 
-    navigationToggle.addEventListener("click", toggleNavigation);
-
-    var navLinks = navigationDrawer.querySelectorAll(".posts a");
-    var i;
-    for (i = 0; i < navLinks.length; i++) {
-      navLinks[i].addEventListener("click", closeNavigation);
-    }
-  }
-
-  function toggleNavigation() {
-    var isOpen = navigationDrawer.classList.toggle("open");
-    navigationToggle.classList.toggle("open", isOpen);
-    navigationToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  }
-
-  function closeNavigation() {
-    if (!navigationDrawer || !navigationDrawer.classList.contains("open")) {
-      return;
+    function toggleNavigation() {
+      const isOpen = navigationDrawer.classList.toggle("open");
+      navigationToggle.classList.toggle("open", isOpen);
+      navigationToggle.setAttribute("aria-expanded", String(isOpen));
     }
 
-    navigationDrawer.classList.remove("open");
-    navigationToggle.classList.remove("open");
-    navigationToggle.setAttribute("aria-expanded", "false");
-  }
-
-  function onDocumentKeydown(event) {
-    if (event.key === "Escape") {
-      closeNavigation();
-    }
-  }
-
-  function prepareLazyMedia() {
-    var images = document.querySelectorAll(".blog-post img, .post .content img");
-    var iframes = document.querySelectorAll("iframe");
-    var i;
-
-    for (i = 0; i < images.length; i++) {
-      images[i].setAttribute("loading", "lazy");
-      images[i].setAttribute("decoding", "async");
+    function closeNavigation() {
+      if (!navigationDrawer?.classList.contains("open")) return;
+      navigationDrawer.classList.remove("open");
+      navigationToggle.classList.remove("open");
+      navigationToggle.setAttribute("aria-expanded", "false");
     }
 
-    for (i = 0; i < iframes.length; i++) {
-      iframes[i].setAttribute("loading", "lazy");
-      iframes[i].setAttribute("referrerpolicy", "no-referrer-when-downgrade");
-    }
-  }
-
-  function initMapExperience() {
-    if (window.innerWidth <= 992 || prefersReducedMotion.matches) {
-      return;
+    function onDocumentKeydown({ key }) {
+      if (key === "Escape") closeNavigation();
     }
 
-    map = document.querySelector("svg");
-    if (!map) {
-      return;
+    // When a sidebar link is clicked the browser jumps instantly to the anchor.
+    // One rAF gives the browser time to land before we repaint the map.
+    function onHashChange() {
+      requestAnimationFrame(() => { recalcBounds(); updateRoutes(); snapViewBox(); });
     }
 
-    setupTravelPaths();
-    addPointLabels();
+    // Snap the SVG viewBox to the correct position for the current scroll
+    // without waiting for a scroll event. Called after hash-jumps.
+    function snapViewBox() {
+      if (!map) return;
+      const currentScroll = scrollY;
 
-    fadeInLines = document.querySelector(".fade-in-lines");
-    routeState = buildRouteState();
-    recalcBounds();
-    updateRoutes();
-  }
-
-  function setupTravelPaths() {
-    var paths = document.getElementsByClassName("travel");
-    var i;
-
-    for (i = 0; i < paths.length; i++) {
-      var length = paths[i].getTotalLength();
-      paths[i].style["stroke-dasharray"] = length;
-      paths[i].style["stroke-dashoffset"] = length;
-      paths[i].style.opacity = futureRouteOpacity;
-      paths[i].style.visibility = "visible";
-    }
-  }
-
-  function addPointLabels() {
-    var points = document.querySelectorAll("#points circle");
-    var i;
-
-    for (i = 0; i < points.length; i++) {
-      if (points[i].previousElementSibling && points[i].previousElementSibling.classList.contains("map-point-label")) {
-        continue;
+      // Active route: interpolate between from/to
+      for (const route of routeState) {
+        if (currentScroll >= route.top && currentScroll <= route.bottom) {
+          const percent = (currentScroll - route.top) / (route.bottom - route.top);
+          boxChange(route.section.dataset.from, route.section.dataset.to, percent);
+          return;
+        }
       }
 
-      var xCoord = parseFloat(points[i].getAttribute("cx")) + 8;
-      var yCoord = parseFloat(points[i].getAttribute("cy")) + 3;
-      var sentence = '<text class="map-point-label ' + points[i].id + '-text" x="' + xCoord + '" y="' + yCoord + '" font-family="Verdana" font-size="8" fill="black">' + points[i].id + "</text>";
-      points[i].insertAdjacentHTML("beforeBegin", sentence);
-    }
-  }
-
-  function buildRouteState() {
-    var routes = [];
-    var i;
-
-    for (i = 0; i < routeSections.length; i++) {
-      var path = document.querySelector(routeSections[i].pathSelector);
-      var section = document.querySelector(routeSections[i].sectionSelector);
-
-      if (!path || !section) {
-        continue;
+      // Below all routes → snap to the last completed route's end position
+      for (let i = routeState.length - 1; i >= 0; i--) {
+        if (currentScroll > routeState[i].bottom) {
+          boxChange(routeState[i].section.dataset.from, routeState[i].section.dataset.to, 1);
+          return;
+        }
       }
 
-      routes.push({
-        path: path,
-        section: section,
-        disappearSpeed: routeSections[i].disappearSpeed,
-        pathLength: path.getTotalLength(),
-        top: 0,
-        bottom: 0
+      // Above all routes → snap to the first upcoming route's start position
+      if (routeState.length > 0) {
+        boxChange(routeState[0].section.dataset.from, routeState[0].section.dataset.to, 0);
+      }
+    }
+
+    function initMapExperience() {
+      if (window.innerWidth <= 992 || prefersReducedMotion.matches) return;
+
+      map = document.querySelector("svg");
+      if (!map) return;
+
+      setupTravelPaths();
+      addPointLabels();
+
+      fadeInLines = document.querySelector(".fade-in-lines");
+      routeState = buildRouteState();
+      recalcBounds();
+      updateRoutes();
+
+      // Lazy-loaded images expand as you scroll, shifting every route's
+      // absolute position. Re-measure via a debounced ResizeObserver so
+      // bounds stay accurate without hammering on every pixel.
+      let recalcTimer = null;
+      const debouncedRecalc = () => {
+        clearTimeout(recalcTimer);
+        recalcTimer = setTimeout(() => { recalcBounds(); updateRoutes(); }, 100);
+      };
+
+      if (typeof ResizeObserver !== "undefined") {
+        new ResizeObserver(debouncedRecalc).observe(document.body);
+      } else {
+        window.addEventListener("load", () => { recalcBounds(); updateRoutes(); });
+      }
+    }
+
+    function setupTravelPaths() {
+      for (const path of document.getElementsByClassName("travel")) {
+        const length = path.getTotalLength();
+        path.style.strokeDasharray = length;
+        path.style.strokeDashoffset = length;
+        path.style.opacity = futureRouteOpacity;
+        path.style.visibility = "visible";
+      }
+    }
+
+    function addPointLabels() {
+      for (const point of document.querySelectorAll("#points circle")) {
+        if (point.previousElementSibling?.classList.contains("map-point-label")) continue;
+        const x = parseFloat(point.getAttribute("cx")) + 8;
+        const y = parseFloat(point.getAttribute("cy")) + 3;
+        point.insertAdjacentHTML("beforebegin",
+          `<text class="map-point-label ${point.id}-text" x="${x}" y="${y}" font-family="Verdana" font-size="8" fill="black">${point.id}</text>`
+        );
+      }
+    }
+
+    function buildRouteState() {
+      const routes = [];
+
+      const addRoute = (pathSelector, section, disappearSpeed = 200) => {
+        const path = document.querySelector(pathSelector);
+        if (!path || !section) return;
+        routes.push({ path, section, disappearSpeed, pathLength: path.getTotalLength(), top: 0, bottom: 0 });
+      };
+
+      // Read route config from data attributes Jekyll bakes into each article.
+      for (const article of document.querySelectorAll(".blog-post")) {
+        const { toPath, toClass, fromPath, fromClass } = article.dataset;
+        if (toPath) addRoute(toPath, article.querySelector(toClass));
+        if (fromPath) addRoute(fromPath, article.querySelector(fromClass));
+      }
+
+      // The Switzerland mid-section has no dedicated article; find it directly.
+      addRoute("#IN-SWITZ-1", document.querySelector(".IN-SWITZ"));
+
+      return routes;
+    }
+
+    function onScroll() {
+      if (scrollTicking) return;
+      scrollTicking = true;
+      requestAnimationFrame(() => { updateRoutes(); scrollTicking = false; });
+    }
+
+    function onResize() {
+      if (resizeTicking) return;
+      resizeTicking = true;
+      requestAnimationFrame(() => {
+        if (!map && window.innerWidth > 992 && !prefersReducedMotion.matches) initMapExperience();
+        recalcBounds();
+        updateRoutes();
+        resizeTicking = false;
       });
     }
 
-    return routes;
-  }
-
-  function onScroll() {
-    if (scrollTicking) {
-      return;
-    }
-
-    scrollTicking = true;
-    window.requestAnimationFrame(function() {
-      updateRoutes();
-      scrollTicking = false;
-    });
-  }
-
-  function onResize() {
-    if (resizeTicking) {
-      return;
-    }
-
-    resizeTicking = true;
-    window.requestAnimationFrame(function() {
-      if (!map && window.innerWidth > 992 && !prefersReducedMotion.matches) {
-        initMapExperience();
+    function recalcBounds() {
+      for (const route of routeState) {
+        const { top } = route.section.getBoundingClientRect();
+        route.top = top + scrollY;
+        route.bottom = route.top + route.section.offsetHeight;
       }
+      routeState.sort((a, b) => a.top - b.top);
 
-      recalcBounds();
-      updateRoutes();
-      resizeTicking = false;
-    });
-  }
-
-  function fullscreen() {
-    return;
-  }
-
-  function recalcBounds() {
-    var i;
-
-    for (i = 0; i < routeState.length; i++) {
-      var rect = routeState[i].section.getBoundingClientRect();
-      routeState[i].top = rect.top + window.scrollY;
-      routeState[i].bottom = routeState[i].top + routeState[i].section.offsetHeight;
-    }
-
-    routeState.sort(function(a, b) {
-      return a.top - b.top;
-    });
-
-    fadeInBounds = null;
-    if (fadeInLines) {
-      var fadeRect = fadeInLines.getBoundingClientRect();
-      var fadeTop = fadeRect.top + window.scrollY;
-      fadeInBounds = {
-        top: fadeTop,
-        bottom: fadeTop + fadeInLines.offsetHeight
-      };
-    }
-  }
-
-  function updateRoutes() {
-    if (!map || !routeState.length) {
-      return;
-    }
-
-    var scrollTop = window.scrollY;
-    var activeIndex = getActiveRouteIndex(scrollTop);
-    var i;
-
-    for (i = 0; i < routeState.length; i++) {
-      var route = routeState[i];
-      updateRoute(route, scrollTop, activeIndex, i);
-    }
-  }
-
-  function getActiveRouteIndex(scrollTop) {
-    var i;
-    var activeIndex = -1;
-
-    for (i = 0; i < routeState.length; i++) {
-      if (scrollTop >= routeState[i].top && scrollTop <= routeState[i].bottom) {
-        activeIndex = i;
+      if (fadeInLines) {
+        const { top } = fadeInLines.getBoundingClientRect();
+        const fadeTop = top + scrollY;
+        fadeInBounds = { top: fadeTop, bottom: fadeTop + fadeInLines.offsetHeight };
       }
     }
 
-    return activeIndex;
-  }
+    function updateRoutes() {
+      if (!map || !routeState.length) return;
+      const currentScroll = scrollY;
+      const activeIndex = getActiveRouteIndex(currentScroll);
+      routeState.forEach((route, i) => updateRoute(route, currentScroll, activeIndex, i));
+    }
 
-  function updateRoute(route, scrollTop, activeIndex, routeIndex) {
-    var offsetVal;
+    const getActiveRouteIndex = (currentScroll) =>
+      routeState.findIndex(r => currentScroll >= r.top && currentScroll <= r.bottom);
 
-    if (activeIndex !== -1) {
-      if (routeIndex < activeIndex) {
-        offsetVal = 0;
-      } else if (routeIndex > activeIndex) {
+    function updateRoute(route, currentScroll, activeIndex, routeIndex) {
+      let offsetVal;
+
+      if (activeIndex !== -1) {
+        if (routeIndex < activeIndex)      offsetVal = 0;
+        else if (routeIndex > activeIndex) offsetVal = route.pathLength;
+        else                               offsetVal = getActiveRouteOffset(route, currentScroll);
+      } else if (currentScroll < route.top) {
         offsetVal = route.pathLength;
+      } else if (currentScroll > route.bottom) {
+        offsetVal = 0;
       } else {
-        offsetVal = getActiveRouteOffset(route, scrollTop);
-      }
-    } else if (scrollTop < route.top) {
-      offsetVal = route.pathLength;
-    } else if (scrollTop > route.bottom) {
-      offsetVal = 0;
-    } else {
-      offsetVal = getActiveRouteOffset(route, scrollTop);
-    }
-
-    route.path.style["stroke-dashoffset"] = offsetVal;
-    route.path.style.opacity = getRouteOpacity(route, scrollTop, activeIndex, routeIndex);
-  }
-
-  function getActiveRouteOffset(route, scrollTop) {
-    var pathPercent = (scrollTop - route.top) / (route.bottom - route.top);
-    var offsetVal = route.pathLength - (route.pathLength * pathPercent);
-    boxChange(route.section.getAttribute("data-from"), route.section.getAttribute("data-to"), pathPercent);
-    return offsetVal;
-  }
-
-  function getRouteOpacity(route, scrollTop, activeIndex, routeIndex) {
-    if (activeIndex !== -1) {
-      if (routeIndex < activeIndex) {
-        return completedRouteOpacity;
+        offsetVal = getActiveRouteOffset(route, currentScroll);
       }
 
-      if (routeIndex === activeIndex) {
-        return 1;
+      route.path.style.strokeDashoffset = offsetVal;
+      route.path.style.opacity = getRouteOpacity(route, currentScroll, activeIndex, routeIndex);
+    }
+
+    function getActiveRouteOffset(route, currentScroll) {
+      const pathPercent = (currentScroll - route.top) / (route.bottom - route.top);
+      boxChange(route.section.dataset.from, route.section.dataset.to, pathPercent);
+      return route.pathLength * (1 - pathPercent);
+    }
+
+    function getRouteOpacity(route, currentScroll, activeIndex, routeIndex) {
+      if (activeIndex !== -1) {
+        if (routeIndex < activeIndex)      return completedRouteOpacity;
+        if (routeIndex === activeIndex)    return 1;
+        return futureRouteOpacity;
       }
-
-      return futureRouteOpacity;
-    }
-
-    if (scrollTop < route.top) {
-      return futureRouteOpacity;
-    }
-
-    if (scrollTop > route.bottom) {
-      return getCompletedRouteOpacity(route, scrollTop);
-    }
-
-    return 1;
-  }
-
-  function getCompletedRouteOpacity(route, scrollTop) {
-    if (scrollTop <= route.bottom + 100) {
+      if (currentScroll < route.top)    return futureRouteOpacity;
+      if (currentScroll > route.bottom) return getCompletedRouteOpacity(route, currentScroll);
       return 1;
     }
 
-    var percPast = 1 - ((scrollTop - route.bottom) / route.disappearSpeed);
-    return Math.max(percPast, completedRouteOpacity);
-  }
-
-  function boxChange(from, to, percent) {
-    if (!map || !from || !to) {
-      return;
+    function getCompletedRouteOpacity(route, currentScroll) {
+      if (currentScroll <= route.bottom + 100) return 1;
+      return Math.max(1 - (currentScroll - route.bottom) / route.disappearSpeed, completedRouteOpacity);
     }
 
-    var fromList = from.split(" ");
-    var toList = to.split(" ");
-    var newViewBox = "";
-    var i;
-
-    for (i = 0; i < 4; i++) {
-      var fromVal = parseInt(fromList[i], 10);
-      var toVal = parseInt(toList[i], 10);
-      var diff = Math.abs(fromVal - toVal);
-
-      if (fromVal >= toVal) {
-        newViewBox += Math.floor(fromVal - (diff * percent));
-      } else {
-        newViewBox += Math.floor(fromVal + (diff * percent));
-      }
-
-      newViewBox += " ";
+    function boxChange(from, to, percent) {
+      if (!map || !from || !to) return;
+      const fromCoords = from.split(" ").map(Number);
+      const toCoords   = to.split(" ").map(Number);
+      const viewBox = fromCoords.map((val, i) =>
+        Math.floor(val + (toCoords[i] - val) * percent)
+      ).join(" ");
+      map.setAttribute("viewBox", viewBox);
     }
 
-    map.setAttribute("viewBox", newViewBox);
-  }
-
-  function scrollToHash() {
-    var hash = window.location.hash;
-    if (!hash) {
-      return;
+    function scrollToHash() {
+      if (!location.hash) return;
+      document.querySelector(location.hash)?.scrollIntoView({
+        behavior: prefersReducedMotion.matches ? "auto" : "smooth",
+        block: "start",
+      });
     }
 
-    var target = document.querySelector(hash);
-    if (!target) {
-      return;
+    function initCopyLinks() {
+      document.querySelectorAll(".copy-link-btn").forEach(btn =>
+        btn.addEventListener("click", copyLink)
+      );
     }
 
-    target.scrollIntoView({
-      behavior: prefersReducedMotion.matches ? "auto" : "smooth",
-      block: "start"
-    });
-  }
-
-  function initCopyLinks() {
-    var buttons = document.querySelectorAll(".copy-link-btn");
-    var i;
-
-    for (i = 0; i < buttons.length; i++) {
-      buttons[i].addEventListener("click", copyLink);
-    }
-  }
-
-  function copyLink(event) {
-    event.preventDefault();
-
-    var text = event.currentTarget.getAttribute("data-clipboard-text");
-    if (!text || !supportsClipboard) {
-      showCopyMessage(false);
-      return;
+    function copyLink(event) {
+      event.preventDefault();
+      const text = event.currentTarget.getAttribute("data-clipboard-text");
+      if (!text || !supportsClipboard) { showCopyMessage(false); return; }
+      navigator.clipboard.writeText(text)
+        .then(() => showCopyMessage(true))
+        .catch(() => showCopyMessage(false));
     }
 
-    navigator.clipboard.writeText(text).then(function() {
-      showCopyMessage(true);
-    }).catch(function() {
-      showCopyMessage(false);
-    });
-  }
-
-  function showCopyMessage(wasSuccessful) {
-    var otherMessage = document.querySelector(wasSuccessful ? ".error-copying" : ".copied");
-    var message = document.querySelector(wasSuccessful ? ".copied" : ".error-copying");
-    if (!message) {
-      return;
+    function showCopyMessage(wasSuccessful) {
+      const message = document.querySelector(wasSuccessful ? ".copied" : ".error-copying");
+      const other   = document.querySelector(wasSuccessful ? ".error-copying" : ".copied");
+      if (!message) return;
+      clearTimeout(liveMessageTimer);
+      other?.classList.remove("visible");
+      message.classList.add("visible");
+      liveMessageTimer = setTimeout(() => message.classList.remove("visible"), 1200);
     }
-
-    if (liveMessageTimer) {
-      window.clearTimeout(liveMessageTimer);
-    }
-
-    if (otherMessage) {
-      otherMessage.classList.remove("visible");
-    }
-
-    message.classList.add("visible");
-    liveMessageTimer = window.setTimeout(function() {
-      message.classList.remove("visible");
-    }, 1200);
-  }
   })();
 </script>
-
-<!-- Analytics at end to load faster -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-102169476-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
 
 </html>

@@ -17,14 +17,14 @@ On Saturday morning, I kept with my new habit of running in the morning (of whic
 When we reached Bremen, we travelled through the Hauptbahnhof and were slowed by Bremen and Munich football (soccer) fans. There were police all over the place and several fans were getting rather rowdy. We passed on by as this wasn't a big deal to us, and we continued to Bremen's Marktplatz. Visible from this central location were historical buildings (one of which was a "World Heritage Site") that were stunning and ridiculously enormous when age is considered. Here we met a tour guide who showed us all of the presumably touristy things about Bremen. It was lots of fun, he told us many stories, and then he left us to do our own thing in Bremen.
 
 <figure>
-  <img src="/im-ausland/img/post-imgs/bremen-square-min.jpg">
+  <img loading="lazy" src="/im-ausland/img/post-imgs/bremen-square-min.jpg">
   <figcaption>The Bremen Rathaus is on the left and the <a href="https://en.wikipedia.org/wiki/Bremen_Roland">Roland Statue</a> is straight ahead.</figcaption>
 </figure>
 
 When we separated, several of us were really hungry, but we also didn't want to pay a lot. So, I stayed with 3 other people––Dariya, Daniel, and Thura––to go get food. We headed for food stands for a good old-fashioned bratwurst. It was delicious and well worth the hype that it receives. We then went to a little cafe for some coffee to warm up. Once we left the cafe, we headed back to the Hauptbahnhof to catch a train back to campus. We then decided to go shopping with what little time was left of the day, so we transferred from tram to bus almost immediately when we got to campus to go shopping in Vegesack (where I didn't buy anything extremely notable...).
 
 <figure>
-  <img src="/im-ausland/img/post-imgs/bremen-cafe-min.jpg">
+  <img loading="lazy" src="/im-ausland/img/post-imgs/bremen-cafe-min.jpg">
 </figure>
 
 Eventually we returned from Vegesack, caught dinner, and went to TOS ("The Other Side", Jacob's on-campus...club?) for some fun!

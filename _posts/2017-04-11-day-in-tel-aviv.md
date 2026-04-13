@@ -17,7 +17,7 @@ data-box-from:
 <p>As I walk through Tel Aviv I realize several things. First of all, it's kind of dirty. There's trash on the streets, a metric shitton of cigarette butts everywhere (I mean <em>everywhere</em>), and there is graffiti all over the place (which I'm slowly realizing is kind of the norm everywhere in the world except for America...). But I also realize other things. The air smells incredible&mdash;it doesn't seem polluted in any way and the smell of food kind of overtakes the city. At this point I'm not sure how to take Israelis or Israel. I continue walking and eventually make it to the beach.</p>
 
 <figure>
-  <img src="/im-ausland/img/post-imgs/tel-aviv-beach-min.jpg">
+  <img loading="lazy" src="/im-ausland/img/post-imgs/tel-aviv-beach-min.jpg">
 </figure>
 
 <p>The beach is beautiful and clean. The people there all seem so happy and just... very open-minded. I look to the left and see the old city of Jaffa. I look to the right and see big cities in the distance as well as an old port/shopping center looking place. I'm conflicted on which way to walk, so I turn towards Jaffa. It's not a short walk, but I don't mind. I've got plenty of time, the beach is soothing, and I'm just enjoying the sun which is such a rare commodity in Northern Germany.</p>
@@ -27,7 +27,7 @@ data-box-from:
 <p>I CONTINUE ON THOUGH like the trooper that I am. From the port I walk to Old Jaffa to see old buildings and other old artifacts (I'm not sure what else to call them). Everything seems so historical&mdash;this old city is exactly what you think of when you think of "Jesus' times". It just seems so Middle Eastern and is incredibly beautiful. I'm so jealous that America was founded by Europeans so late and we don't have the kind of history that much of the rest of the world (especially around the Med) has.</p>
 
 <figure>
-  <img src="/im-ausland/img/post-imgs/old-jaffa-min.jpg">
+  <img loading="lazy" src="/im-ausland/img/post-imgs/old-jaffa-min.jpg">
 </figure>
 
 <p>At some point while I'm walking around (and this is only noon or so) I realize that I'm starting to get pretty sunburnt. This is bad, especially since it's my first day in Israel and I've got to endure the sun for another week or so. As a result, I find a tree in the Old City and sit in its shade. It's a beautiful, relaxing moment...one that I don't really experience much since I'm rather up-tight and think way too much about all sorts of random things. Furthermore, to elevate the wonderfulness of the experience, there were two dogs there and the owners were kind of neglecting them (that's not the wonderful part) and so they came over and played with me and it was wonderful (that's the wonderful part). ALSO, some little kids are being bad and playing in a fountain and I want to yell at them but, 1) I don't know Hebrew, 2) I don't know them, and 3) some old people yelled at them for me, so I didn't have to.</p>

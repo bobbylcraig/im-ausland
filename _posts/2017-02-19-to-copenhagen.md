@@ -33,14 +33,14 @@ data-box-from: "1675 1650 500 400"
 <p>Sophie was getting tired a little after 1, so we headed home and saw Max and Jordan (maybe his name?) on the way back. Lots was happening in the meatpacking district that night, but we unfortunately left early. For the weekend Sophie was generous enough to let me stay with her (thank goodness) so we made our way to her little suburban apartment and went to bed.</p>
 
 <figure>
-  <img src="/im-ausland/img/post-imgs/me-and-soph-min.jpg">
+  <img loading="lazy" src="/im-ausland/img/post-imgs/me-and-soph-min.jpg">
   <figcaption>Soph and me!</figcaption>
 </figure>
 
 <p>The next morning I got to meet Sophie's host mom, which was super awesome. She was really knowledgeable about Danish culture and world events, and we had a pretty good time talking with her. She made us breakfast and Sophie and I probably stayed to talk a bit too long. We were originally planning on meeting up with Kristina around 10am on Saturday, but we didn't even all get together until almost 1pm. We talked wayyyy longer than expected. Still, it was lots of fun.</p>
 
 <figure>
-  <img src="/im-ausland/img/post-imgs/me-and-kristina-cope-min.jpg">
+  <img loading="lazy" src="/im-ausland/img/post-imgs/me-and-kristina-cope-min.jpg">
   <figcaption>Kristina and me!</figcaption>
 </figure>
 
@@ -51,7 +51,7 @@ data-box-from: "1675 1650 500 400"
 <p>Ashmita, who is also studying in Copenhagen this semester, knew where all of the cool things to see were, so we tried quite a few places. Most notable, I feel, was the board game cafe, <a href="http://bastardcafe.dk">Bastard Café</a>. It was unfortunately filled to the brim, so we couldn't go. So, we settled on an Irish pub called The Dubliner. We spent several hours here with two more Denison students, Will and Ceginna, who added a lot of fun to the afternoon. After 5 or so rounds, we left for some food before going out. But then I got a text from Sophie saying she would be going to bed at 11, so I should be at her house by then, so I had to leave them all to go to a karaoke bar by themselves. I went back to Kristina's for my backpack so I could get a shower and roughed my way through Copenhagen's extremely confusing and unclear (at least in my experience) transit system. It took me quite a bit longer than I was hoping to get to Sophie's apartment, but I made it a mere 20 minutes late! Sophie was tired, so I just got a shower and went to bed.</p>
 
 <figure>
-  <img src="/im-ausland/img/post-imgs/me-and-ash-and-seymour-min.jpg">
+  <img loading="lazy" src="/im-ausland/img/post-imgs/me-and-ash-and-seymour-min.jpg">
 </figure>
 
 <p>Sunday morning (this morning) I made up for how late we woke up on Saturday. I got up at 7:30am, got dressed, gave Soph a hug goodbye, missed the bus and had to wait 20 minutes for the next one...but I still got to Kristina's bright and early! Ha-ha! We made our way to a cafe, had some breakfast, and then went sightseeing a tiny bit more. We saw plenty of government buildings, jumped on trampolines, and even got to go to Christiania (a hippie community that is basically the Homestead on steroids). At the end, I grabbed my bag from Kristina's and we headed for the train station. One last coffee was had, some food was bought, and I boarded the train.</p>

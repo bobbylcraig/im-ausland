@@ -35,9 +35,11 @@ layout: default
 	<div class="row">
 		<div class="fuzz-out">
 			{% for post in site.posts reversed %}
-				<article class="blog-post" id="{{ post.slug }}" aria-labelledby="{{ post.slug }}-title">
-					<h3 class="location-text">{{ post.location }}</h3>
-					<h2 class="post-heading" id="{{ post.slug }}-title">{{ post.title }}</h2>
+				<article class="blog-post" id="{{ post.slug }}" aria-labelledby="{{ post.slug }}-title" 
+					{% if post.to-id %} data-to-path="#{{ post.to-id }}" data-to-class=".{{ post.to-class }}" {% endif %}
+					{% if post.from-id %} data-from-path="#{{ post.from-id }}" data-from-class=".{{ post.from-class }}" {% endif %}>
+					<h2 class="location-text">{{ post.location }}</h2>
+					<h3 class="post-heading" id="{{ post.slug }}-title">{{ post.title }}</h3>
 					<hr class="post-hr">
 					<nav class="post-actions" aria-label="Actions for {{ post.title }}">
 						<a class="post-icon" href="/im-ausland{{ post.url }}" aria-label="Open the full post for {{ post.title }}"><i class="fa fa-book fa-lg" aria-hidden="true"></i></a>
