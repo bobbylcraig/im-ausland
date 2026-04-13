@@ -238,13 +238,14 @@
       requestAnimationFrame(() => { recalcBounds(); updateRoutes(); snapViewBox(); });
     }
 
-    // Snap the SVG viewBox to the correct position for the current scroll
-    // without waiting for a scroll event. Called after hash-jumps.
+    // Snap the SVG viewBox to the correct position when a hash-jump lands.
+    // Outside active sections the fallbacks pin the viewBox to sensible
+    // completed/not-started positions so the map stays oriented.
     function snapViewBox() {
       if (!map) return;
       const currentScroll = scrollY;
 
-      // Active route: interpolate between from/to
+      // Actively within a route section: interpolate
       for (const route of routeState) {
         if (currentScroll >= route.top && currentScroll <= route.bottom) {
           const percent = (currentScroll - route.top) / (route.bottom - route.top);
@@ -253,7 +254,7 @@
         }
       }
 
-      // Below all routes → snap to the last completed route's end position
+      // Below all routes → show last completed route's destination
       for (let i = routeState.length - 1; i >= 0; i--) {
         if (currentScroll > routeState[i].bottom) {
           boxChange(routeState[i].section.dataset.from, routeState[i].section.dataset.to, 1);
@@ -261,7 +262,7 @@
         }
       }
 
-      // Above all routes → snap to the first upcoming route's start position
+      // Above all routes → show first upcoming route's origin
       if (routeState.length > 0) {
         boxChange(routeState[0].section.dataset.from, routeState[0].section.dataset.to, 0);
       }
@@ -283,11 +284,13 @@
 
       // Lazy-loaded images expand as you scroll, shifting every route's
       // absolute position. Re-measure via a debounced ResizeObserver so
-      // bounds stay accurate without hammering on every pixel.
+      // bounds stay accurate. We only recalc positions here — the scroll
+      // handler owns actually redrawing routes so boxChange isn't triggered
+      // spuriously by an image load event.
       let recalcTimer = null;
       const debouncedRecalc = () => {
         clearTimeout(recalcTimer);
-        recalcTimer = setTimeout(() => { recalcBounds(); updateRoutes(); }, 100);
+        recalcTimer = setTimeout(recalcBounds, 100);
       };
 
       if (typeof ResizeObserver !== "undefined") {

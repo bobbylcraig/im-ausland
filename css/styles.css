@@ -63,9 +63,9 @@ blockquote {
 figure img {
   border: 10px solid #ddffdd;
   max-width: 100%;
-  width: 100%;
   height: auto;
-  text-align: center;
+  display: block;
+  margin: 0 auto;
 }
 
 figure figcaption {
