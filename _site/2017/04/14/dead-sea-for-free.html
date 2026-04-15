@@ -136,298 +136,348 @@
   </body>
 
   <script>
-  (() => {
-    let map = null;
-    let navigationToggle = null;
-    let navigationDrawer = null;
-    let liveMessageTimer = null;
-    let routeState = [];
-    let fadeInLines = null;
-    let fadeInBounds = null;
-    let scrollTicking = false;
-    let resizeTicking = false;
-    const futureRouteOpacity = 0.05;
-    const completedRouteOpacity = 0.18;
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const supportsClipboard = !!(navigator.clipboard?.writeText);
+(() => {
+  // ─── Constants ────────────────────────────────────────────────────────────
+  const FUTURE_OPACITY    = 0.05;
+  const COMPLETED_OPACITY = 0.18;
+  const MOBILE_BREAKPOINT = 992;
+  const FADE_DURATION_MS  = 1200;
+  const COPY_BUFFER_PX    = 100;  // scroll distance after section bottom before fade begins
 
-    document.addEventListener("DOMContentLoaded", () => {
-      navigationToggle = document.querySelector(".slide-activator");
-      navigationDrawer = document.querySelector(".slide-out-nav");
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const supportsClipboard    = !!navigator.clipboard?.writeText;
 
-      initNavigation();
-      initMapExperience();
-      initCopyLinks();
-      scrollToHash();
+  // ─── Module state ─────────────────────────────────────────────────────────
+  let map            = null;
+  let routeState     = [];
+  let scrollTicking  = false;
+  let resizeTicking  = false;
+  let liveMessageTimer = null;
 
-      window.addEventListener("resize", onResize, { passive: true });
-      window.addEventListener("scroll", onScroll, { passive: true });
-      window.addEventListener("hashchange", onHashChange);
-      document.addEventListener("keydown", onDocumentKeydown);
-    });
+  // Cached UI elements (set once in DOMContentLoaded)
+  let navToggle, navDrawer, copiedMsg, errorMsg;
 
-    function initNavigation() {
-      if (!navigationToggle || !navigationDrawer) return;
-      navigationToggle.addEventListener("click", toggleNavigation);
-      navigationDrawer.querySelectorAll(".posts a").forEach(link =>
-        link.addEventListener("click", closeNavigation)
-      );
-    }
+  // ─── Boot ─────────────────────────────────────────────────────────────────
 
-    function toggleNavigation() {
-      const isOpen = navigationDrawer.classList.toggle("open");
-      navigationToggle.classList.toggle("open", isOpen);
-      navigationToggle.setAttribute("aria-expanded", String(isOpen));
-    }
+  document.addEventListener("DOMContentLoaded", () => {
+    navToggle  = document.querySelector(".slide-activator");
+    navDrawer  = document.querySelector(".slide-out-nav");
+    copiedMsg  = document.querySelector(".copied");
+    errorMsg   = document.querySelector(".error-copying");
 
-    function closeNavigation() {
-      if (!navigationDrawer?.classList.contains("open")) return;
-      navigationDrawer.classList.remove("open");
-      navigationToggle.classList.remove("open");
-      navigationToggle.setAttribute("aria-expanded", "false");
-    }
+    initNavigation();
+    initCopyLinks();
+    scrollToHash();
 
-    function onDocumentKeydown({ key }) {
-      if (key === "Escape") closeNavigation();
-    }
+    if (isMapEligible()) initMapExperience();
 
-    // When a sidebar link is clicked the browser jumps instantly to the anchor.
-    // One rAF gives the browser time to land before we repaint the map.
-    function onHashChange() {
-      requestAnimationFrame(() => { recalcBounds(); updateRoutes(); snapViewBox(); });
-    }
+    window.addEventListener("resize",     onResize,     { passive: true });
+    window.addEventListener("scroll",     onScroll,     { passive: true });
+    window.addEventListener("hashchange", onHashChange);
+    document.addEventListener("keydown",  onKeydown);
+  });
 
-    // Snap the SVG viewBox to the correct position when a hash-jump lands.
-    // Outside active sections the fallbacks pin the viewBox to sensible
-    // completed/not-started positions so the map stays oriented.
-    function snapViewBox() {
-      if (!map) return;
-      const currentScroll = scrollY;
+  // ─── Guards ───────────────────────────────────────────────────────────────
 
-      // Actively within a route section: interpolate
-      for (const route of routeState) {
-        if (currentScroll >= route.top && currentScroll <= route.bottom) {
-          const percent = (currentScroll - route.top) / (route.bottom - route.top);
-          boxChange(route.section.dataset.from, route.section.dataset.to, percent);
-          return;
-        }
-      }
+  /** Map is only shown on wide viewports without a reduced-motion preference. */
+  function isMapEligible() {
+    return window.innerWidth > MOBILE_BREAKPOINT && !prefersReducedMotion.matches;
+  }
 
-      // Below all routes → show last completed route's destination
-      for (let i = routeState.length - 1; i >= 0; i--) {
-        if (currentScroll > routeState[i].bottom) {
-          boxChange(routeState[i].section.dataset.from, routeState[i].section.dataset.to, 1);
-          return;
-        }
-      }
+  // ─── Navigation ───────────────────────────────────────────────────────────
 
-      // Above all routes → show first upcoming route's origin
-      if (routeState.length > 0) {
-        boxChange(routeState[0].section.dataset.from, routeState[0].section.dataset.to, 0);
-      }
-    }
+  function initNavigation() {
+    if (!navToggle || !navDrawer) return;
+    navToggle.addEventListener("click", toggleNavigation);
+    navDrawer.querySelectorAll(".posts a").forEach(a =>
+      a.addEventListener("click", closeNavigation)
+    );
+  }
 
-    function initMapExperience() {
-      if (window.innerWidth <= 992 || prefersReducedMotion.matches) return;
+  function toggleNavigation() {
+    const isOpen = navDrawer.classList.toggle("open");
+    navToggle.classList.toggle("open", isOpen);
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+  }
 
-      map = document.querySelector("svg");
-      if (!map) return;
+  function closeNavigation() {
+    if (!navDrawer?.classList.contains("open")) return;
+    navDrawer.classList.remove("open");
+    navToggle.classList.remove("open");
+    navToggle.setAttribute("aria-expanded", "false");
+  }
 
-      setupTravelPaths();
-      addPointLabels();
+  function onKeydown({ key }) {
+    if (key === "Escape") closeNavigation();
+  }
 
-      fadeInLines = document.querySelector(".fade-in-lines");
-      routeState = buildRouteState();
+  // ─── Hash handling ────────────────────────────────────────────────────────
+
+  function onHashChange() {
+    // One rAF gives the browser time to jump to the anchor before we repaint.
+    requestAnimationFrame(() => {
       recalcBounds();
       updateRoutes();
+      snapViewBox();
+    });
+  }
 
-      // Lazy-loaded images expand as you scroll, shifting every route's
-      // absolute position. Re-measure via a debounced ResizeObserver so
-      // bounds stay accurate. We only recalc positions here — the scroll
-      // handler owns actually redrawing routes so boxChange isn't triggered
-      // spuriously by an image load event.
+  /**
+   * Snap the SVG viewBox to match the current scroll position after a hash
+   * jump or resize. Falls back to the nearest sensible completed/origin state
+   * when the scroll sits outside every route's bounds.
+   */
+  function snapViewBox() {
+    if (!map || !routeState.length) return;
+    const scroll = window.scrollY;
+
+    for (const route of routeState) {
+      if (scroll >= route.top && scroll <= route.bottom) {
+        const pct = (scroll - route.top) / (route.bottom - route.top);
+        applyViewBox(route, pct);
+        return;
+      }
+    }
+
+    // Below all routes → pin to last completed route's destination.
+    for (let i = routeState.length - 1; i >= 0; i--) {
+      if (scroll > routeState[i].bottom) {
+        applyViewBox(routeState[i], 1);
+        return;
+      }
+    }
+
+    // Above all routes → pin to first route's origin.
+    applyViewBox(routeState[0], 0);
+  }
+
+  // ─── Map initialisation ───────────────────────────────────────────────────
+
+  function initMapExperience() {
+    map = document.querySelector("svg");
+    if (!map) return;
+
+    setupTravelPaths();
+    addPointLabels();
+
+    routeState = buildRouteState();
+    recalcBounds();
+    updateRoutes();
+
+    // Lazy-loaded images expand sections after paint, shifting every route's
+    // absolute position. Re-measure via a debounced ResizeObserver on the body
+    // so bounds stay accurate without thrashing layout.
+    if (typeof ResizeObserver !== "undefined") {
       let recalcTimer = null;
-      const debouncedRecalc = () => {
+      new ResizeObserver(() => {
         clearTimeout(recalcTimer);
         recalcTimer = setTimeout(recalcBounds, 100);
-      };
-
-      if (typeof ResizeObserver !== "undefined") {
-        new ResizeObserver(debouncedRecalc).observe(document.body);
-      } else {
-        window.addEventListener("load", () => { recalcBounds(); updateRoutes(); });
-      }
+      }).observe(document.body);
+    } else {
+      window.addEventListener("load", () => { recalcBounds(); updateRoutes(); });
     }
+  }
 
-    function setupTravelPaths() {
-      for (const path of document.getElementsByClassName("travel")) {
-        const length = path.getTotalLength();
-        path.style.strokeDasharray = length;
-        path.style.strokeDashoffset = length;
-        path.style.opacity = futureRouteOpacity;
-        path.style.visibility = "visible";
-      }
+  /** Prepare every `.travel` path for stroke-dashoffset animation. */
+  function setupTravelPaths() {
+    for (const path of document.getElementsByClassName("travel")) {
+      const len = path.getTotalLength();
+      path.style.strokeDasharray  = len;
+      path.style.strokeDashoffset = len;
+      path.style.opacity          = FUTURE_OPACITY;
+      path.style.visibility       = "visible";
     }
+  }
 
-    function addPointLabels() {
-      for (const point of document.querySelectorAll("#points circle")) {
-        if (point.previousElementSibling?.classList.contains("map-point-label")) continue;
-        const x = parseFloat(point.getAttribute("cx")) + 8;
-        const y = parseFloat(point.getAttribute("cy")) + 3;
-        point.insertAdjacentHTML("beforebegin",
-          `<text class="map-point-label ${point.id}-text" x="${x}" y="${y}" font-family="Verdana" font-size="8" fill="black">${point.id}</text>`
-        );
-      }
-    }
-
-    function buildRouteState() {
-      const routes = [];
-
-      const addRoute = (pathSelector, section, disappearSpeed = 200) => {
-        const path = document.querySelector(pathSelector);
-        if (!path || !section) return;
-        routes.push({ path, section, disappearSpeed, pathLength: path.getTotalLength(), top: 0, bottom: 0 });
-      };
-
-      // Read route config from data attributes Jekyll bakes into each article.
-      for (const article of document.querySelectorAll(".blog-post")) {
-        const { toPath, toClass, fromPath, fromClass } = article.dataset;
-        if (toPath) addRoute(toPath, article.querySelector(toClass));
-        if (fromPath) addRoute(fromPath, article.querySelector(fromClass));
-      }
-
-      // The Switzerland mid-section has no dedicated article; find it directly.
-      addRoute("#IN-SWITZ-1", document.querySelector(".IN-SWITZ"));
-
-      return routes;
-    }
-
-    function onScroll() {
-      if (scrollTicking) return;
-      scrollTicking = true;
-      requestAnimationFrame(() => { updateRoutes(); scrollTicking = false; });
-    }
-
-    function onResize() {
-      if (resizeTicking) return;
-      resizeTicking = true;
-      requestAnimationFrame(() => {
-        if (!map && window.innerWidth > 992 && !prefersReducedMotion.matches) initMapExperience();
-        recalcBounds();
-        updateRoutes();
-        resizeTicking = false;
-      });
-    }
-
-    function recalcBounds() {
-      for (const route of routeState) {
-        const { top } = route.section.getBoundingClientRect();
-        route.top = top + scrollY;
-        route.bottom = route.top + route.section.offsetHeight;
-      }
-      routeState.sort((a, b) => a.top - b.top);
-
-      if (fadeInLines) {
-        const { top } = fadeInLines.getBoundingClientRect();
-        const fadeTop = top + scrollY;
-        fadeInBounds = { top: fadeTop, bottom: fadeTop + fadeInLines.offsetHeight };
-      }
-    }
-
-    function updateRoutes() {
-      if (!map || !routeState.length) return;
-      const currentScroll = scrollY;
-      const activeIndex = getActiveRouteIndex(currentScroll);
-      routeState.forEach((route, i) => updateRoute(route, currentScroll, activeIndex, i));
-    }
-
-    const getActiveRouteIndex = (currentScroll) =>
-      routeState.findIndex(r => currentScroll >= r.top && currentScroll <= r.bottom);
-
-    function updateRoute(route, currentScroll, activeIndex, routeIndex) {
-      let offsetVal;
-
-      if (activeIndex !== -1) {
-        if (routeIndex < activeIndex)      offsetVal = 0;
-        else if (routeIndex > activeIndex) offsetVal = route.pathLength;
-        else                               offsetVal = getActiveRouteOffset(route, currentScroll);
-      } else if (currentScroll < route.top) {
-        offsetVal = route.pathLength;
-      } else if (currentScroll > route.bottom) {
-        offsetVal = 0;
-      } else {
-        offsetVal = getActiveRouteOffset(route, currentScroll);
-      }
-
-      route.path.style.strokeDashoffset = offsetVal;
-      route.path.style.opacity = getRouteOpacity(route, currentScroll, activeIndex, routeIndex);
-    }
-
-    function getActiveRouteOffset(route, currentScroll) {
-      const pathPercent = (currentScroll - route.top) / (route.bottom - route.top);
-      boxChange(route.section.dataset.from, route.section.dataset.to, pathPercent);
-      return route.pathLength * (1 - pathPercent);
-    }
-
-    function getRouteOpacity(route, currentScroll, activeIndex, routeIndex) {
-      if (activeIndex !== -1) {
-        if (routeIndex < activeIndex)      return completedRouteOpacity;
-        if (routeIndex === activeIndex)    return 1;
-        return futureRouteOpacity;
-      }
-      if (currentScroll < route.top)    return futureRouteOpacity;
-      if (currentScroll > route.bottom) return getCompletedRouteOpacity(route, currentScroll);
-      return 1;
-    }
-
-    function getCompletedRouteOpacity(route, currentScroll) {
-      if (currentScroll <= route.bottom + 100) return 1;
-      return Math.max(1 - (currentScroll - route.bottom) / route.disappearSpeed, completedRouteOpacity);
-    }
-
-    function boxChange(from, to, percent) {
-      if (!map || !from || !to) return;
-      const fromCoords = from.split(" ").map(Number);
-      const toCoords   = to.split(" ").map(Number);
-      const viewBox = fromCoords.map((val, i) =>
-        Math.floor(val + (toCoords[i] - val) * percent)
-      ).join(" ");
-      map.setAttribute("viewBox", viewBox);
-    }
-
-    function scrollToHash() {
-      if (!location.hash) return;
-      document.querySelector(location.hash)?.scrollIntoView({
-        behavior: prefersReducedMotion.matches ? "auto" : "smooth",
-        block: "start",
-      });
-    }
-
-    function initCopyLinks() {
-      document.querySelectorAll(".copy-link-btn").forEach(btn =>
-        btn.addEventListener("click", copyLink)
+  /** Insert a text label beside each map point circle (idempotent). */
+  function addPointLabels() {
+    for (const circle of document.querySelectorAll("#points circle")) {
+      if (circle.previousElementSibling?.classList.contains("map-point-label")) continue;
+      const x = parseFloat(circle.getAttribute("cx")) + 8;
+      const y = parseFloat(circle.getAttribute("cy")) + 3;
+      circle.insertAdjacentHTML("beforebegin",
+        `<text class="map-point-label ${circle.id}-text" x="${x}" y="${y}" ` +
+        `font-family="Verdana" font-size="8" fill="black">${circle.id}</text>`
       );
     }
+  }
 
-    function copyLink(event) {
-      event.preventDefault();
-      const text = event.currentTarget.getAttribute("data-clipboard-text");
-      if (!text || !supportsClipboard) { showCopyMessage(false); return; }
-      navigator.clipboard.writeText(text)
-        .then(() => showCopyMessage(true))
-        .catch(() => showCopyMessage(false));
+  /**
+   * Build the ordered list of route descriptors from data attributes that
+   * Jekyll bakes into each article. Each descriptor pre-parses the from/to
+   * viewBox coordinates so the scroll handler never does string work.
+   */
+  function buildRouteState() {
+    const routes = [];
+
+    const addRoute = (pathSelector, section, disappearSpeed = 200) => {
+      const path = document.querySelector(pathSelector);
+      if (!path || !section) return;
+      routes.push({
+        path,
+        section,
+        disappearSpeed,
+        pathLength: path.getTotalLength(),
+        from: section.dataset.from?.split(" ").map(Number) ?? [],
+        to:   section.dataset.to?.split(" ").map(Number)   ?? [],
+        top:    0,
+        bottom: 0,
+      });
+    };
+
+    for (const article of document.querySelectorAll(".blog-post")) {
+      const { toPath, toClass, fromPath, fromClass } = article.dataset;
+      if (toPath)   addRoute(toPath,   article.querySelector(toClass));
+      if (fromPath) addRoute(fromPath, article.querySelector(fromClass));
     }
 
-    function showCopyMessage(wasSuccessful) {
-      const message = document.querySelector(wasSuccessful ? ".copied" : ".error-copying");
-      const other   = document.querySelector(wasSuccessful ? ".error-copying" : ".copied");
-      if (!message) return;
-      clearTimeout(liveMessageTimer);
-      other?.classList.remove("visible");
-      message.classList.add("visible");
-      liveMessageTimer = setTimeout(() => message.classList.remove("visible"), 1200);
+    // The Switzerland mid-section has no dedicated article element.
+    addRoute("#IN-SWITZ-1", document.querySelector(".IN-SWITZ"));
+
+    return routes;
+  }
+
+  // ─── Scroll / Resize ──────────────────────────────────────────────────────
+
+  function onScroll() {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    requestAnimationFrame(() => { updateRoutes(); scrollTicking = false; });
+  }
+
+  function onResize() {
+    if (resizeTicking) return;
+    resizeTicking = true;
+    requestAnimationFrame(() => {
+      // Initialise the map if the viewport just crossed the breakpoint.
+      if (!map && isMapEligible()) initMapExperience();
+      recalcBounds();
+      updateRoutes();
+      resizeTicking = false;
+    });
+  }
+
+  /**
+   * Recompute the absolute top/bottom of every route section.
+   * Also re-sorts by top position so the active-route search stays correct
+   * after lazy content shifts sections around.
+   */
+  function recalcBounds() {
+    for (const route of routeState) {
+      const rect  = route.section.getBoundingClientRect();
+      route.top    = rect.top + window.scrollY;
+      route.bottom = route.top + route.section.offsetHeight;
     }
-  })();
+    routeState.sort((a, b) => a.top - b.top);
+  }
+
+  // ─── Rendering ────────────────────────────────────────────────────────────
+
+  function updateRoutes() {
+    if (!map || !routeState.length) return;
+
+    const scroll      = window.scrollY;
+    const activeIndex = routeState.findIndex(r => scroll >= r.top && scroll <= r.bottom);
+
+    for (let i = 0; i < routeState.length; i++) {
+      updateRoute(routeState[i], scroll, activeIndex, i);
+    }
+  }
+
+  function updateRoute(route, scroll, activeIndex, index) {
+    let offset;
+
+    if (activeIndex !== -1) {
+      if (index < activeIndex)      offset = 0;
+      else if (index > activeIndex) offset = route.pathLength;
+      else                          offset = activeRouteOffset(route, scroll);
+    } else if (scroll < route.top) {
+      offset = route.pathLength;
+    } else if (scroll > route.bottom) {
+      offset = 0;
+    } else {
+      // Scroll is inside this section but no active index found — edge case
+      // that can occur momentarily during recalcBounds; treat as active.
+      offset = activeRouteOffset(route, scroll);
+    }
+
+    route.path.style.strokeDashoffset = offset;
+    route.path.style.opacity = routeOpacity(route, scroll, activeIndex, index);
+  }
+
+  /** Interpolate offset and advance the viewBox for the currently-active route. */
+  function activeRouteOffset(route, scroll) {
+    const pct = (scroll - route.top) / (route.bottom - route.top);
+    applyViewBox(route, pct);
+    return route.pathLength * (1 - pct);
+  }
+
+  function routeOpacity(route, scroll, activeIndex, index) {
+    if (activeIndex !== -1) {
+      if (index < activeIndex)   return COMPLETED_OPACITY;
+      if (index === activeIndex) return 1;
+      return FUTURE_OPACITY;
+    }
+    if (scroll < route.top)    return FUTURE_OPACITY;
+    if (scroll > route.bottom) return completedOpacity(route, scroll);
+    return 1;
+  }
+
+  function completedOpacity(route, scroll) {
+    if (scroll <= route.bottom + COPY_BUFFER_PX) return 1;
+    return Math.max(
+      1 - (scroll - route.bottom) / route.disappearSpeed,
+      COMPLETED_OPACITY
+    );
+  }
+
+  /** Lerp the four viewBox components between route.from and route.to. */
+  function applyViewBox(route, pct) {
+    if (!map || !route.from.length || !route.to.length) return;
+    const viewBox = route.from
+      .map((v, i) => Math.floor(v + (route.to[i] - v) * pct))
+      .join(" ");
+    map.setAttribute("viewBox", viewBox);
+  }
+
+  // ─── Utilities ────────────────────────────────────────────────────────────
+
+  function scrollToHash() {
+    if (!location.hash) return;
+    document.querySelector(location.hash)?.scrollIntoView({
+      behavior: prefersReducedMotion.matches ? "auto" : "smooth",
+      block: "start",
+    });
+  }
+
+  // ─── Copy-link buttons ────────────────────────────────────────────────────
+
+  function initCopyLinks() {
+    document.querySelectorAll(".copy-link-btn").forEach(btn =>
+      btn.addEventListener("click", onCopyClick)
+    );
+  }
+
+  function onCopyClick(event) {
+    event.preventDefault();
+    const text = event.currentTarget.getAttribute("data-clipboard-text");
+    if (!text || !supportsClipboard) { showCopyMessage(false); return; }
+    navigator.clipboard.writeText(text)
+      .then(()  => showCopyMessage(true))
+      .catch(()  => showCopyMessage(false));
+  }
+
+  function showCopyMessage(success) {
+    const show = success ? copiedMsg : errorMsg;
+    const hide = success ? errorMsg  : copiedMsg;
+    if (!show) return;
+
+    clearTimeout(liveMessageTimer);
+    hide?.classList.remove("visible");
+    show.classList.add("visible");
+    liveMessageTimer = setTimeout(() => show.classList.remove("visible"), FADE_DURATION_MS);
+  }
+})();
 </script>
 
 </html>
