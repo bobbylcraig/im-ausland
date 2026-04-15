@@ -35,7 +35,7 @@ data-box-from: "1675 1650 500 400"
 <p>I get to the hostel (eventually!), check-in (my room was ready, yay!), and go to buy a lock from a nearby store. It was surprisingly difficult to find a lock. Kind of annoying. The hostel is super nice and I really enjoy it. Once I finally arrive, I see Evan checking in and say hi (in a very bro-ey way) and we chill while he checks into his room. We hang out for a short period of time, and eventually we go to Notre Dame as I noticed it was close on my walk to the hostel. We didn't want to wait in line or pay to go up in the bell tower, so we just went into the church proper. When we went in it looked like a mass was going on, so we had to be quiet and take in the beauty relatively quickly. There was so much care put into building the cathedral and the gothic ceilings seemed to reach to the heavens. Notre Dame was probably my favorite part of the entire trip&mdash;it's that beautiful.</p>
 
 <figure>
-  <img loading="lazy" src="/im-ausland/img/post-imgs/notre-dame-min.jpg">
+  <img loading="lazy" src="/im-ausland/img/post-imgs/notre-dame-min.jpg" alt="Notre Dame">
 </figure>
 
 <p>At this point, we're a bit parched so we decide to stop by a bar and get a drink. We head all over Paris until we eventually find a place that has beer listed as 5 Euros. Not entirely unreasonable. We get to the counter, order a beer...and are asked if we wanted a small or large. Well, apparently the large was double the cost (or maybe that's the tourist tax) because we ended up paying 10 Euro for some crappy French beer. Never again.</p>
@@ -51,7 +51,7 @@ data-box-from: "1675 1650 500 400"
 <p>This time, Maddie took us to this cool old-fashioned France hill "butte" thing. She was very excited about it (as she seemed to be about most of Paris) and told us all about it. We ate at this nifty restaurant, got a ham and cheese sandwich (which wasn't too bad considering I hate ham) and talked more about France. It's kind of overwhelming how much Maddie loves Paris. While in the butte neighborhood thingy (I'm sure it has a name and Maddie would kill me for not calling it by that name) we went to the oldest vineyard (and last, if I remember correctly) in Paris, we went to a church on the top of the hill, and we got some gelato which was definitely needed. Like, vitally. It was an adorable little neighborhood, exactly what you think of when you think of France, but it was also incredibly touristy. Still, it was neat finally seeing people playing accordions in Paris like you'd expect if you'd never been there.</p>
 
 <figure>
-  <img loading="lazy" src="/im-ausland/img/post-imgs/eiffel-tower-min.jpg">
+  <img loading="lazy" src="/im-ausland/img/post-imgs/eiffel-tower-min.jpg" alt="Eiffel Tower">
   <figcaption>Picturesque, eh?</figcaption>
 </figure>
 
@@ -62,7 +62,7 @@ data-box-from: "1675 1650 500 400"
 <p>The last day we're in Paris we wake up (relatively late) and eat breakfast. From there, we take a 15 stop metro ride to the Eiffel Tower (I can't believe I walked that entire distance the first day) and basically chilled there most of the morning. Got some incredible photos and Evan got the Snapchat video that he was foaming at the mouth the entire trip to get. It involved Kanye's "Ni**as in Paris" and some rapid zooming action. High quality, for sure.</p>
 
 <figure>
-  <img loading="lazy" src="/im-ausland/img/post-imgs/chill-in-paris-min.jpg">
+  <img loading="lazy" src="/im-ausland/img/post-imgs/chill-in-paris-min.jpg" alt="Chill In Paris">
 </figure>
 
 <p>Soon enough, we realize that we're being lazy bums and probably should actually do something while we're in Paris and we get up and head to the Musée de l'Armée that Maddie had talked about the day prior and that we passed several times. It was free for students (huge plus) and we got to see a lot of really cool things. From medieval armor to artifacts from the French Revolution, there was a lot to be seen here. If you went outside, you could see modern military equipment alongside some really old cannons that looked totally badass. It was a good time. Perhaps the coolest part of the museum, however, was seeing the burial place of Napoleon. The building where he was buried was unbelievably enormous, his entire family was with him, and you could tell that Napoleon is vastly important to the history and the people of France.</p>

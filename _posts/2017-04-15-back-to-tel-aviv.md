@@ -29,7 +29,7 @@ data-box-from: "3675 3050 187 150"
 <p>When we arrived, we ended up in east Jerusalem but walked to the west thinking we might find something to eat or see. We. Were. So. Wrong. Shabbat was in full force, so absolutely nothing was open in Jerusalem. We walked around, cursed Shabbat, asked a guy in a hotel where some gentiles might eat and he told us to eat in the Old City (where we had just come from). Ugh, more walking.</p>
 
 <figure>
-  <img loading="lazy" src="/im-ausland/img/post-imgs/jerusalem-dad-min.jpg">
+  <img loading="lazy" src="/im-ausland/img/post-imgs/jerusalem-dad-min.jpg" alt="Jerusalem Dad">
   <figcaption>This is normal in Jerusalem. Taking the kids for a walk? Bring an assault rifle.</figcaption>
 </figure>
 

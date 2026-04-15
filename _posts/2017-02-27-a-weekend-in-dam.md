@@ -25,7 +25,7 @@ data-box-from: "1675 1650 500 400"
 </div>
 
 <figure>
-  <img loading="lazy" src="/im-ausland/img/post-imgs/dam-pub-min.jpg">
+  <img loading="lazy" src="/im-ausland/img/post-imgs/dam-pub-min.jpg" alt="Dam Pub">
 </figure>
 
 <p>We walked in, grabbed our respective drinks (mostly Heineken...ya know, when in Amsterdam), and just enjoyed each other's company. An hour or two passed quickly and we bought not too much because it was ridiculously expensive. Dariya oogled over the Irish bartender and we joined in singing Queen songs with all of the random English, Welsh, Scots, and Irish people in the bar. It was a fun night. After lots of fun, we called it a night and made our way back to our hostel.</p>
@@ -33,7 +33,7 @@ data-box-from: "1675 1650 500 400"
 <p>On Saturday morning, we left the hostel (slightly later than I was hoping) and we did normal touristy things. We first went to the "i amsterdam" letters and got some silly pictures. We then bought tickets for the Van Gogh museum and got to enjoy that, which was super fun. Van Gogh is one of my favorite painters, so I'm really glad that I got to go through the museum while I was in Amsterdam. After that, the group got lunch and we split up so those who wanted to go to the Rijksmuseum could and those who didn't want to or already had been could do something else. I had already been to Rijks in November, so I decided to forgo seeing it again. Dariya, Jack, and I didn't get up to anything extremely exciting in place of the Rijksmuseum, but we walked around and did some more sightseeing. ALSO, in this time period I got talked into paying 32.50 Euro for a freaking haircut (I'm still really upset about this) and I bought 10 Euro worth of cheese...so I guess you could say that not everything went poorly. We continued with random sightseeing until we finally met up with Maaike again!</p>
 
 <figure>
-  <img loading="lazy" src="/im-ausland/img/post-imgs/expensive-haircuts-min.jpg">
+  <img loading="lazy" src="/im-ausland/img/post-imgs/expensive-haircuts-min.jpg" alt="Expensive Haircuts">
   <figcaption>Does this haircut look worth €32.50? Lmk.</figcaption>
 </figure>
 
@@ -55,7 +55,7 @@ data-box-from: "1675 1650 500 400"
 <p>We caught our train, not much interesting happened...UNTIL we saw a bunch of people coming back from Karneval (or Carnival in English/Rio) and I got tons of pictures with them because they all looked awesome and were causing a ruckus in the train station playing really loud music. There were even beer-drinking Ronald McDonalds...SUPER COOL.</p>
 
 <figure>
-  <img loading="lazy" src="/im-ausland/img/post-imgs/karneval-min.jpg">
+  <img loading="lazy" src="/im-ausland/img/post-imgs/karneval-min.jpg" alt="Karneval">
 </figure>
 
 <p>But yeah, got home, went to bed, and a new week started! The end. Hannover next weekend, maybe? We'll see.</p>

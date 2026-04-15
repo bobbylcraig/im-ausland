@@ -27,7 +27,7 @@ data-box-from: "1675 1650 500 400"
 <p>When we went to buy our tickets for the guided tour, we were kind of hit with a bombshell...they only had two tickets left for the English tour and there were 7 (I think?) of us...awkward. We all discussed amongst ourselves and decided it was probably best for Brooke and Lillian to do the English tour. That meant the rest of us did the German tour...which was interesting. So, for 90 minutes we listened to our tour guide speak in <em>very fast</em> German. Surprisingly enough, I think I actually understood most of what he had to say. He was very good at miming what he was doing and occasionally translating tough German words into English for those of us that didn't speak German. The tour, altogether, wasn't terrible despite the whole German thing. I got a lot of free chocolate out of it, and I even got to make a chocolate bar (which I still need to get back from Maaike because she has it somewhere!).</p>
 
 <figure>
-  <img loading="lazy" src="/im-ausland/img/post-imgs/chocolate-min.jpg">
+  <img loading="lazy" src="/im-ausland/img/post-imgs/chocolate-min.jpg" alt="Chocolate">
   <figcaption>Maaike enjoys her one true love: chocolate.</figcaption>
 </figure>
 

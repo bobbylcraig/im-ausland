@@ -17,7 +17,7 @@ data-box-from:
 <p>I went to some museum about about art and history in Palestine owned by a private citizen and it was free. I met some British couple there, but they were leaving as I was getting there. The owner gave us tea and talked with us about the state of Palestine and corruption in Ramallah. He was really fired up about it and seemed to think all of the Palestinians hated him (they might have...I don't know!). I walked around and looked at art afterward, which was just all right, and then when I heard the bands outside for the Easter celebration I decided it was time to leave.</p>
 
 <figure>
-  <img loading="lazy" src="/im-ausland/img/post-imgs/we-ramallah-min.jpg">
+  <img loading="lazy" src="/im-ausland/img/post-imgs/we-ramallah-min.jpg" alt="We Ramallah">
 </figure>
 
 <p>When I left the streets were littered with people and a parade had formed in the streets. It was mostly young kids playing in a band (well, several bands) but it was fun to see the patriotism, happiness, and pride of Palestinians. I walked around for a while and took pictures but you can only look at the same thing for so long. Therefore, I walked around in shops around Ramallah, bought two delicious cinnamon buns for a shekel each (or about 50¢), and finally it was time for me to go see Yusuf to head to Jerusalem.</p>
